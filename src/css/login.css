@@ -34,7 +34,7 @@ html,
 body{
     width: 100%;
     min-height: 100vh;
-    background-color: #004587;
+    background-color: #ffffff;
 }
 
 .btn-menu{
@@ -78,33 +78,158 @@ body{
     background-size: 10mm;
 }
 
-@media screen and (max-width: 800px){
-    /* CABEÇALHO */
-    .menu, .social{
-        display: none;
-    }
-
-    /* BARRA DE PESQUISA */
-    .search-box{
-        margin: auto;
-        width: 350px;
-        height: 80px;
-        background: rgba(255, 255, 255, 0.705);
-        border: 2px solif #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        display: flex;
-        justify-content: space-between;
-        position:relative;
-        top: -27%;
-        left: 10px;
-    }
-
-    .search-box .imput-search input{
-        border: 0;
-        outline: 0;
-        font-size: 20px;
-        background: rgba(255, 255, 255, 0);
-    }
-
+/* RODAPÉ */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 115px;
+    color: white;
+    background-color: #00407E;
+    border-top: 5px solid #ff8000;
+    flex-direction: row;
+    left: 0;
 }
+
+.logo-rodapier {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 25px;
+    margin-left: 100px;
+    position: absolute;
+    justify-content: space-between;
+}
+
+.copyright {
+    font-size: 14px;
+    font-family: Sanchez;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.social-rodapier {
+    display: flex;
+    margin-right: 100px;
+    margin-top: -25px;
+    justify-content: flex-end;
+    grid-column-gap: 5px;
+}
+
+.btn-social-rodapier {
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #00537c00;
+    border-radius: 1mm;
+    background-color: #ffffff;
+}
+
+.btn-social-rodapier:hover {
+    color: #ffffff;
+    background-color: #FF8000;
+    background-size: 10mm;
+}/* RODAPÉ */
+
+/* LOGIN */
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px
+}
+
+.areaLogin img {
+    width: 420px;
+}
+
+.formLogin h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.3em;
+}
+
+.formLogin p {
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.formLogin input {
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+.formLogin input:focus {
+    border: 1px solid #FF8000;
+}
+
+.formLogin label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.formLogin a {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #555;
+    transition: all linear 160ms;
+}
+
+.formLogin a:hover {
+    color: #FF8000;
+}
+
+.btn {
+    background-color: #00407E;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none !important;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #002e5c;
+
+}/* LOGIN */
+
+@media screen and (max-width: 800px){ /* DEIXE A SUA PÁGINA RESPONSIVA AQUI */
+
+    /* CABEÇALHO */
+    #topo {
+      justify-content: flex-start;
+    }
+  
+    .menu,
+    .social {
+      display: none;
+    }/* CABEÇALHO */
+  }
