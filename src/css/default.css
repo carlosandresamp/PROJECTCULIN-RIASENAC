@@ -15,7 +15,6 @@
 #container {
     width: 100%;
     height: 100vh;
-    margin: -10px;
 }
 
 #topo {
@@ -184,7 +183,6 @@ body {
     flex-wrap: wrap;
     margin: 10px;
     justify-content: center;
-    margin-top: -100px;
 }
 
 .card {
@@ -346,7 +344,7 @@ body {
     }
 
     /* MENU RESPONSIVO */
-    
+
 
     /* RODAPÉ */
 
