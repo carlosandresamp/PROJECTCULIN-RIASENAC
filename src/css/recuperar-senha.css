@@ -37,6 +37,8 @@ body{
     background-color: #ffffff;
 }
 
+
+
 .btn-menu{
     width: 90px;
     height: 30px;
@@ -75,7 +77,6 @@ body{
 .btn-social:hover{
     color: #ffffff;
     background-color: #004587;
-    background-size: 10mm;
 }
 
 /* RODAPÉ */
@@ -139,7 +140,7 @@ body{
     #topo {
       justify-content: flex-start;
     }
-  
+
     .menu,
     .social {
       display: none;
