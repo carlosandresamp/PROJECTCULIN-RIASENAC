@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -20,24 +20,25 @@
     flex-direction: row;
     justify-content: space-around;
     border-bottom: 5px solid #ff8000;
+    margin-bottom: 0;
 }
 
-.logo{
+.logo {
     margin: 15px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
 html,
-body{
+body {
     width: 100%;
     min-height: 100vh;
     background-color: #ffffff;
 }
 
-.btn-menu{
+.btn-menu {
     width: 90px;
     height: 30px;
     border: 1px solid #00537c00;
@@ -45,13 +46,13 @@ body{
     font-family: Sanchez;
     font-size: 16px;
     color: #004587;
-    background:none;
+    background: none;
     top: 25%;
     position: relative;
     line-height: 25px;
 }
 
-.btn-menu:hover{
+.btn-menu:hover {
     width: 90px;
     height: 30px;
     color: #ffffff;
@@ -60,7 +61,7 @@ body{
     font-size: 16;
 }
 
-.btn-social{
+.btn-social {
     color: #ffffff;
     width: 32px;
     height: 32px;
@@ -72,76 +73,136 @@ body{
     justify-content: space-around;
 }
 
-.btn-social:hover{
+.btn-social:hover {
     color: #ffffff;
     background-color: #004587;
     background-size: 10mm;
 }
 
-/* RODAPÉ */
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 115px;
-    color: white;
-    background-color: #00407E;
-    border-top: 5px solid #ff8000;
-    flex-direction: row;
-    left: 0;
-}
-
-.logo-rodapier {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 25px;
-    margin-left: 100px;
-    position: absolute;
-    justify-content: space-between;
-}
-
-.copyright {
-    font-size: 14px;
-    font-family: Sanchez;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    text-align: center;
-}
-
-.social-rodapier {
-    display: flex;
-    margin-right: 100px;
-    margin-top: -25px;
-    justify-content: flex-end;
-    grid-column-gap: 5px;
-}
-
-.btn-social-rodapier {
-    color: #ffffff;
-    width: 32px;
-    height: 32px;
-    border: 1px solid #00537c00;
-    border-radius: 1mm;
-    background-color: #ffffff;
-}
-
-.btn-social-rodapier:hover {
-    color: #ffffff;
-    background-color: #FF8000;
-    background-size: 10mm;
-}
-/* RODAPÉ */
-
-@media screen and (max-width: 800px){ /* DEIXE A SUA PÁGINA RESPONSIVA AQUI */
+@media screen and (max-width: 800px) {
 
     /* CABEÇALHO */
-    #topo {
-      justify-content: flex-start;
-    }
-
     .menu,
     .social {
-      display: none;
-    }/* CABEÇALHO */
-  }
+        display: none;
+    }
+
+    /* BARRA DE PESQUISA */
+    .search-box {
+        margin: auto;
+        width: 350px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.705);
+        border: 2px solif #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: -27%;
+        left: 10px;
+    }
+
+    .search-box .imput-search input {
+        border: 0;
+        outline: 0;
+        font-size: 20px;
+        background: rgba(255, 255, 255, 0);
+    }
+
+}
+.imagem{
+    width: 100%;
+    
+}
+.imagem img {
+    width: 100%;
+    height: 500px;
+    
+    border: 6px solid #004587;
+    margin-left: 11px;
+
+
+
+}
+
+.img-perfil{
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    border: 5px solid #004587;
+}
+
+#perfil {
+    margin-top: -250px;
+    height: 400px;
+    width: 400px;
+    
+
+}
+
+.content{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+#nome{
+    display: flex;
+    justify-content: center;
+    font-size: 60px ;
+    font-style: italic;
+    color: #004587;
+   
+}
+
+#but{
+display: flex;
+justify-content: center;
+
+}
+
+#seguir{
+    font-size: larger;
+    width: 200px;
+    height: 50px;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #004587;
+}
+#seguir:hover{
+    background-color: #001f3b;
+}
+
+#compartilhar{
+    font-size:larger;
+    width: 300px;
+    height: 50px;
+    border-radius: 100px;
+    margin-left: 25px;
+    color: #fff;
+    background-color: #004587;
+    
+}
+#compartilhar:hover{
+    background-color: #001f3b;}
+
+#curtir{
+    font-size:larger;
+    margin-left: 25px;
+    width: 200px;
+    height: 50px;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #004587;
+}
+#curtir:hover{
+    background-color: #001f3b;
+}
+
+#catalogo{
+font-size: 100px;
+
+
+}
