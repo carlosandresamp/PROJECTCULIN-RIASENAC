@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../src/css/add-receitas.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Receita</title>
+    <title>Chefs</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 
                 <div class="menu">
                     <a href="../index.html">
-                        <button class="btn-menu">ínicio</button>
+                        <button class="btn-menu">Ínicio</button>
                     </a>
 
                     <a href="http://www.senac.br/" target="_blank">
@@ -72,313 +72,35 @@
                 </div><!--social-->
             </div><!--topo-->
 
-            <form style="margin:0px" id="dtform" method="post" action="/Diary.aspx?pa=mrece&recipeid=0&action=save">
+            <div class="container">
+                <h1> Adicione uma receita</h1>
+                <form>
+                    <label for="recipe-name">Nome da receita:</label>
+                    <input type="text" id="recipe-name" name="recipe-name" required>
 
-                <div class="breakout">
-                    <div style="margin: 10px;">
-                        <h3 style="margin: 0;">Criar uma Nova Receita:</h3>
-                        <table class="generic">
-                            <colgroup>
-                                <col width="150">
-                                <col width="*">
-                            </colgroup>
-                            <tbody>
+                    <label for="ingredients">Ingredientes:</label>
+                    <textarea id="ingredients" name="ingredients" required></textarea>
 
-                                <tr valign="top>">
-                                    <td>
-                                        <b>
-                                            Título:
-                                            <span class="rec"> *</span>
-                                        </b>
-                                    </td>
-                                    <td>
-                                        <input onchange="SPS();" name="title" id="title" value style="width: 99%">
-                                        <span class="smallText" greyText></span>
-                                        <hr>
-                                    </td>
-                                </tr>
+                    <label for="directions">Instruções:</label>
+                    <textarea id="directions" name="directions" required></textarea>
 
-                                <tr valign="top>">
-                                    <td>
-                                        <b>
-                                            Descrição:
-                                            <span class="rec"> *</span>
-                                        </b>
-                                    </td>
-                                    <td>
-                                        <textarea onchange="SPS();" name="description" id="description" style="width: 99%" rows="2"></textarea>
-                                        <span class="smallText" greyText></span>
-                                        <hr>
-                                    </td>
-                                </tr>
+                    <label for="prep-time">Tempo de preparação (em minutos):</label>
+                    <input type="number" id="prep-time" name="prep-time" required>
 
-                                <tr valign="top>">
-                                    <td>
-                                        <b>
-                                            Número de Porções:
-                                            <span class="rec"> *</span>
-                                        </b>
-                                    </td>
-                                    <td>
-                                        <input onchange="SPS();" name="portions" id="portions" value="1" style="width: 30px">
-                                        <span class="smallText" greyText>
-                                            (Introduzir o número de porções desta receita)
-                                        </span>
-                                        <hr>
-                                    </td>
-                                </tr>
+                    <label for="cook-time">Tempo de cozimento (em minutos):</label>
+                    <input type="number" id="cook-time" name="cook-time" required>
 
-                                <tr valign="top>">
-                                    <td>
-                                        <b>
-                                            Tempo de Preparação:
-                                            <span class="rec"> *</span>
-                                        </b>
-                                    </td>
-                                    <td>
-                                        <input onchange="SPS();" name="prepTime" id="prepTime" value="0" style="width: 30px">
-                                        <span class="smallText" greyText>
-                                            (Introduzir o número total de minutos necessários para a preparação)
-                                        </span>
-                                        <hr>
-                                    </td>
-                                </tr>
+                    <label for="serving-size">Quantidade de porções:</label>
+                    <input type="number" id="serving-size" name="serving-size" required>
 
-                                <tr valign="top>">
-                                    <td>
-                                        <b>
-                                            Tempo de Cozimento:
-                                            <span class="rec"> *</span>
-                                        </b>
-                                    </td>
-                                    <td>
-                                        <input onchange="SPS();" name="cookTime" id="cookTime" value="0" style="width: 30px">
-                                        <span class="smallText" greyText>
-                                            (Introduzir o número total de minutos necessários para cozinhar)
-                                        </span>
-                                        <hr>
-                                    </td>
-                                </tr>
+                    <label for="recipe-image">Carregue a imagem da receita:</label>
+                    <input type="file" id="recipe-image" name="recipe-image">
 
-                            </tbody>
-                        </table>
-                        <input type="hidden" name="sharing" id="sharing" value>
-                    </div>
-                </div>
-                <div style="width:100%;display:table">
+                    <label for="recipe-video">Carregue o vídeo da receita:</label>
+                    <input type="file" id="recipe-video" name="recipe-video">
 
-                    <h3 style="margin:0px;font-family:Helvetica,Arial;font-size:123%;text-transform:none;padding:2px;color:#444444">
-                        Tipos de refeição (p. ex.: refeições principais, sobremesas, bebidas)
-                    </h3>
-                    <hr>
-                    <div style="margin:10px;">
-                        <table class="generic">
-                            <tbody>
-                                <tr>
-                                    <td>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="1_type" id="1_type" value="1">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="2_type" id="2_type" value="2">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="3_type" id="3_type" value="3">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="4_type" id="4_type" value="4">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="5_type" id="5_type" value="5">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="6_type" id="6_type" value="6">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="7_type" id="7_type" value="7">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="8_type" id="8_type" value="8">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="9_type" id="9_type" value="9">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="10_type" id="10_type" value="10">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="11_type" id="11_type" value="11">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="12_type" id="12_type" value="12">
-                                            Aperitivos
-                                        </div>
-
-                                        <div style="float:left; width:190px;">
-                                            <input onchange="SPS();" type="checkbox" name="13_type" id="13_type" value="13">
-                                            Aperitivos
-                                        </div>
-
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </form>
-
-            <table class="generic">
-                <tbody>
-                    <tr>
-                        <td class="borderBottom">
-                            <table class="generic">
-                                <tbody>
-                                    <tr>
-                                   <td class="greytitlex" rowspan="2" valign="middle" width="*" style="font-weight:bold;font-size:123%;padding:4px">Ingredientes</td>
-
-                                   <td class="grey" style="padding-right:3px" title="Gorduras">
-                                        Gord
-                                        <span class="smallText">(g)</span>
-                                    </td>
-
-                                    <td class="grey" style="padding-right:3px" title="Carboidratos">
-                                        Carbs
-                                        <span class="smallText">(g)</span>
-                                    </td>
-
-                                    <td class="grey" style="padding-right:3px" title="Proteínas">
-                                        Prot
-                                        <span class="smallText">(g)</span>
-                                    </td>
-
-                                    <td class="grey" style="padding-right:3px" title="Calorias">
-                                        Cals
-                                        <span class="smallText">(g)</span>
-                                    </td>
-
-                                    </tr>
-                                    <tr>
-                                    <td class="greyback2" title="Gorduras: -g">-</td>
-                                    <td class="greyback2" title="Carboidratos: -g">-</td>
-                                    <td class="greyback2" title="Proteínas: -g">-</td>
-                                    <td class="greyback2" title="Calorias: -kcal">-</td>
-                                    <td width="10px&quot;"> </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr class="row">
-                        <td>
-                            <div id="addItem" style="padding:5px">
-                                <a href="#" onclick="do_item_add(); return false;"><img src="/media/images/add_b.png" style="vertical-align:middle;padding-right:5px">
-                                <b>Adicionar Ingrediente</b>
-                                </a>
-                            </div>
-
-                            <div id="searchItem" style="background-color:#FCF3E5;display:none;padding:5px;padding-bottom:0px;">
-                                <a href="#" onclick="cancel_search(); return false;"><img src="/media/images/add_b.png" style="vertical-align:middle;padding-right:5px">
-                                <b>Adicionar Ingrediente</b>
-                                </a>
-                                <div style="margin:40px;margin-bottom:0px;margin-top:10px;display:table;font-size:92%;">
-                                    <form style="margin:0">
-                                        <div style="float:left">
-                                            <b>Procurar um Ingrediente:</b>
-                                            <input type="text" id="searchItemExp" style="width:220px;vertical-align:middle;height:14px" onkeydown="return search_downed(event);" maxlength="50">
-                                        </div>
-
-                                        <div style="float:right">
-                                            <a class="button green thin" href="#" onclick="do_search(); return false" style="margin-left:5px">
-                                                <span class="left"> </span>
-                                                <span class="middle" style="padding:0px 5px">Pesquisar</span>
-                                                <span class="right"> </span>
-                                            </a>
-
-                                            <a class="button grey thin" href="#" onclick="cancel_search(); return false;" style="margin-left:5px">
-                                                <span class="left"> </span>
-                                                <span class="middle" style="padding:0px 5px">Cancelar</span>
-                                                <span class="right"> </span>
-                                            </a>
-                                        </div>
-                                        <div style="clear:both;margin-bottom:10px"> </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <form id="ingredientForm" method="post" style="margin:0px;top:0px;" action="/Diary.aspx?pa=mrece&action=addentry&recipeid=0">
-                                <div id="searchItemResults" class style="background-color:#FDF7E8;display:none;">
-                                    Pesquisando...
-                                </div>
-                            </form>
-
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div>
-
-                <h3 style="margin:0px;padding:2px;font-family:Helvetica,Arial;font-size:123%;text-transform:none;color:#444444">Instruções</h3>
-                <hr>
-                <div style="margin:10px;">
-                    <table class="generic" width="100%">
-                        <tbody>
-                            <tr>
-                                <td class="label" style="width:150px">
-                                    Etapa 1:
-                                </td>
-
-                                <td width="500">
-                                    <textarea rows="3" onchange="SPS();" name="step1" id="step1" style="width:500px;"></textarea>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="label" style="width:150px">
-                                    Etapa 2:
-                                </td>
-
-                                <td width="500">
-                                    <textarea rows="3" onchange="SPS();" name="step2" id="step2" style="width:500px;"></textarea>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="label" style="width:150px">
-                                    Etapa 3:
-                                </td>
-
-                                <td width="500">
-                                    <textarea rows="3" onchange="SPS();" name="step3" id="step3" style="width:500px;"></textarea>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
+                    <button type="submit">Enviar receita</button>
+                </form>
             </div>
 
             <div class="footer">
