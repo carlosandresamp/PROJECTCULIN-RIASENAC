@@ -72,73 +72,32 @@
                 </div><!--social-->
             </div><!--topo-->
 
-            <div id="container">
-                <h1>Editar receita</h1>
-                <div id="box_add">
-                    <label>Título</label>
-                    <input type="text" required>
-                    <label>Descrição</label>
-                    <textarea name="Descrição" id="textarea" cols="35" rows="8"></textarea>
-                    <label>Número de porções</label>
-                    <input type="number">
-                    <label>Tempo de Preparação</label>
-                    <input type="time">
-                    <label>Tempo de Cozimento</label>
-                    <input type="time">
-                </div>
-                <div class="check_box">
-                    Tipos de refeições:
-
-                    <input type="checkbox" id="checkbox" value="Aperitivos">
-                    <label for="Aperitivos">Aperitivos</label>
-
-                    <input type="checkbox" id="checkbox" value="Sopa">
-                    <label for="Sopa">Sopa</label>
-
-                    <input type="checkbox" id="checkbox" value="Pratos Principais">
-                    <label for="Pratos Principais">Pratos Principais</label>
-
-                    <input type="checkbox" id="checkbox" value="Acompanhamentos">
-                    <label for="Acompanhamentos">Acompanhamentos</label>
-
-                    <input type="checkbox" id="checkbox" value="Pães e Produtos de Panificação">
-                    <label for="Pães e Produtos de Panificação">Pães e Produtos de Panificação</label>
-
-                    <input type="checkbox" id="checkbox" value="Saladas e Molhos para Saladas">
-                    <label for="Saladas e Molhos para Saladas">Saladas e Molhos para Saladas</label>
-
-                    <input type="checkbox" id="checkbox" value="Sobremesas">
-                    <label for="Sobremesas">Sobremesas</label>
-
-                    <input type="checkbox" id="checkbox" value="Lanches">
-                    <label for="Lanches">Lanches</label>
-
-                    <input type="checkbox" id="checkbox" value="Bebidas">
-                    <label for="Bebidas">Bebidas</label>
-
-                    <input type="checkbox" id="checkbox" value="Café da Manhã">
-                    <label for="Café da Manhã">Café da Manhã</label>
-
-                    <input type="checkbox" id="checkbox" value="Almoço">
-                    <label for="Almoço">Almoço</label>
-
-                    <input type="checkbox" id="checkbox" value="Outros">
-                    <label for="Outros">Outros</label>
-                </div>
-                <div id="box_add">
-                    <label>Ingredientes</label>
-                    <textarea name="Ingredientes" id="textarea" cols="35" rows="8"></textarea>
-                    <label>Modo de preparo</label>
-                    <textarea name="modo-de-preparo" id="textarea" cols="35" rows="10"></textarea>
-                </div>
-                <div id="btn-end">
-                    <button type="submit">Salvar</button>
-                    <button type="button">Cancelar</button>
-                </div>
-
+            <div class="edit-receita-text">
+                <h1>Editar Receita</h1>
             </div>
+                
+            <main>
+                <form action="#" method="POST">
+                    <label for="title">Título da Receita:</label>
+                    <input type="text" id="title" name="title" value="Bolo de Chocolate">
 
-            <!-- ESPAÇO LIVRE (ENTREO TOPO E O RODAPÉ) -->
+                    <label for="ingredients">Ingredientes:</label>
+                    <textarea id="ingredients" name="ingredients" rows="4"
+                        placeholder="Digite os ingredientes...">50g de chocolate, 2 ovos, ...</textarea>
+
+                    <label for="instructions">Instruções:</label>
+                    <textarea id="instructions" name="instructions" rows="6"
+                        placeholder="Digite as instruções...">1. Pré-aqueça o forno a 180°C...</textarea>
+
+                    <label for="image">Imagem:</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+
+                    <label for="video">Vídeo:</label>
+                    <input type="text" id="video" name="video" placeholder="Cole o link do vídeo">
+
+                    <button type="submit">Salvar Alterações</button>
+                </form>
+            </main>
 
             <div class="footer">
                 <h1 class="logo-rodapier">
