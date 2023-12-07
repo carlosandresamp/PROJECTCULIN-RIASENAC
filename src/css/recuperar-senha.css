@@ -160,6 +160,7 @@ fieldset {
     background-color: #00407E;
     border-top: 5px solid #ff8000;
     flex-direction: row;
+    margin-top: 15%;
 }
 
 .logo-rodapier {
