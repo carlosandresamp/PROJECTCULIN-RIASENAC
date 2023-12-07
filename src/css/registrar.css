@@ -78,6 +78,79 @@ body{
     background-size: 10mm;
 }
 
+fieldset {
+    border-radius: 10px;
+    width: 350px;
+    height: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+#Cadastro {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.Nome input {
+    border-radius: 15px;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+}
+
+.Email input {
+    border-radius: 15px;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+}
+
+.senha input {
+    border-radius: 15px;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+}
+
+.confirmar input {
+    border-radius: 15px;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+}
+
+.CPF input {
+    border-radius: 15px;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+}
+
+
+.Enviar input {
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: blue;
+    align-items: flex-end;
+    width: 120px;
+    height: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.caixa {
+    margin-top: 33px;
+}
+
+.caixa img {
+    width: 115px;
+}
 /* RODAPÉ */
 .footer {
     position: absolute;
