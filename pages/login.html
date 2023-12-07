@@ -40,7 +40,7 @@
                     </a>
                 </div><!--menu-->
 
-                <div class="social"> 
+                <div class="social">
                     <a href="https://www.facebook.com/SenacBrasil" target="_blank">
                         <button class="btn-social"><img width="20px" img src="../media/images/facebook.png"
                                 alt=""></button>
@@ -74,13 +74,14 @@
             <div class="page">
                 <form method="POST" class="formLogin">
                     <h2>Login</h1>
-                    <p>Digite os seus dados de acesso no campo abaixo.</p>
-                    <label for="email">E-mail</label>
-                    <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
-                    <label for="password">Senha</label>
-                    <input type="password" placeholder="Digite seu e-mail" />
-                    <a href="recuperar-senha.html">Esqueci minha senha</a>
-                    <input type="submit" value="Acessar" class="btn" />
+                        <p>Digite os seus dados de acesso no campo abaixo.</p>
+                        <label for="email">E-mail</label>
+                        <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" placeholder="Digite sua senha" />
+                        <button type="button" id="togglePassword">Mostrar Senha</button>
+                        <a href="recuperar-senha.html">Esqueci minha senha</a>
+                        <input type="submit" value="Acessar" class="btn" />
                 </form>
             </div>
 
@@ -119,5 +120,6 @@
             </div><!--footer-->
     </header>
 </body>
+<script src="../js/libs/eyepassword.js"></script>
 
 </html>
