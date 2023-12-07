@@ -9,6 +9,7 @@
     height: 100vh;
 }
 
+/* MENU DO TOPO */
 #topo {
     width: 100%;
     height: 100px;
@@ -79,7 +80,9 @@ body {
     background-color: #004587;
     background-size: 10mm;
 }
+/* MENU DO TOPO */
 
+/*BACKGROUND BANNER */
 .banner {
     bottom: 0;
     margin-top: 0px;
@@ -88,7 +91,9 @@ body {
     background-size: cover;
     height: 300px;
 }
+/*BACKGROUND BANNER */
 
+/* SEARCH BAR */
 .texto {
     margin: 10px;
     word-wrap: break-word;
@@ -139,6 +144,7 @@ body {
     height: 80px;
     background: rgba(255, 255, 255, 0);
 }
+/* SEARCH BAR */
 
 /* CATEGORY */
 .category {
