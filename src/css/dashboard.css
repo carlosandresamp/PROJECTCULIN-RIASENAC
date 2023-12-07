@@ -1,20 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    flex-direction: flex;
+    margin: 0px;
+    padding: 0px;
 }
 
 .header {
     width: 100%;
     height: 100vh;
-    margin: -10px;
 }
 
+/* MENU DO TOPO */
 #topo {
     width: 100%;
-    height: 25mm;
-    margin: 10px;
+    height: 100px;
+    margin: 0;
     background: rgb(255, 255, 255);
     display: flex;
     flex-direction: row;
@@ -60,6 +59,13 @@ body {
     font-size: 16;
 }
 
+.social {
+    display: flex;
+    margin-top: 25px;
+    justify-content: flex-end;
+    grid-column-gap: 5px;
+}
+
 .btn-social {
     color: #ffffff;
     width: 32px;
@@ -67,9 +73,6 @@ body {
     border: 1px solid #00537c00;
     border-radius: 1mm;
     background-color: #676767;
-    position: relative;
-    top: 25%;
-    justify-content: space-around;
 }
 
 .btn-social:hover {
@@ -77,6 +80,7 @@ body {
     background-color: #004587;
     background-size: 10mm;
 }
+/* MENU DO TOPO */
 
 /* DASHBOARD */
 .header a {
@@ -150,7 +154,6 @@ body {
     background-color: #00407E;
     border-top: 5px solid #ff8000;
     flex-direction: row;
-    left: 0;
 }
 
 .logo-rodapier {
@@ -194,10 +197,17 @@ body {
     background-size: 10mm;
 }
 
+
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
 /* RODAPÉ */
 
-@media screen and (max-width: 800px) {
-    /* DEIXE A SUA PÁGINA RESPONSIVA AQUI */
+@media screen and (max-width: 800px) { /* DEIXE A SUA PÁGINA RESPONSIVA AQUI */
 
     /* CABEÇALHO */
     #topo {
