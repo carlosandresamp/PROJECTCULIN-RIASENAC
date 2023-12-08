@@ -122,6 +122,7 @@ body {
     font-size: 60px ;
     font-style: italic;
     color: #004587;
+    margin-top: 10px;
    
 }
 
@@ -137,6 +138,8 @@ justify-content: center;
     border-radius: 100px;
     color: #fff;
     background-color: #004587;
+    margin-top: 50px;
+   
 }
 #seguir:hover{
     background-color: #001f3b;
@@ -150,10 +153,14 @@ justify-content: center;
     margin-left: 25px;
     color: #fff;
     background-color: #004587;
+    margin-top: 30px;
+    
     
 }
 #compartilhar:hover{
     background-color: #001f3b;}
+    
+
 
 #curtir{
     font-size:larger;
@@ -163,15 +170,85 @@ justify-content: center;
     border-radius: 100px;
     color: #fff;
     background-color: #004587;
+    margin-top: 50px;
+   
 }
 #curtir:hover{
     background-color: #001f3b;
 }
 
 #catalogo{
-    font-size: 100px;
+     
+   
+}
+#doce{
+border: transparent;
+background-color: transparent;
+color: #00407E;
+margin-left: 62px;
+font-size: 23px;
 }
 
+#doce:hover{
+    background-color: #001f3b;
+    height: 29px;
+    width: 135px;
+    color: #fff;
+    border-radius: 20px;
+}
+.inu{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+#nha{
+    font-size: 30px;
+    margin-left: 20px;
+    color: #00407E;
+
+}
+
+#receita1{
+    height: 400px;
+    width: 340px;
+    border-radius: 20px;
+
+}
+
+#receita{
+  
+    height: 400px;
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 20px;
+    background: url(/media/images/receita1.jpeg);
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    border-radius: 20px;
+}
+    
+    
+
+#lista-receita{
+    width: 100%;
+    display: flex;
+    justify-items: flex-start;
+}
+
+
+#nomer{
+    font-size: 25px;
+    border: 2px solid #fff;
+    
+}
 /* RODAPÉ */
 .footer {
     position: relative;
