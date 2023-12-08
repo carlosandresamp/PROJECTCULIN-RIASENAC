@@ -80,6 +80,7 @@ body {
     background-color: #004587;
     background-size: 10mm;
 }
+
 /* MENU DO TOPO */
 
 /*BACKGROUND BANNER */
@@ -91,6 +92,7 @@ body {
     background-size: cover;
     height: 300px;
 }
+
 /*BACKGROUND BANNER */
 
 /* SEARCH BAR */
@@ -144,6 +146,7 @@ body {
     height: 80px;
     background: rgba(255, 255, 255, 0);
 }
+
 /* SEARCH BAR */
 
 /* CATEGORY */
@@ -297,21 +300,17 @@ body {
 }
 
 
-  .menu {
+.menu {
     list-style: none;
     display: flex;
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
-  }
+}
+
 /* RODAPÉ */
 
 @media screen and (max-width: 800px) {
-
-    .menu-desktop, .social {
-        display: none;
-    }
-
     /* CABEÇALHO */
     #topo {
         justify-content: flex-start;
@@ -338,8 +337,52 @@ body {
         font-size: 20px;
         background: rgba(255, 255, 255, 0);
     }
-    /* MENU RESPONSIVO */
 
+    /* MENU RESPONSIVO */
+    .btn-menu {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #00537c00;
+        border-radius: 3mm;
+        font-family: Sanchez;
+        font-size: 8px;
+        color: #004587;
+        background: none;
+        top: 5%;
+        position: relative;
+    }
+
+    .btn-menu:hover {
+        width: 30px;
+        height: 30px;
+        color: #ffffff;
+        background-color: #004587;
+        background-size: 5mm;
+        font-size: 8px;
+    }
+
+    .social {
+        display: flex;
+        margin-top: 35px;
+        margin-right: 7px;
+        justify-content: flex-end;
+        grid-column-gap: 5px;
+    }
+
+    .btn-social {
+        color: #ffffff;
+        width: 32px;
+        height: 32px;
+        border: 1px solid #00537c00;
+        border-radius: 1mm;
+        background-color: #676767;
+    }
+
+    .btn-social:hover {
+        color: #ffffff;
+        background-color: #004587;
+        background-size: 10mm;
+    }
 
     /* RODAPÉ */
 
