@@ -79,14 +79,15 @@ body {
     background-size: 10mm;
 }
 
-.imagem{
+.imagem {
     width: 100%;
-    
+
 }
+
 .imagem img {
     width: 100%;
     height: 500px;
-    
+
     border: 6px solid #004587;
     margin-left: 11px;
 
@@ -94,7 +95,7 @@ body {
 
 }
 
-.img-perfil{
+.img-perfil {
     height: 100%;
     width: 100%;
     border-radius: 100%;
@@ -105,33 +106,33 @@ body {
     margin-top: -250px;
     height: 400px;
     width: 400px;
-    
+
 
 }
 
-.content{
+.content {
     display: flex;
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 }
 
-#nome{
+#nome {
     display: flex;
     justify-content: center;
-    font-size: 60px ;
+    font-size: 60px;
     font-style: italic;
     color: #004587;
     margin-top: 10px;
-   
+
 }
 
-#but{
-display: flex;
-justify-content: center;
+#but {
+    display: flex;
+    justify-content: center;
 }
 
-#seguir{
+#seguir {
     font-size: larger;
     width: 200px;
     height: 50px;
@@ -139,14 +140,15 @@ justify-content: center;
     color: #fff;
     background-color: #004587;
     margin-top: 50px;
-   
+
 }
-#seguir:hover{
+
+#seguir:hover {
     background-color: #001f3b;
 }
 
-#compartilhar{
-    font-size:larger;
+#compartilhar {
+    font-size: larger;
     width: 300px;
     height: 50px;
     border-radius: 100px;
@@ -154,16 +156,18 @@ justify-content: center;
     color: #fff;
     background-color: #004587;
     margin-top: 30px;
-    
-    
+
+
 }
-#compartilhar:hover{
-    background-color: #001f3b;}
-    
+
+#compartilhar:hover {
+    background-color: #001f3b;
+}
 
 
-#curtir{
-    font-size:larger;
+
+#curtir {
+    font-size: larger;
     margin-left: 25px;
     width: 200px;
     height: 50px;
@@ -171,32 +175,32 @@ justify-content: center;
     color: #fff;
     background-color: #004587;
     margin-top: 50px;
-   
+
 }
-#curtir:hover{
+
+#curtir:hover {
     background-color: #001f3b;
 }
 
-#catalogo{
-     
-   
-}
-#doce{
-border: transparent;
-background-color: transparent;
-color: #00407E;
-margin-left: 62px;
-font-size: 23px;
+#catalogo {}
+
+#doce {
+    border: transparent;
+    background-color: transparent;
+    color: #00407E;
+    margin-left: 62px;
+    font-size: 23px;
 }
 
-#doce:hover{
+#doce:hover {
     background-color: #001f3b;
     height: 29px;
     width: 135px;
     color: #fff;
     border-radius: 20px;
 }
-.inu{
+
+.inu {
     margin-top: 50px;
     width: 100%;
     display: flex;
@@ -204,51 +208,93 @@ font-size: 23px;
     align-items: start;
 }
 
-#nha{
+#nha {
     font-size: 30px;
     margin-left: 20px;
     color: #00407E;
 
 }
 
-#receita1{
-    height: 400px;
-    width: 340px;
-    border-radius: 20px;
+#receita {
 
-}
-
-#receita{
-  
-    height: 400px;
-    width: 340px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 50px;
-    margin-top: 20px;
-    background: url(/media/images/receita1.jpeg);
-    background-position: center;
-    background-size: cover;
-    color: #fff;
-    border-radius: 20px;
-}
-    
-    
-
-#lista-receita{
     width: 100%;
     display: flex;
-    justify-items: flex-start;
+    justify-content: flex-start;
+
 }
 
+#receita1 {
+    padding: 2mm;
+    background-color: rgb(240, 240, 240);
+    height: 400px;
+    width: 300px;
+    border: 2px solid #ff8000;
+    margin-left: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
-#nomer{
-    font-size: 25px;
-    border: 2px solid #fff;
+
+}
+
+#receitatipo {
+   
+    height: 200px;
+    width: 250px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: 2px solid #ff8000;
+
+}
+
+#names {
+    font-size: 30px;
+    font-style: unset;
+    background-color: #ff8000;
+    height: 40px;
+    width: 250px;
+    border-radius: 20px;
+    color: #fff;
+
+}
+
+#label {
+    display: flex;
+    justify-content: center;
+
+}
+
+#label label {
+    text-align: center;
+}
+#perfilrece{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    border: 2px solid #ff8000;
+    margin-top: -40px;
+}
+#nomezin{
+    background-color: #FF8000;
+    color: #ffffff;
+    height: 40px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+#receitinha{
     
 }
+
+
+
+
+
 /* RODAPÉ */
 .footer {
     position: relative;
@@ -302,9 +348,11 @@ font-size: 23px;
     background-color: #FF8000;
     background-size: 10mm;
 }
+
 /* RODAPÉ */
 
-@media screen and (max-width: 800px) { /* DEIXE A SUA PÁGINA RESPONSIVA AQUI */
+@media screen and (max-width: 800px) {
+    /* DEIXE A SUA PÁGINA RESPONSIVA AQUI */
 
     /* CABEÇALHO */
     .menu,
