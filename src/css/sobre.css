@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+}
+
+/* MENU DO TOPO */
+#topo {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 50px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 5px solid #ff8000;
+}
+
+.logo {
+    margin: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.btn-menu {
+    width: 90px;
+    height: 30px;
+    border: 1px solid #00537c00;
+    border-radius: 3mm;
+    font-family: Sanchez;
+    font-size: 16px;
+    color: #004587;
+    background: none;
+    top: 25%;
+    position: relative;
+    line-height: 25px;
+}
+
+.btn-menu:hover {
+    width: 90px;
+    height: 30px;
+    color: #ffffff;
+    background-color: #004587;
+    background-size: 5mm;
+    font-size: 16;
+}
+
+.social {
+    display: flex;
+    margin-top: 25px;
+    justify-content: flex-end;
+    grid-column-gap: 5px;
+}
+
+.btn-social {
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #00537c00;
+    border-radius: 1mm;
+    background-color: #676767;
+}
+
+.btn-social:hover {
+    color: #ffffff;
+    background-color: #004587;
+    background-size: 10mm;
+}
+/* MENU DO TOPO */
+
+/* SOBRE NÓS */
+.sobremos-container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #004587;
+    padding: 20px;
+    border-radius: 5px;
+    color: #ffffff;
+    margin: auto;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobremos-text {
+    text-align: center;
+}
+/* SOBRE NÓS */
+
+/* RODAPÉ */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 115px;
+    color: white;
+    background-color: #00407E;
+    border-top: 5px solid #ff8000;
+    flex-direction: row;
+    left: 0;
+    margin-top: 50px;
+}
+
+.logo-rodapier {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 25px;
+    margin-left: 100px;
+    position: absolute;
+    justify-content: space-between;
+}
+
+.copyright {
+    font-size: 14px;
+    font-family: Sanchez;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.social-rodapier {
+    display: flex;
+    margin-right: 100px;
+    margin-top: -35px;
+    justify-content: flex-end;
+    grid-column-gap: 5px;
+}
+
+.btn-social-rodapier {
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #00537c00;
+    border-radius: 1mm;
+    background-color: #ffffff;
+}
+
+.btn-social-rodapier:hover {
+    color: #ffffff;
+    background-color: #FF8000;
+    background-size: 10mm;
+}
+/* RODAPÉ */
+
+@media screen and (max-width: 800px) { /* DEIXE A SUA PÁGINA RESPONSIVA AQUI */
+
+    /* CABEÇALHO */
+    #topo {
+        justify-content: flex-start;
+    }
+
+    .menu,
+    .social {
+        display: none;
+    }
+
+    /* CABEÇALHO */
+}
