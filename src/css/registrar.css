@@ -142,13 +142,20 @@ fieldset {
 .Enviar input {
     cursor: pointer;
     border-radius: 15px;
-    background-color: blue;
-    align-items: flex-end;
-    width: 120px;
+    background-color: #FFFFFF;
+    align-items: flex-start;
+    width: 100px; 
     height: 40px;
-    color: rgb(255, 255, 255);
+    color: #004A8D;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
+.Enviar input:hover {
+    background-color: #0066CC;
+    color: #FFFFFF;
+}
 .caixa {
     margin-top: 33px;
 }
