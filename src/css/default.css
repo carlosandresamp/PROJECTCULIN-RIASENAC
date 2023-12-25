@@ -10,6 +10,8 @@
     height: 100vh;
 }
 
+/* DEFAULT */
+
 /* TOPO */
 #topo {
     width: 100%;
@@ -308,7 +310,6 @@ body {
     background-size: 10mm;
 }
 
-
 .menu {
     list-style: none;
     display: flex;
@@ -321,12 +322,12 @@ body {
 
 @media screen and (max-width: 800px) {
 
-    /* CABEÇALHO */
+    /* TOPO */
     #topo {
         justify-content: flex-start;
     }
 
-    /* CABEÇALHO */
+    /* TOPO */
 
     /* SEARCH BAR */
     .search-box {

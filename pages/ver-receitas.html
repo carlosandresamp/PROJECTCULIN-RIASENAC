@@ -4,152 +4,163 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../src/css/ver-receitas.css">
+  <script defer src="../js/libs/script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ver Receitas</title>
 </head>
 
 <body>
   <header>
-    <div id="container">
-      <div id="topo">
 
-        <div class="logo">
-          <h1>
-            <a href="/index.html"><img width="100" src="../media/images/logo-senac-cnc-color-100.png" alt=""></a>
-          </h1>
-        </div><!--logo-->
+    <div id="topo">
 
-        <div class="menu">
-          <a href="/index.html">
-            <button class="btn-menu">Ínicio</button>
+      <div class="logo">
+
+        <h1>
+          <a href="../index.html"><img width="100" src="../media/images/logo-senac-cnc-color-100.png" alt=""></a>
+        </h1>
+      </div><!--logo-->
+
+      <nav class="nav">
+
+        <button class="btn-menu" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
+          aria-expanded="false"><span class="hamburger"></span>
+        </button>
+
+        <ul class="menu" id="menu" role="menu">
+          <a href="index.html">
+            <button class="btn-menu-desktop">Ínicio</button>
           </a>
 
           <a href="http://www.senac.br/" target="_blank">
-            <button class="btn-menu">Senac</button>
+            <button class="btn-menu-desktop">Senac</button>
           </a>
 
-          <a href="chefs.html">
-            <button class="btn-menu">Chefs</button>
+          <a href="../pages/chefs.html">
+            <button class="btn-menu-desktop">Chefs</button>
           </a>
 
           <a href="../pages/sobre.html">
-            <button class="btn-menu">Sobre</button>
+            <button class="btn-menu-desktop">Sobre</button>
           </a>
 
-          <a href="login.html">
-            <button class="btn-menu">Login</button>
-          </a>
-        </div><!--menu-->
+          <a href="../pages/login.html">
+            <button class="btn-menu-desktop">Login</button>
+          </a><!--MENU DO TOPO-->
 
-        <div class="social">
-          <a href="https://www.facebook.com/SenacBrasil" target="_blank">
-            <button class="btn-social"><img width="20px" img src="../media/images/facebook.png" alt=""></button>
-          </a>
+          <div class="social">
+            <a href="https://www.facebook.com/SenacBrasil" target="_blank">
+              <button class="btn-social"><img width="20px" img src="../media/images/facebook.png" alt=""></button>
+            </a>
 
-          <a href="https://www.instagram.com/senacbrasil/" target="_blank">
-            <button class="btn-social"><img width="20px" img src="../media/images/instagram.png" alt=""></button>
-          </a>
+            <a href="https://www.instagram.com/senacbrasil/" target="_blank">
+              <button class="btn-social"><img width="20px" img src="../media/images/instagram.png" alt=""></button>
+            </a>
 
-          <a href="https://twitter.com/SenacBrasil" target="_blank">
-            <button class="btn-social"><img width="20px" img src="../media/images/x-twitter.png" alt=""></button>
-          </a>
+            <a href="https://twitter.com/SenacBrasil" target="_blank">
+              <button class="btn-social"><img width="20px" img src="../media/images/x-twitter.png" alt=""></button>
+            </a>
 
-          <a href="https://www.linkedin.com/company/2655383" target="_blank">
-            <button class="btn-social" alt=""><img width="20px" img src="../media/images/linkedin.png" alt=""></button>
-          </a>
+            <a href="https://www.linkedin.com/company/2655383" target="_blank">
+              <button class="btn-social" alt=""><img width="20px" img src="../media/images/linkedin.png"
+                  alt=""></button>
+            </a>
 
-          <a href="https://www.youtube.com/user/SenacNacional" target="_blank">
-            <button class="btn-social"><img width="20px" img src="../media/images/youtube.png" alt=""></button>
-          </a>
+            <a href="https://www.youtube.com/user/SenacNacional" target="_blank">
+              <button class="btn-social"><img width="20px" img src="../media/images/youtube.png" alt=""></button>
+            </a>
+          </div><!--social-->
+        </ul><!--menu-->
+      </nav>
 
-        </div><!--social-->
-      </div><!--topo-->
-      <div id="receita">
-        <label id="comida">Maria-Isabel de Frango</label>
-        <div id="butereceita">
-          <button id="btn-receita">★ Avalie essa receita </button>
-          <button id="btn-receita">Compartilhar</button>
-          <button id="btn-receita">❤Favoritar</button>
-          <button id="btn-receita" value="Print this page" onClick="window.print()">Imprimir</button>
-        </div>
-        <div id="raspinha">
-          <img src="../media/images/arroz-de-capote.jpg" alt="" id="frango" />
-          <div id="ingredientes">
-            <label for="" id="txtingredientes">
-              🛒Ingredientes (1 porção)</label>
-            <label for="" id="rosquinha"> - 🍗 400g de frango cortado <br>
-              <br>
-              - 🧅 1 cebola pequena picada <br>
-              <br>
-              - 🧄 2 dentes de alho amassado <br>
-              <br>
-              -🥘 2 sachês de tempero pronto <br>
-              <br>
-              -🍶 3 colheres (sopa) de azeite<br>
-              <br>
-              -💦 3 xícaras (chá) de água<br>
-              <br>
-              -🥬 1 lata de seleta de legumes<br>
-              <br>
-              -🍚 1 xícara (chá) de arroz<br>
-              <br>
-              -🧂 sal, pimenta e salsinha a gosto
-            </label>
-          </div>
-        </div>
+    </div><!--topo-->
 
-        <div id="preparo">
-          <label for="" id="txt">
-            🍽️ Modo de Preparo (30 min)
+    <div id="receita">
+      <label id="comida">Maria-Isabel de Frango</label>
+      <div id="butereceita">
+        <button id="btn-receita">★ Avalie essa receita </button>
+        <button id="btn-receita">Compartilhar</button>
+        <button id="btn-receita">❤Favoritar</button>
+        <button id="btn-receita" value="Print this page" onClick="window.print()">Imprimir</button>
+      </div>
+      <div id="raspinha">
+        <img src="../media/images/arroz-de-capote.jpg" alt="" id="frango" />
+        <div id="ingredientes">
+          <label for="" id="txtingredientes">
+            🛒Ingredientes (1 porção)</label>
+          <label for="" id="rosquinha"> - 🍗 400g de frango cortado <br>
+            <br>
+            - 🧅 1 cebola pequena picada <br>
+            <br>
+            - 🧄 2 dentes de alho amassado <br>
+            <br>
+            -🥘 2 sachês de tempero pronto <br>
+            <br>
+            -🍶 3 colheres (sopa) de azeite<br>
+            <br>
+            -💦 3 xícaras (chá) de água<br>
+            <br>
+            -🥬 1 lata de seleta de legumes<br>
+            <br>
+            -🍚 1 xícara (chá) de arroz<br>
+            <br>
+            -🧂 sal, pimenta e salsinha a gosto
           </label>
-          <label for="" id="tt"><br> <br> <br> <br> - Em fogo alto, aqueça uma panela com o óleo e doure os pedaços de
-            frango temperados com sal e pimenta.
-            Adicione a cebola, o alho e refogue por mais 5 minutos. <br> <br> <br>
-            - Junte 2 xícaras (chá) da água, o caldo de galinha e cozinhe por 20 minutos em fogo médio ou até o frango
-            amaciar e a água secar.
-            - Junte o arroz e frite por 2 minutos. <br> <br> <br>
-            - Acrescente o tomate, a cenoura, o restante da água e cozinhe por 20 minutos em fogo baixo ou até secar
-            toda a água e o arroz ficar macio.
-            - Se necessário, tempere com sal. <br> <br> <br>
-            - Retire do fogo e deixe descansar por 10 minutos.
-            Polvilhe com salsa, solte o arroz com um garfo e sirva.</label>
-
-          <div class="footer">
-            <h1 class="logo-rodapier">
-              <a href="index.html"><img width="100" src="../media/images/logo-branca.png" alt=""></a>
-            </h1>
-            <span class="copyright">© Todos os Direitos Reservados - 2017.</span>
-            <div class="social-rodapier">
-              <a href="https://www.facebook.com/SenacBrasil" target="_blank">
-                <button class="btn-social-rodapier"><img width="20px" img src="../media/images/facebook-rodapier.png"
-                    alt=""></button>
-              </a>
-
-              <a href="https://www.instagram.com/senacbrasil/" target="_blank">
-                <button class="btn-social-rodapier"><img width="20px" img src="../media/images/instagram-rodapier.png"
-                    alt=""></button>
-              </a>
-
-              <a href="https://twitter.com/SenacBrasil" target="_blank">
-                <button class="btn-social-rodapier"><img width="20px" img src="../media/images/x-twitter-rodapier.png"
-                    alt=""></button>
-              </a>
-
-              <a href="https://www.linkedin.com/company/2655383" target="_blank">
-                <button class="btn-social-rodapier" alt=""><img width="20px" img
-                    src="../media/images/linkedin-rodapier.png" alt=""></button>
-              </a>
-
-              <a href="https://www.youtube.com/user/SenacNacional" target="_blank">
-                <button class="btn-social-rodapier"><img width="20px" img src="../media/images/youtube-rodapier.png"
-                    alt=""></button>
-              </a>
-
-            </div><!--social-rodapier-->
-          </div><!--footer-->
-
         </div>
       </div>
+
+      <div id="preparo">
+        <label for="" id="txt">
+          🍽️ Modo de Preparo (30 min)
+        </label>
+        <label for="" id="tt"><br> <br> <br> <br> - Em fogo alto, aqueça uma panela com o óleo e doure os pedaços de
+          frango temperados com sal e pimenta.
+          Adicione a cebola, o alho e refogue por mais 5 minutos. <br> <br> <br>
+          - Junte 2 xícaras (chá) da água, o caldo de galinha e cozinhe por 20 minutos em fogo médio ou até o frango
+          amaciar e a água secar.
+          - Junte o arroz e frite por 2 minutos. <br> <br> <br>
+          - Acrescente o tomate, a cenoura, o restante da água e cozinhe por 20 minutos em fogo baixo ou até secar
+          toda a água e o arroz ficar macio.
+          - Se necessário, tempere com sal. <br> <br> <br>
+          - Retire do fogo e deixe descansar por 10 minutos.
+          Polvilhe com salsa, solte o arroz com um garfo e sirva.</label>
+
+        <div class="footer">
+          <h1 class="logo-rodapier">
+            <a href="index.html"><img width="100" src="../media/images/logo-branca.png" alt=""></a>
+          </h1>
+          <span class="copyright">© Todos os Direitos Reservados - 2017.</span>
+          <div class="social-rodapier">
+            <a href="https://www.facebook.com/SenacBrasil" target="_blank">
+              <button class="btn-social-rodapier"><img width="20px" img src="../media/images/facebook-rodapier.png"
+                  alt=""></button>
+            </a>
+
+            <a href="https://www.instagram.com/senacbrasil/" target="_blank">
+              <button class="btn-social-rodapier"><img width="20px" img src="../media/images/instagram-rodapier.png"
+                  alt=""></button>
+            </a>
+
+            <a href="https://twitter.com/SenacBrasil" target="_blank">
+              <button class="btn-social-rodapier"><img width="20px" img src="../media/images/x-twitter-rodapier.png"
+                  alt=""></button>
+            </a>
+
+            <a href="https://www.linkedin.com/company/2655383" target="_blank">
+              <button class="btn-social-rodapier" alt=""><img width="20px" img
+                  src="../media/images/linkedin-rodapier.png" alt=""></button>
+            </a>
+
+            <a href="https://www.youtube.com/user/SenacNacional" target="_blank">
+              <button class="btn-social-rodapier"><img width="20px" img src="../media/images/youtube-rodapier.png"
+                  alt=""></button>
+            </a>
+
+          </div><!--social-rodapier-->
+        </div><!--footer-->
+
+      </div>
+    </div>
     </div>
 
 

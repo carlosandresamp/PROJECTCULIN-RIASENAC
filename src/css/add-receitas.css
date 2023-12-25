@@ -1,15 +1,18 @@
+/* DEFAULT */
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
 
-#container {
+.header {
     width: 100%;
     height: 100vh;
 }
 
-/* MENU DO TOPO */
+/* DEFAULT */
+
+/* TOPO */
 #topo {
     width: 100%;
     height: 100px;
@@ -36,7 +39,10 @@ body {
     background-color: #ffffff;
 }
 
-.btn-menu {
+/* TOPO */
+
+/* MENU DO TOPO */
+.btn-menu-desktop {
     width: 90px;
     height: 30px;
     border: 1px solid #00537c00;
@@ -50,7 +56,7 @@ body {
     line-height: 25px;
 }
 
-.btn-menu:hover {
+.btn-menu-desktop:hover {
     width: 90px;
     height: 30px;
     color: #ffffff;
@@ -61,9 +67,10 @@ body {
 
 .social {
     display: flex;
-    margin-top: 25px;
+    margin-top: 5px;
     justify-content: flex-end;
     grid-column-gap: 5px;
+    margin-left: 170px;
 }
 
 .btn-social {
@@ -80,6 +87,7 @@ body {
     background-color: #004587;
     background-size: 10mm;
 }
+
 /* MENU DO TOPO */
 
 /* ADD RECEITA */
@@ -103,22 +111,33 @@ textarea {
     box-sizing: border-box;
 }
 
-button {
-    background-color: #343a40;
-    color: white;
-    border: none;
-    border-radius: 3mm;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #FF8000;
-}
-
 label {
     font-weight: bold;
 }
+
+.enviar-receita{
+    width: 110px;
+    height: 25px;
+    background: none;
+    background-color: #ababab;
+    border-radius: 3mm;
+    border: none;
+    margin: auto;
+    margin-top: 15px;
+    display: block;
+}
+
+.enviar-receita:hover{
+    background-color: #ff8000;
+    color: #ffffff;
+}
+
+.enviar-receita h1{
+    font-size: 15px;
+    text-align: center;
+    color: #ffffff;
+}
+
 /* ADD RECEITA */
 
 /* RODAPÉ */
@@ -156,7 +175,7 @@ label {
 .social-rodapier {
     display: flex;
     margin-right: 100px;
-    margin-top: -35px;
+    margin-top: -25px;
     justify-content: flex-end;
     grid-column-gap: 5px;
 }
@@ -175,19 +194,141 @@ label {
     background-color: #FF8000;
     background-size: 10mm;
 }
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
 /* RODAPÉ */
 
-@media screen and (max-width: 800px) { /* DEIXE A SUA PÁGINA RESPONSIVA AQUI */
+@media screen and (max-width: 800px) {
+    /* DEIXE A SUA PÁGINA RESPONSIVA AQUI */
 
-    /* CABEÇALHO */
+    /* TOPO */
     #topo {
         justify-content: flex-start;
     }
 
-    .menu,
-    .social {
-        display: none;
+    /* TOPO */
+
+    /* MENU RESPONSIVO */
+    .menu {
+        display: block;
+        position: absolute;
+        top: 4.6875rem;
+        left: 0;
+        background: white;
+        text-align: center;
+        width: 100%;
+        height: 0;
+        z-index: 1;
+        visibility: hidden;
+        overflow-y: hidden;
+        transition: 0.5s;
     }
 
-    /* CABEÇALHO */
+    .menu a {
+        padding: 1rem 0;
+        margin-inline: 1rem;
+        border-radius: 0;
+    }
+
+    .btn-menu {
+        background: none;
+        border: none;
+        font: inherit;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--white);
+        padding: 1rem 0;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        border-top: 0.125rem solid;
+        width: 1.25rem;
+        margin: 20px;
+        margin-left: 180px;
+    }
+
+    .hamburger::after,
+    .hamburger::before {
+        content: " ";
+        display: block;
+        width: 1.25rem;
+        height: 0.125rem;
+        background: currentColor;
+        margin-top: 0.3125rem;
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .nav.active .menu {
+        height: calc(100vh - 4.6875rem);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    .nav.active .hamburger {
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburger::after {
+        transform: rotate(-135deg);
+        top: -0.4375rem;
+    }
+
+    .social {
+        display: flex;
+        margin-top: 200px;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .btn-social {
+        color: #ffffff;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #00537c00;
+        border-radius: 1mm;
+        background-color: #000000;
+    }
+
+    /* MENU RESPONSIVO */
+
+    /* RODAPÉ */
+    .footer {
+        height: 200px;
+    }
+
+    .logo-rodapier {
+        margin-left: 1px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .copyright {
+        display: block;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .social-rodapier {
+        margin-top: -60px;
+        margin-left: 100px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* RODAPÉ */
 }

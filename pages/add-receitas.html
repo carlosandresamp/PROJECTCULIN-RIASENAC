@@ -5,137 +5,151 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../src/css/add-receitas.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script defer src="../js/libs/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar receita</title>
 </head>
 
 <body>
     <header>
-        <div class="header">
-            <div id="topo">
 
-                <h1 class="logo">
-                    <a href="../index.html"><img width="100" src="../media/images/logo-senac-cnc-color-100.png"
-                            alt=""></a>
+        <div id="topo">
+
+            <div class="logo">
+
+                <h1>
+                    <a href="../index.html"><img width="100" src="../media/images/logo-senac-cnc-color-100.png" alt=""></a>
                 </h1>
+            </div><!--logo-->
 
-                <div class="menu">
-                    <a href="../index.html">
-                        <button class="btn-menu">Ínicio</button>
+            <nav class="nav">
+
+                <button class="btn-menu" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
+                    aria-expanded="false"><span class="hamburger"></span>
+                </button>
+
+                <ul class="menu" id="menu" role="menu">
+                    <a href="index.html">
+                        <button class="btn-menu-desktop">Ínicio</button>
                     </a>
 
                     <a href="http://www.senac.br/" target="_blank">
-                        <button class="btn-menu">Senac</button>
+                        <button class="btn-menu-desktop">Senac</button>
                     </a>
 
                     <a href="../pages/chefs.html">
-                        <button class="btn-menu">Chefs</button>
+                        <button class="btn-menu-desktop">Chefs</button>
                     </a>
 
                     <a href="../pages/sobre.html">
-                        <button class="btn-menu">Sobre</button>
+                        <button class="btn-menu-desktop">Sobre</button>
                     </a>
 
                     <a href="../pages/login.html">
-                        <button class="btn-menu">Login</button>
-                    </a>
-                </div><!--menu-->
+                        <button class="btn-menu-desktop">Login</button>
+                    </a><!--MENU DO TOPO-->
 
-                <div class="social">
-                    <a href="https://www.facebook.com/SenacBrasil" target="_blank">
-                        <button class="btn-social"><img width="20px" img src="../media/images/facebook.png"
-                                alt=""></button>
-                    </a>
+                    <div class="social">
+                        <a href="https://www.facebook.com/SenacBrasil" target="_blank">
+                            <button class="btn-social"><img width="20px" img src="../media/images/facebook.png"
+                                    alt=""></button>
+                        </a>
 
-                    <a href="https://www.instagram.com/senacbrasil/" target="_blank">
-                        <button class="btn-social"><img width="20px" img src="../media/images/instagram.png"
-                                alt=""></button>
-                    </a>
+                        <a href="https://www.instagram.com/senacbrasil/" target="_blank">
+                            <button class="btn-social"><img width="20px" img src="../media/images/instagram.png"
+                                    alt=""></button>
+                        </a>
 
-                    <a href="https://twitter.com/SenacBrasil" target="_blank">
-                        <button class="btn-social"><img width="20px" img src="../media/images/x-twitter.png"
-                                alt=""></button>
-                    </a>
+                        <a href="https://twitter.com/SenacBrasil" target="_blank">
+                            <button class="btn-social"><img width="20px" img src="../media/images/x-twitter.png"
+                                    alt=""></button>
+                        </a>
 
-                    <a href="https://www.linkedin.com/company/2655383" target="_blank">
-                        <button class="btn-social" alt=""><img width="20px" img src="../media/images/linkedin.png"
-                                alt=""></button>
-                    </a>
+                        <a href="https://www.linkedin.com/company/2655383" target="_blank">
+                            <button class="btn-social" alt=""><img width="20px" img src="../media/images/linkedin.png"
+                                    alt=""></button>
+                        </a>
 
-                    <a href="https://www.youtube.com/user/SenacNacional" target="_blank">
-                        <button class="btn-social"><img width="20px" img src="../media/images/youtube.png"
-                                alt=""></button>
-                    </a>
+                        <a href="https://www.youtube.com/user/SenacNacional" target="_blank">
+                            <button class="btn-social"><img width="20px" img src="../media/images/youtube.png"
+                                    alt=""></button>
+                        </a>
+                    </div><!--social-->
+                </ul><!--menu-->
+            </nav>
 
-                    <a class="menu-mobile mobile-view"></a>
+        </div><!--topo-->
 
-                </div><!--social-->
-            </div><!--topo-->
+        <div class="container">
+            <h1> Adicione uma receita</h1>
+            <form>
+                <label for="recipe-name">Nome da receita:</label>
+                <input type="text" id="recipe-name" name="recipe-name" required>
 
-            <div class="container">
-                <h1> Adicione uma receita</h1>
-                <form>
-                    <label for="recipe-name">Nome da receita:</label>
-                    <input type="text" id="recipe-name" name="recipe-name" required>
+                <label for="ingredients">Ingredientes:</label>
+                <textarea id="ingredients" name="ingredients" required></textarea>
 
-                    <label for="ingredients">Ingredientes:</label>
-                    <textarea id="ingredients" name="ingredients" required></textarea>
+                <label for="directions">Instruções:</label>
+                <textarea id="directions" name="directions" required></textarea>
 
-                    <label for="directions">Instruções:</label>
-                    <textarea id="directions" name="directions" required></textarea>
+                <label for="prep-time">Tempo de preparação (em minutos):</label>
+                <input type="number" id="prep-time" name="prep-time" required>
 
-                    <label for="prep-time">Tempo de preparação (em minutos):</label>
-                    <input type="number" id="prep-time" name="prep-time" required>
+                <label for="cook-time">Tempo de cozimento (em minutos):</label>
+                <input type="number" id="cook-time" name="cook-time" required>
 
-                    <label for="cook-time">Tempo de cozimento (em minutos):</label>
-                    <input type="number" id="cook-time" name="cook-time" required>
+                <label for="serving-size">Quantidade de porções:</label>
+                <input type="number" id="serving-size" name="serving-size" required>
 
-                    <label for="serving-size">Quantidade de porções:</label>
-                    <input type="number" id="serving-size" name="serving-size" required>
+                <label for="recipe-image">
+                    <p>Carregue a imagem da receita:</p>
+                </label>
+                <input type="file" id="recipe-image" name="recipe-image">
 
-                    <label for="recipe-image">Carregue a imagem da receita:</label>
-                    <input type="file" id="recipe-image" name="recipe-image">
+                <label for="video">
+                    <p>Vídeo:</p>
+                </label>
+                <input type="text" id="video" name="video" placeholder="Cole o link do vídeo">
 
-                    <label for="recipe-video">Carregue o vídeo da receita:</label>
-                    <input type="file" id="recipe-video" name="recipe-video">
+                <button class="enviar-receita" type="submit">
+                    <h1>Enviar receita</h1>
+                </button>
+            </form>
+        </div>
 
-                    <button type="submit">Enviar receita</button>
-                </form>
-            </div>
+        <div class="footer">
+            <h1 class="logo-rodapier">
+                <a href="index.html"><img width="100" src="../media/images/logo-branca.png" alt=""></a>
+            </h1>
+            <span class="copyright">© Todos os Direitos Reservados - 2017.</span>
+            <div class="social-rodapier">
+                <a href="https://www.facebook.com/SenacBrasil" target="_blank">
+                    <button class="btn-social-rodapier"><img width="20px" img
+                            src="../media/images/facebook-rodapier.png" alt=""></button>
+                </a>
 
-            <div class="footer">
-                <h1 class="logo-rodapier">
-                    <a href="index.html"><img width="100" src="../media/images/logo-branca.png" alt=""></a>
-                </h1>
-                <span class="copyright">© Todos os Direitos Reservados - 2017.</span>
-                <div class="social-rodapier">
-                    <a href="https://www.facebook.com/SenacBrasil" target="_blank">
-                        <button class="btn-social-rodapier"><img width="20px" img
-                                src="../media/images/facebook-rodapier.png" alt=""></button>
-                    </a>
+                <a href="https://www.instagram.com/senacbrasil/" target="_blank">
+                    <button class="btn-social-rodapier"><img width="20px" img
+                            src="../media/images/instagram-rodapier.png" alt=""></button>
+                </a>
 
-                    <a href="https://www.instagram.com/senacbrasil/" target="_blank">
-                        <button class="btn-social-rodapier"><img width="20px" img
-                                src="../media/images/instagram-rodapier.png" alt=""></button>
-                    </a>
+                <a href="https://twitter.com/SenacBrasil" target="_blank">
+                    <button class="btn-social-rodapier"><img width="20px" img
+                            src="../media/images/x-twitter-rodapier.png" alt=""></button>
+                </a>
 
-                    <a href="https://twitter.com/SenacBrasil" target="_blank">
-                        <button class="btn-social-rodapier"><img width="20px" img
-                                src="../media/images/x-twitter-rodapier.png" alt=""></button>
-                    </a>
+                <a href="https://www.linkedin.com/company/2655383" target="_blank">
+                    <button class="btn-social-rodapier" alt=""><img width="20px" img
+                            src="../media/images/linkedin-rodapier.png" alt=""></button>
+                </a>
 
-                    <a href="https://www.linkedin.com/company/2655383" target="_blank">
-                        <button class="btn-social-rodapier" alt=""><img width="20px" img
-                                src="../media/images/linkedin-rodapier.png" alt=""></button>
-                    </a>
+                <a href="https://www.youtube.com/user/SenacNacional" target="_blank">
+                    <button class="btn-social-rodapier"><img width="20px" img src="../media/images/youtube-rodapier.png"
+                            alt=""></button>
+                </a>
 
-                    <a href="https://www.youtube.com/user/SenacNacional" target="_blank">
-                        <button class="btn-social-rodapier"><img width="20px" img
-                                src="../media/images/youtube-rodapier.png" alt=""></button>
-                    </a>
-
-                </div><!--social-rodapier-->
-            </div><!--footer-->
+            </div><!--social-rodapier-->
+        </div><!--footer-->
     </header>
 </body>
 
