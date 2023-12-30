@@ -6,8 +6,10 @@
 }
 
 #container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 /* DEFAULT */
@@ -94,7 +96,7 @@ body {
 .banner {
     bottom: 0;
     margin-top: 0px;
-    background-image: url(../../media/images/banner.png);
+    background-image: url(../../media/images/padrao-de-hamburguer-de-comida-d.png);
     background-position: center;
     background-size: cover;
     height: 300px;
@@ -158,17 +160,17 @@ body {
 
 /* CATEGORY */
 .category {
-    font-family: Sanchez;
-    font-size: 16px;
-    color: #004587;
-    background: none;
+    width: 100%;
+    height: 7rem;
+    margin: 4rem auto 0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    grid-column-gap: 5px;
-    padding: 5mm;
-    margin-top: 45px;
+    padding: 1rem;
+    overflow-x: auto;
+    grid-column-gap: 11px;
+}
+
+.category::-webkit-scrollbar {
+    width: 0;
 }
 
 .btn-category {
@@ -267,6 +269,7 @@ body {
     background-color: #00407E;
     border-top: 5px solid #ff8000;
     flex-direction: row;
+    margin-top: 5%;
 }
 
 .logo-rodapier {
