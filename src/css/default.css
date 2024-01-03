@@ -6,8 +6,10 @@
 }
 
 #container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 /* DEFAULT */
@@ -54,6 +56,7 @@ body {
     top: 25%;
     position: relative;
     line-height: 25px;
+    transition: all 0.3s linear;
 }
 
 .btn-menu-desktop:hover {
@@ -79,7 +82,8 @@ body {
     height: 32px;
     border: 1px solid #00537c00;
     border-radius: 1mm;
-    background-color: #676767;
+    background-color: #A7A8AA;
+    transition: all 0.3s linear;
 }
 
 .btn-social:hover {
@@ -94,7 +98,7 @@ body {
 .banner {
     bottom: 0;
     margin-top: 0px;
-    background-image: url(../../media/images/banner.png);
+    background-image: url(../../media/images/padrao-de-hamburguer-de-comida-d.png);
     background-position: center;
     background-size: cover;
     height: 300px;
@@ -158,17 +162,17 @@ body {
 
 /* CATEGORY */
 .category {
-    font-family: Sanchez;
-    font-size: 16px;
-    color: #004587;
-    background: none;
+    width: 100%;
+    height: 7rem;
+    margin: 4rem auto 0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    grid-column-gap: 5px;
-    padding: 5mm;
-    margin-top: 45px;
+    padding: 1rem;
+    overflow-x: auto;
+    grid-column-gap: 11px;
+}
+
+.category::-webkit-scrollbar {
+    width: 0;
 }
 
 .btn-category {
@@ -176,6 +180,7 @@ body {
     padding: 1rem;
     border: 1px solid #777;
     background: none;
+    transition: all 0.3s linear;
 }
 
 .btn-category:hover {
@@ -202,6 +207,13 @@ body {
     border-radius: 12px;
     box-shadow: 4px 4px 12px #aaaa;
     margin: 2mm;
+    position: relative;
+    transition: all 0.3s linear;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 0 8px #004587;
 }
 
 .card img {
@@ -209,6 +221,11 @@ body {
     height: 130px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    transition: all 0.3s linear;
+}
+
+.card:hover img {
+    scale: 1.1;
 }
 
 .card div {
@@ -220,17 +237,22 @@ body {
     height: 50%;
 }
 
-.card h2 {
+.card i {
+    font-size: .7rem;
+    color: #a8a8a8;
+}
+
+.card h3 {
     font-size: .9rem;
-    color: #aaaa;
+    color: #000000;
 }
 
 .card button {
     background-color: #ff8000;
+    width: 90%;
     height: 40px;
     border: none;
     padding: 4px;
-    width: 90%;
     color: #ffffff;
     font-size: 1rem;
     font-weight: bold;
@@ -247,12 +269,12 @@ body {
 }
 
 .chef img {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     border-radius: 100%;
     position: absolute;
-    margin-bottom: 150px;
-    border: 3px solid #fff;
+    margin-bottom: 130px;
+    border: 3px solid #ffffff;
 }
 
 /* CARDS */
@@ -267,6 +289,7 @@ body {
     background-color: #00407E;
     border-top: 5px solid #ff8000;
     flex-direction: row;
+    margin-top: 5%;
 }
 
 .logo-rodapier {
@@ -302,6 +325,7 @@ body {
     border: 1px solid #00537c00;
     border-radius: 1mm;
     background-color: #ffffff;
+    transition: all 0.3s linear;
 }
 
 .btn-social-rodapier:hover {

@@ -1,3 +1,4 @@
+// MENU HAMBURGUER RENSPONSIVO
 const nav = document.querySelector(".nav");
 const btnMenu = document.querySelector(".btn-menu");
 const menu = document.querySelector(".menu");

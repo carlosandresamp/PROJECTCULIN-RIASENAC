@@ -53,6 +53,7 @@ body {
     top: 25%;
     position: relative;
     line-height: 25px;
+    transition: all 0.3s linear;
 }
 
 .btn-menu-desktop:hover {
@@ -78,7 +79,8 @@ body {
     height: 32px;
     border: 1px solid #00537c00;
     border-radius: 1mm;
-    background-color: #676767;
+    background-color: #A7A8AA;
+    transition: all 0.3s linear;
 }
 
 .btn-social:hover {
@@ -171,6 +173,7 @@ body {
     border: 1px solid #00537c00;
     border-radius: 1mm;
     background-color: #ffffff;
+    transition: all 0.3s linear;
 }
 
 .btn-social-rodapier:hover {
