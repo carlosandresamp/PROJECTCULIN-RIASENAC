@@ -8,6 +8,9 @@
 .header {
   width: 100%;
   height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 /* DEFAULT */
@@ -54,7 +57,6 @@ body {
   top: 25%;
   position: relative;
   line-height: 25px;
-  transition: all 0.3s linear;
 }
 
 .btn-menu-desktop:hover {
@@ -80,8 +82,7 @@ body {
   height: 32px;
   border: 1px solid #00537c00;
   border-radius: 1mm;
-  background-color: #A7A8AA;
-  transition: all 0.3s linear;
+  background-color: #676767;
 }
 
 .btn-social:hover {
@@ -94,93 +95,301 @@ body {
 
 /* VER RECEITAS */
 #receita {
-  width: 100%;
-  position: absolute;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
+  width: 100%;
+}
+
+#titulo {
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  font-style: inherit;
+  font-weight: bold;
+}
+
+#avaliação {
+
+  width: 400px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-#comida {
-  font-size: 35pt;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+/* BOTÕES */
+
+#botões {
   display: flex;
   justify-content: center;
-  color: #000000;
-  margin-top: 40px;
+
+
 }
 
-#butereceita {
-  display: flex;
 
-  justify-content: center;
-}
 
-#btn-receita {
+.botão {
+  font-size: 25px;
+  border: transparent;
+  background-color: #054d96;
+  margin-left: 30px;
   height: 40px;
   width: 200px;
-  margin: 10mm;
-  border: none;
-
-  color: white;
-  background-color: #ff8000;
-  border-radius: 25px;
-  font-size: larger;
-}
-
-#btn-receita:hover {
-  background-color: #ce6700;
-}
-
-#frango {
-  height: 500px;
-  width: 650px;
-  border: 2px solid #ff8000;
-}
-
-#raspinha {
+  border-radius: 20px;
+  color: #ffffff;
+  margin-top: 30px;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+
 }
 
-#ingredientes {
-  padding-top: 10px;
-  height: 50px;
-  width: 600px;
-  background-color: #e9e9e9;
-  margin-left: 50px;
+.botão:hover{
+  background-color: #00305f;
+  
 }
-
-#txtingredientes {
-  font-size: 17pt;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  margin: 20px;
-  color: #000000;
-}
-
-#rosquinha {
+#lasanha{
   display: flex;
-  flex-direction: column;
-  margin-top: 50px;
+  justify-content: center;
 
 }
 
-#preparo {
+#las{
+  height: 400px;
+  width: 800px;
+  margin-top: 40px;
+  border: 2px solid #00407E;
+
+}
+
+/*igredientes*/
+
+#div{
   height: 50px;
   width: 100%;
-  background-color: #ffffff;
-  border: 4px solid #ff8000;
+  background-color: #dfdede;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #d6d6d6;
+ 
+  
+  
+}
+
+#text{
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.categorias{
+display: flex;
+justify-content: center;
+align-self: center;
+}
+
+.tipos{
+  font-size: large;
+  margin-left: 60px;
+  margin-top: 30px;
+  background-color: transparent;
+  border: transparent ;
+  text-decoration: underline;
+  font-weight: bold;
+  color: #054d96;
+
+}
+
+.tipos:hover{
+  color: #00305f;
+}
+
+.Igredientes{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  margin-bottom: 90px;
+  margin-left: 300px;
+}
+
+#igredientes2{
+  display: flex;
+justify-content: end;
+align-items: end;
+flex-direction: column;
+margin-top: -520px;
+margin-bottom: 50px;
+margin-right: 300px;
+}
+
+
+#igre{
   margin-top: 50px;
-  padding-top: 7px;
+  font-size: 24px;
+  
+ 
+  
 }
 
-#preparo #tt {
-  margin-bottom: 50px;
+#die{
+  margin-top: 30px;
+  font-size: 24px;
+  
+
+  
 }
 
-#txt {
+/*modo de preparo*/
 
+.div2{
+  height: 50px;
+  width: 100%;
+  background-color: #dfdede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:20px;
+  border: 2px solid #d6d6d6;
+}
+
+#garfo{
+  width: 50px;
+  height: 40px;
+
+}
+
+#modo{
+  font-size: 30px ;
+  font-weight: bold;
+  margin-left: 10px;
+  
+}
+
+#sim{
+height: 30px;
+width: 30px;
+}
+#molho{
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px ;
+
+
+}
+
+#molh{
+  font-size: 30px;
+  margin-left: 20px;
+  text-decoration: underline solid #FF8000;
+  font-weight: bold;
+  color: #ff8000;
+  margin-top: 6px;
+  margin-left: -10px;
+
+
+}
+
+#preparo{
+  font-size: 20px;
+}
+#frango{
+  font-size: 30px;
+  margin-left: 20px;
+  text-decoration: underline solid #FF8000;
+  font-weight: bold;
+  color: #ff8000;
+  margin-left: -10px;
+  margin-top: 30px;
+}
+
+#preparo2{
+  font-size: 20px;
+}
+
+#montagem{
+  font-size: 30px;
+  margin-left: 20px;
+  text-decoration: underline solid #FF8000;
+  font-weight: bold;
+  color: #ff8000;
+  margin-left: -10px;
+  margin-top: 30px;
+}
+#preparo3{
+  font-size: 20px;
+}
+
+/* butão avalie essa receita*/
+
+#AvalieEssaReceita{
+display: flex;
+justify-content: center;
+}
+
+#but{
+  background-color: #054d96;
+  color: #ffffff;
+  font-size: 30px;
+  border: transparent;
+    height: 50px;
+    width: 300px;
+    margin-top: 80px;
+    border-radius: 40px;
+
+}
+
+#but:hover{
+  background-color: #00305f;
+}
+
+/* categorias relacionadas*/
+
+#div3{
+  height: 50px;
+  width: 100%;
+  background-color: #dfdede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  border: 2px solid #d6d6d6;
+}
+
+#cat{
+  font-size: 30px ;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#relacionadas{
+
+}
+
+#tips{
+  margin-left: 60px;
+  margin-top: 40px;
+  height: 30px;
+  width: 240px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow:3px 2px 6px black;
+  font-size: 12px;
+}
+
+#tips:hover{
+  background-color: #cfcfcf;
+}
+
+
+
+#txt{
   font-size: 17pt;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   /* margin: 20px; */
@@ -192,7 +401,7 @@ body {
 
 #tt {
   display: flex;
-  justify-content: flex-start;
+    justify-content: flex-start;
   align-items: flex-start;
   margin-top: 10px;
   margin-left: 20px;
@@ -247,7 +456,6 @@ body {
   border: 1px solid #00537c00;
   border-radius: 1mm;
   background-color: #ffffff;
-  transition: all 0.3s linear;
 }
 
 .btn-social-rodapier:hover {
