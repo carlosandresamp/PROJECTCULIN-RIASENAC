@@ -204,6 +204,13 @@ body {
     border-radius: 12px;
     box-shadow: 4px 4px 12px #aaaa;
     margin: 2mm;
+    position: relative;
+    transition: all 0.3s linear;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 0 8px #004587;
 }
 
 .card img {
@@ -211,6 +218,11 @@ body {
     height: 130px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    transition: all 0.3s linear;
+}
+
+.card:hover img {
+    scale: 1.1;
 }
 
 .card div {
@@ -222,17 +234,22 @@ body {
     height: 50%;
 }
 
-.card h2 {
+.card {
+    font-size: .7rem;
+    color: #a8a8a8;
+}
+
+.card h3 {
     font-size: .9rem;
-    color: #aaaa;
+    color: #000000;
 }
 
 .card button {
     background-color: #ff8000;
+    width: 90%;
     height: 40px;
     border: none;
     padding: 4px;
-    width: 90%;
     color: #ffffff;
     font-size: 1rem;
     font-weight: bold;
@@ -249,12 +266,12 @@ body {
 }
 
 .chef img {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     border-radius: 100%;
     position: absolute;
-    margin-bottom: 150px;
-    border: 3px solid #fff;
+    margin-bottom: 130px;
+    border: 3px solid #ffffff;
 }
 
 /* CARDS */
