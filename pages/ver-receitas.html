@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../src/css/ver-receitas.css">
   <script defer src="../js/libs/script.js"></script>
+  <script defer src="../js/libs/avalia.js"></script>
+  <script defer src="../js/libs/slidervreceit.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ver Receitas</title>
 </head>
@@ -28,7 +30,7 @@
         </button>
 
         <ul class="menu" id="menu" role="menu">
-          <a href="index.html">
+          <a href="../index.html">
             <button class="btn-menu-desktop">Ínicio</button>
           </a>
 
@@ -77,133 +79,199 @@
 
     <!--receita-->
     <div id="receita">
-      <label for="" id="titulo">Lasanha de frango</label>
-      <img src="../media/images/4.8  22 AVALIAÇÕES.png" alt="" id="avaliação">
-    </div>
-    <div id="botões">
-      <button class="botão"> Avalie</button>
-      <button class="botão"> Favoritar</button>
-      <button class="botão"> imprimir</button>
-      <button class="botão">compartilhar</button>
+      <label for="" id="titulo">• Lasanha de frango</label>
     </div>
 
-    <div class="categorias">
-      <button class="tipos">massas</button>
-      <button class="tipos">drinks</button>
-      <button class="tipos">sobremesas</button>
-      <button class="tipos">salgados</button>
-      <button class="tipos">aves</button>
-      <button class="tipos">peixes</button>
-      <button class="tipos">sopas</button>
-      <button class="tipos">lanches</button>
-      <button class="tipos">saudavel</button>
-      <button class="tipos">bolos</button>
-      <button class="tipos">frutas</button>
+    <div class="category">
 
+      <a href="#">
+        <button class="btn-category">Massas</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Drinks</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Sobremesas</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Salgados</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Aves</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Peixes</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Sopas</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Lanches</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Saudável</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Bolos</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Frutas</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Frutas</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Frutas</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Frutas</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Frutas</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Frutas</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Frutas</button>
+      </a>
+
+      <a href="#">
+        <button class="btn-category">Frutas</button>
+      </a>
+    </div><!--categogry-->
+
+    <div id="slider-container">
+      <div id="slider-wrapper">
+        <div class="slide"><img src="../media/images/flango-asanha.png" alt="Image 1"></div>
+        <div class="slide"><img src="../media/images/flango-asanha.png" alt="Image 2"></div>
+        <div class="slide">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Lz8JFNlRSQY" frameborder="0"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <div id="prev" onclick="prevSlide()">&#10094;</div>
+      <div id="next" onclick="nextSlide()">&#10095;</div>
     </div>
 
-    <div id="lasanha">
-      <img src="../media/images/flango-asanha.png" alt="" id="las">
-    </div>
+    <ul class="avaliacao">
+      <li class="star-icon ativo" data-avaliacao="1"></li>
+      <li class="star-icon" data-avaliacao="2"></li>
+      <li class="star-icon" data-avaliacao="3"></li>
+      <li class="star-icon" data-avaliacao="4"></li>
+      <li class="star-icon" data-avaliacao="5"></li>
+    </ul>
 
     <div id="div">
-      <img src="../media/images/garfo.png" alt="" id="garfo">
-      <label for="" id="text"> Igredientes (4 porções)</label>
-
+      <label for="" id="text">Igredientes (4 porções)</label>
     </div>
 
-<div class="Igredientes">
-  <label id="igre" for="">🔸 1 Peito de frango</label>
-  <label id="igre" for="">🔸 400g de presunto <br> fatiado</label>
-  <label id="igre" for="">🔸 1 pote de <br> requeijão cremoso</label>
-  <label id="igre" for="">🔸 2 copos de leite</label>
-  <label id="igre" for="">🔸 2 colheres de farinha</label>
-  <label id="igre" for="">🔸 1 cebola média</label>
-  
-  
-</div>
-<div id="igredientes2">
-  <label id="die" for="">🔸 500g de queijo <br> muçarela fatiado</label>
-  <label id="die" for="">🔸 1 pacote de massa <br> de lasanha</label>
-  <label id="die" for="">🔸 2 caldos de <br> galinha</label>
-  <label id="die" for="">🔸 1 caixa de <br> creme de leite</label>
-  <label id="die" for="">🔸 3 colheres de manteiga</label>
-</div>
+    <div class="Igredientes">
+      <label id="igre" for="">🔸 1 Peito de frango;</label>
+      <label id="igre" for="">🔸 400g de presunto fatiado;</label>
+      <label id="igre" for="">🔸 1 pote de requeijão cremoso;</label>
+      <label id="igre" for="">🔸 2 copos de leite;</label>
+      <label id="igre" for="">🔸 2 colheres de farinha;</label>
+      <label id="igre" for="">🔸 1 cebola média;</label>
+      <label id="igre" for="">🔸 500g de queijo muçarela fatiado;</label>
+      <label id="igre" for="">🔸 1 pacote de massa de lasanha;</label>
+      <label id="igre" for="">🔸 2 caldos de galinha;</label>
+      <label id="igre" for="">🔸 1 caixa de creme de leite;</label>
+      <label id="igre" for="">🔸 3 colheres de manteiga;</label>
+    </div>
 
-<div class="div2">
-  <img src="../media/images/symbole-de-l-horloge-noire.png" alt="" id="sim">
-  <label  for="" id="modo" >modo de preparo (45min)</label>
-</div>
+    <div id="div2">
+      <label for="" id="modo">Modo de preparo (45min)</label>
+    </div>
 
-<div id="molho">
+    <div id="molho">
 
-  <label for="" id="molh">Molho</label>
-  <label id="preparo" for="" ><br>
-    
-    🔸 Em uma panela, faça um creme homogêneo com as 2 colheres de farinha e 2 colheres de manteiga (reserve 1 colher de manteiga).
-<br><br>
-  
-🔸 Acrescente o leite, 1 caldo de galinha e mexa constantemente.
-    <br><br>
+      <label for="" id="molh">Molho</label>
+      <label id="preparo" for=""><br>
 
-    🔸 Retire do fogo e acrescente o creme de leite, reserve.</label>
-    
-    <label id="frango" for="">Frango</label>
-    <label id="preparo2" for=""><br>
-      
-      Cozinhe o peito de frango em água (sem óleo), após cozido, desfie-o.
-<br><br>
-      
-🔸 Pique a cebola em pedaços pequenos, coloque em uma panela e doure com a manteiga.
-      <br><br>
-      
-      🔸 Acrescente o frango e o caldo de galinha, mexa sempre até o frango ficar totalmente dourado.</label>
+        🔸 Em uma panela, faça um creme homogêneo com as 2 colheres de farinha e 2 colheres de manteiga (reserve 1
+        colher de manteiga).
+        <br><br>
+
+        🔸 Acrescente o leite, 1 caldo de galinha e mexa constantemente.
+        <br><br>
+
+        🔸 Retire do fogo e acrescente o creme de leite, reserve.</label>
+
+      <label id="frango" for="">Frango</label>
+      <label id="preparo2" for=""><br>
+
+        Cozinhe o peito de frango em água (sem óleo), após cozido, desfie-o.
+        <br><br>
+
+        🔸 Pique a cebola em pedaços pequenos, coloque em uma panela e doure com a manteiga.
+        <br><br>
+
+        🔸 Acrescente o frango e o caldo de galinha, mexa sempre até o frango ficar totalmente dourado.</label>
       <label id="montagem" for="">Montagem</label>
       <label id="preparo3" for=""><br>
-      
+
         🔸 Em um refratário, coloque 2 conchas de molho.
         <br><br>
-        
+
         🔸 Faça a base com massa de lasanha, cubra com 1 camada de presunto, 1 de queijo e 1 de frango (nessa ordem).
         <br><br>
-        
+
         🔸 Sobre o frango, coloque 1 camada de requeijão e 2 conchas de molho.
         <br><br>
-        
+
         🔸 Cubra o requeijão com 1 camada de presunto, 1 camada de queijo e 1 camada de massa, coloque molho.
         <br><br>
-      
+
         🔸 Repita esse processo até faltar cerca de 2,5 cm para chegar na borda do refratário.
         <br><br>
-      
+
         🔸 Para finalizar, cubra a lasanha com muito queijo, requeijão e molho.
         <br>
         <br>
-      
+
         🔸 Asse por, aproximadamente, 20 minutos em fogo baixo.</label>
-</div>
+    </div>
 
-<div id="AvalieEssaReceita">
-  <button id="but">Avalie essa receita</button>
-</div>
+    <a href="../pages/registrar.html">
+      <div id="AvalieEssaReceita">
+        <button id="but">Adicionar um comentário</button>
+      </div>
+    </a>
 
-<div id="div3">
-<label for="" id="cat">Categorias relacionadas</label>
-</div>
+    <div id="div3">
+      <label for="" id="cat">Categorias relacionadas</label>
+    </div>
 
-<div id="relacionadas">
-  <button id="tips">Lasanha</button>
-  <button id="tips">Pizzas,empanados e calzones</button>
-  <button id="tips">Macarrão</button>
-  <button id="tips">Pães</button>
-  <button id="tips">Pizzas</button>
-  <button id="tips">Espaguete</button>
-  <button id="tips">Panqueca</button>
-  <button id="tips">Macarronada</button>
-  <button id="tips">Pão de queijo</button>
-  <button id="tips">Inhoque</button>
+    <div id="relacionadas">
+      <button id="tips">Lasanha</button>
+      <button id="tips">Pizzas,empanados e calzones</button>
+      <button id="tips">Macarrão</button>
+      <button id="tips">Pães</button>
+      <button id="tips">Pizzas</button>
+      <button id="tips">Espaguete</button>
+      <button id="tips">Panqueca</button>
+      <button id="tips">Macarronada</button>
+      <button id="tips">Pão de queijo</button>
+      <button id="tips">Inhoque</button>
 
-</div>
+    </div>
 
     </div>
 
