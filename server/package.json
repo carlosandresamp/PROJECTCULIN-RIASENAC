@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.1.0",
+    "yarn": "^1.22.21"
+  },
+  "scripts": {
+    "start": "sucrase-node src/server.js",
+    "start2": "nodemon --exec sucrase-node src/server.js"
+  },
+  "name": "serve",
+  "version": "1",
+  "description": "ServerTest",
+  "main": "server.js",
+  "repository": "server",
+  "author": "carlosAndr",
+  "license": "no",
+  "private": false,
+  "devDependencies": {
+    "nodemon": "^3.0.3",
+    "sucrase": "^3.35.0"
+  }
+}
