@@ -440,11 +440,12 @@ color: white;
 /* CATEGORIAS RELACIONADAS*/
 #div3 {
   height: 50px;
-  width: 100%;
+  width: 80%;
   background-color: #dfdede;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
   margin-top: 60px;
   border: 2px solid #d6d6d6;
 }
