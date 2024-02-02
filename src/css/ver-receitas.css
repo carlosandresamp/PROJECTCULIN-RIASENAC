@@ -94,19 +94,18 @@ body {
 /* MENU DO TOPO */
 
 /* VER RECEITAS */
+
 #receita {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  width: 100%;
 }
 
 #titulo {
-  font-size: 50px;
-  display: flex;
-  margin-right: 900px;
-  margin-top: 50px;
+ height: 120px;
+ width: 580px;
+ font-weight: bolder;
+ font-size: 70px;
 }
 
 #avaliação {
@@ -120,7 +119,9 @@ body {
 
 /* SLIDER */
 #slider-container {
-  width: 70%;
+  width: 80%;
+  height: 550px;
+  border-radius: 50px;
   margin: auto;
   overflow: hidden;
   justify-content: center;
@@ -208,14 +209,71 @@ body {
 }
 
 /*INGREDIENTES*/
-#div {
-  width: 50%;
-  background-color: #dfdede;
-  margin: 30px auto;
+
+#re{
   display: flex;
-  border: 2px solid #d6d6d6;
+  justify-content: center;
+  align-items: center;
+  margin-top: 170px;
+
 }
 
+#receitaCompleta{
+  height: 400px;
+  width: 90%;
+  background-color: rgb(247, 247, 247);
+  border-radius: 40px;
+  border: 2px solid #e6e5e5;
+  box-shadow: 2px 5px 15px black;
+
+  
+ 
+}
+#imagemIngre{
+  height: 320px;
+  width: 350px;
+  margin-top: 30px;
+  margin-left: 40px;
+  border-radius: 40px;
+ 
+}
+
+#textingredientes{
+  font-size: 40px;
+  display: flex;  
+  justify-content: center;
+  position: relative;
+  top: -330px;
+  left: 150px;
+  font-weight: bolder;
+
+}
+
+#tipo1{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-top: -71px;
+  left: -25px;
+  font-size: 20px;
+  
+}
+#tipo2{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+ left: 350px;
+ font-size: 20px;
+ margin-top: 23px;
+ top: -40px;
+  
+}
 #text {
   font-size: 30px;
   font-weight: bold;
@@ -232,7 +290,7 @@ body {
   flex-direction: column;
   margin-bottom: 50px;
   margin-left: 335px;
-}
+}*/
 
 #igre {
   margin-top: 20px;
@@ -249,12 +307,17 @@ body {
 }
 
 /*MODO DE PREPARO*/
+#preparação{
+  margin-top: 70px;
+}
 #div2 {
-  width: 50%;
-  background-color: #dfdede;
+  
+  width: 90%;
+  height: 40px;
+  background-color: #ff8000;
   margin: 30px auto;
   display: flex;
-  border: 2px solid #d6d6d6;
+color: white;
 }
 
 #modo {
@@ -269,20 +332,26 @@ body {
   flex-direction: column;
   margin-top: 50px;
   margin-left: 335px;
+  
 }
 
 #molh {
   font-size: 30px;
-  margin-left: 20px;
-  text-decoration: underline solid #FF8000;
+  margin-left: -90px;
   font-weight: bold;
-  color: #ff8000;
+  color: black;
   margin-top: 6px;
-  margin-left: -10px;
+ 
+  
 }
 
 #preparo {
+  display: flex;
+  position: relative;
+  left: -90px;
   font-size: 20px;
+  
+  
 }
 
 #frango {
@@ -322,18 +391,22 @@ body {
 #but {
   background-color: #054d96;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 25px;
   border: transparent;
-  height: 80px;
+  height: 50px;
   width: 300px;
   margin-top: 80px;
   border-radius: 40px;
+  margin-top: -40px;
 
 }
 
 #but:hover {
   background-color: #00305f;
 }
+
+
+
 
 /* CATEGORIAS DO TOPO DA PÁGINA */
 .category {
@@ -414,6 +487,8 @@ body {
   margin-top: 10px;
   margin-left: 20px;
 }
+
+
 
 /* VER RECEITAS */
 
