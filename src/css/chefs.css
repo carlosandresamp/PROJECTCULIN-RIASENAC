@@ -5,9 +5,12 @@
     padding: 0px;
 }
 
-.header {
+.container {
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* DEFAULT */
@@ -105,10 +108,6 @@ body {
     border-radius: 10px;
     border: 3px solid #ff8000;
 }
-.fundo-perfil:hover{
-    height: 160px;
-    width: 270px;
-}
 
 .card {
     border: 1px solid #ddd;
@@ -134,13 +133,10 @@ body {
 
 .card-chef:hover i {
     color: #a8a8a8;
-
 }
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    width: 307px;
-    height: 357px;
 }
 
 .profile-pic {
@@ -215,71 +211,7 @@ body {
 
 /* CHEFS */
 
-/* RODAPÉ */
-.footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 115px;
-    color: white;
-    background-color: #00407E;
-    border-top: 5px solid #ff8000;
-    flex-direction: row;
-    left: 0;
-    margin-top: 50px;
-}
 
-.logo-rodapier {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 25px;
-    margin-left: 100px;
-    position: absolute;
-    justify-content: space-between;
-}
-
-.copyright {
-    font-size: 14px;
-    font-family: Sanchez;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    text-align: center;
-}
-
-.social-rodapier {
-    display: flex;
-    margin-right: 100px;
-    margin-top: -35px;
-    justify-content: flex-end;
-    grid-column-gap: 5px;
-}
-
-.btn-social-rodapier {
-    color: #ffffff;
-    width: 32px;
-    height: 32px;
-    border: 1px solid #00537c00;
-    border-radius: 1mm;
-    background-color: #ffffff;
-    transition: all 0.3s linear;
-}
-
-.btn-social-rodapier:hover {
-    color: #ffffff;
-    background-color: #FF8000;
-    background-size: 10mm;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-}
-
-/* RODAPÉ */
 
 /* SUBIR ATÉ O TOPO */
 #backToTopBtn {
