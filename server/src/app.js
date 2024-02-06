@@ -1,18 +1,29 @@
 const express = require('express');
-const routes = require('./routes');
-import mongoose from 'mongoose';
-class App{
-    constructor(){
-        mongoose.connect('mongodb+srv://sitetest_:ak10cri19eu2@cluster0.oxfyljs.mongodb.net/?retryWrites=true&w=majority')
-        this.server = express();
-        this.middlewares();
-        this.routes();
-    };
-    middlewares(){
-        this.server.use(express.json());
-    };
-    routes(){
-        this.server.use(routes);
-    };
-};
-module.exports = new App().server;
+const app = express();
+const uploadUser = require('../middlewares/uploadImage');
+
+
+app.post("/upload-image", uploadUser.single('image'), async (req, res) => {
+
+    if (req.file) {
+        console.log(req.file);
+        return res.json({
+            erro: false,
+            mensagem: "Upload realizado com sucesso!"
+        });
+    }
+
+    return res.status(400).json({
+        erro: true,
+        mensagem: "Erro: Upload não realizado com sucesso, necessário enviar uma imagem PNG ou JPG!"
+    });
+
+
+
+});
+
+app.listen(3333, () => {
+    console.log("Servidor iniciado na porta 3333: http://localhost:3333");
+});
+
+module.exports = app; // sem o export, o server.js não encontra o app

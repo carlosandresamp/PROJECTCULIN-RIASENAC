@@ -28,7 +28,7 @@ const RecipeShema = new Schema({
     },
 
     TempoDePreparo: {
-        type: Number,
+        type: String,
         required: true
     },
 
@@ -44,12 +44,18 @@ const RecipeShema = new Schema({
     },
 
     Image: {
-        type: Buffer,
-        contentType: String,
-        required: true
-    }
+        type: String,
+    },
 
 
+},{toJSON: {
+    virtuals: true
+}})
+
+
+
+RecipeShema.virtual('Image-ft').get(function(){
+    return `http://localhost:3333/files/${this.Image}`
 })
 
 export default new model('Recipe', RecipeShema)
