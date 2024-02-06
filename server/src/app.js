@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const uploadUser = require('../middlewares/uploadImage');
 
-
 app.post("/upload-image", uploadUser.single('image'), async (req, res) => {
 
     if (req.file) {
@@ -22,6 +21,4 @@ app.post("/upload-image", uploadUser.single('image'), async (req, res) => {
 
 });
 
-app.listen(3333, () => {
-    console.log("Servidor iniciado na porta 3333: http://localhost:3333");
-});
+module.exports = app
