@@ -158,6 +158,7 @@ body {
     color: #fff;
     background-color: #004587;
     margin-top: 50px;
+    font-family: none;
 
 }
 
@@ -174,6 +175,7 @@ body {
     color: #fff;
     background-color: #004587;
     margin-top: 30px;
+    font-family: none;
 
 
 }
@@ -193,7 +195,7 @@ body {
     color: #fff;
     background-color: #004587;
     margin-top: 50px;
-
+    font-family: none;
 }
 
 #curtir:hover {
@@ -208,6 +210,7 @@ body {
     color: #00407E;
     margin-left: 62px;
     font-size: 23px;
+    font-family: none;
 }
 
 #doce:hover {
@@ -216,6 +219,7 @@ body {
     width: 135px;
     color: #fff;
     border-radius: 20px;
+    font-family: none;
 }
 
 .inu {
@@ -238,6 +242,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    font-family: none;
 
 }
 
@@ -253,6 +258,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-family: none;
 
 
 }
@@ -275,6 +281,7 @@ body {
     width: 250px;
     border-radius: 20px;
     color: #fff;
+    font-family: none;
 
 }
 
