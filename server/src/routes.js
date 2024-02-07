@@ -1,31 +1,53 @@
-const {Router} = require('express');
+const express = require('express');
+const router = express.Router();
+const Recipe = require('./model/recipe');
+const uploadImage = require('../middlewares/uploadImage');
 
-import RecipeController from './Controller/RecipeController';
-import UserController from './Controller/UserController';
-import CategoryController from './Controller/CategoryController';
-import AvaliationController from './Controller/AvaliationController';
-import CommentController from './Controller/CommentController';
-// import uploads from './config/uploads';
-// import multer from 'multer';
-
-// const upload =  multer(uploads).single('image'); // pega a imagem do formulário
-
-const routes = new Router();
-
-routes.get('/', (req, res) => {
-    return res.json({message: 'ok'});
+router.get('/recipes', async (req, res) => {
+  const recipes = await Recipe.find();
+  res.json(recipes);
 });
 
-// routes.post('/recipe', upload, RecipeController.Store)
+router.post('/recipes', uploadImage.single('image'), async (req, res) => {
+  const { name, description, ingredients, instructions } = req.body;
+  const image = req.file.path;
 
-routes.get('/recipe', RecipeController.store)
+  const newRecipe = new Recipe({
+    name,
+    description,
+    ingredients,
+    instructions,
+    image
+  });
 
-routes.get('/user', UserController.store)
+  await newRecipe.save();
+  res.status(201).json(newRecipe);
+});
 
-routes.get('/category', CategoryController.store)
+router.get('/recipes/:id', async (req, res) => {
+  const recipe = await Recipe.findById(req.params.id);
+  res.json(recipe);
+});
 
-routes.get('/avaliation', AvaliationController.store)
+router.put('/recipes/:id', uploadImage.single('image'), async (req, res) => {
+  const { name, description, ingredients, instructions } = req.body;
+  const image = req.file.path;
 
-routes.get('/comment', CommentController.store)
+  const updatedRecipe = {
+    name,
+    description,
+    ingredients,
+    instructions,
+    image
+  };
 
-module.exports = routes;
+  await Recipe.findByIdAndUpdate(req.params.id, updatedRecipe);
+  res.json({ message: 'Recipe updated successfully' });
+});
+
+router.delete('/recipes/:id', async (req, res) => {
+  await Recipe.findByIdAndDelete(req.params.id);
+  res.json({ message: 'Recipe deleted successfully' });
+});
+
+module.exports = router;

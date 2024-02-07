@@ -1,24 +1,17 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const routes = require('./routes');
+
 const app = express();
-const uploadUser = require('../middlewares/uploadImage');
 
-app.post("/upload-image", uploadUser.single('image'), async (req, res) => {
-
-    if (req.file) {
-        console.log(req.file);
-        return res.json({
-            erro: false,
-            mensagem: "Upload realizado com sucesso!"
-        });
-    }
-
-    return res.status(400).json({
-        erro: true,
-        mensagem: "Erro: Upload não realizado com sucesso, necessário enviar uma imagem PNG ou JPG!"
-    });
-
-
-
+mongoose.connect('mongodb://localhost:27017/recipe-app', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
-module.exports = app
+app.use(express.json());
+app.use('/', routes);
+
+app.listen(3333, () => {
+  console.log('Server is running on port 3333');
+});
