@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: none;
 }
 
 .container {
@@ -138,8 +139,7 @@ fieldset {
 }
 
 #text {
-    font-family: Arial,
-        sans-serif;
+    font-family: none;
 
 }
 
@@ -148,6 +148,7 @@ fieldset {
     width: 250px;
     height: 40px;
     padding-left: 15px;
+    font-family: none;
 }
 
 .senha input {
@@ -155,6 +156,7 @@ fieldset {
     /* width: 180px; */
     height: 40px;
     padding-left: 15px;
+    font-family: none;
 }
 
 .Enviar input {
@@ -168,11 +170,13 @@ fieldset {
     margin-top: 10px;
     transition: background-color 0.3s;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    font-family: none;
 }
 
 .Enviar input:hover {
     background-color: #0066CC;
     color: #FFFFFF;
+    font-family: none;
 }
 
 .caixa {
