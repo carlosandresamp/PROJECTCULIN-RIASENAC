@@ -1,53 +1,19 @@
-const express = require('express');
-const router = express.Router();
-const Recipe = require('./model/recipe');
-const uploadImage = require('../middlewares/uploadImage');
+import { Router } from "express";
+import cadastroReceita from "./Controller/receitaController";
+import RegistrarUsuarioController from "./Controller/registrarController";
+import multer from "multer";
+import uploadconfg from "./config/uploadconfg";
 
-router.get('/recipes', async (req, res) => {
-  const recipes = await Recipe.find();
-  res.json(recipes);
+const upload = multer(uploadconfg);
+
+const routes = new Router();
+routes.get("/", (req, res) => {
+  return res.json({ message: "ok" });
 });
 
-router.post('/recipes', uploadImage.single('image'), async (req, res) => {
-  const { name, description, ingredients, instructions } = req.body;
-  const image = req.file.path;
-
-  const newRecipe = new Recipe({
-    name,
-    description,
-    ingredients,
-    instructions,
-    image
-  });
-
-  await newRecipe.save();
-  res.status(201).json(newRecipe);
-});
-
-router.get('/recipes/:id', async (req, res) => {
-  const recipe = await Recipe.findById(req.params.id);
-  res.json(recipe);
-});
-
-router.put('/recipes/:id', uploadImage.single('image'), async (req, res) => {
-  const { name, description, ingredients, instructions } = req.body;
-  const image = req.file.path;
-
-  const updatedRecipe = {
-    name,
-    description,
-    ingredients,
-    instructions,
-    image
-  };
-
-  await Recipe.findByIdAndUpdate(req.params.id, updatedRecipe);
-  res.json({ message: 'Recipe updated successfully' });
-});
-
-router.delete('/recipes/:id', async (req, res) => {
-  await Recipe.findByIdAndDelete(req.params.id);
-  res.json({ message: 'Recipe deleted successfully' });
-});
-
-module.exports = router;
+//put
+routes.post("/cadastroReceita", upload.single("foto"), cadastroReceita.store);
+routes.post("/RegistrarUsuarioController", RegistrarUsuarioController.store);
+routes.get("/RegistrarUsuarioController", RegistrarUsuarioController.show);
+routes.get("/cadastroReceita", cadastroReceita.showAll);
+module.exports = routes;

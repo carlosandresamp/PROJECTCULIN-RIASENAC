@@ -1,15 +1,5 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const routes = require('./routes');
+const app = require('./app.js');
 
-const app = express();
+app.listen(3333);
 
-mongoose.connect('mongodb://localhost:27017/recipe-app', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-app.use(express.json());
-app.use('/', routes);
-
-module.exports = app;
+console.log('Servidor em Execução!');

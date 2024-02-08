@@ -1,17 +1,27 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const routes = require('./routes');
+const express = require("express");
+const routes = require("./routes");
+import mongoose from "mongoose";
 
-const app = express();
+// @author carlos augusto
+// @ date 22/01/2024
+// @memberof App
+// @description este contem o contrutor com a conecção do banco de dados
 
-mongoose.connect('mongodb://localhost:27017/recipe-app', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-app.use(express.json());
-app.use('/', routes);
-
-app.listen(3333, () => {
-  console.log('Server is running on port 3333');
-});
+class App {
+  constructor() {
+    this.server = express();
+    this.middlewares();
+    this.routes();
+    mongoose.connect(
+      "mongodb+srv://carlos:3178931789@cluster0.cpfsxlr.mongodb.net/?retryWrites=true&w=majority"
+    );
+  }
+  middlewares() {
+    this.server.use(express.static(__dirname + "/public"));
+    this.server.use(express.json());
+  }
+  routes() {
+    this.server.use(routes);
+  }
+}
+module.exports = new App().server;
