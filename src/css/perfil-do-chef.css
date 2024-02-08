@@ -45,6 +45,7 @@ body {
 }
 
 /* TOPO */
+
 /* MENU DO TOPO */
 .btn-menu-desktop {
     width: 90px;
@@ -72,7 +73,7 @@ body {
 
 .social {
     display: flex;
-    margin-top: 5px;
+    margin-top: -19px;
     justify-content: flex-end;
     grid-column-gap: 5px;
     margin-left: 170px;
@@ -92,6 +93,15 @@ body {
     color: #ffffff;
     background-color: #004587;
     background-size: 10mm;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-right: 555px;
 }
 
 /* MENU DO TOPO */

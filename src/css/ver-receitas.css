@@ -57,6 +57,7 @@ body {
   top: 25%;
   position: relative;
   line-height: 25px;
+  transition: all 0.3s linear;
 }
 
 .btn-menu-desktop:hover {
@@ -70,7 +71,7 @@ body {
 
 .social {
   display: flex;
-  margin-top: 5px;
+  margin-top: -19px;
   justify-content: flex-end;
   grid-column-gap: 5px;
   margin-left: 170px;
@@ -82,13 +83,23 @@ body {
   height: 32px;
   border: 1px solid #00537c00;
   border-radius: 1mm;
-  background-color: #676767;
+  background-color: #A7A8AA;
+  transition: all 0.3s linear;
 }
 
 .btn-social:hover {
   color: #ffffff;
   background-color: #004587;
   background-size: 10mm;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-right: 555px;
 }
 
 /* MENU DO TOPO */

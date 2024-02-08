@@ -54,12 +54,4 @@
     background-size: 10mm;
 }
 
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-}
-
 /* RODAPÉ */
