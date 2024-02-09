@@ -3,17 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../src/css/rodape.css">
     <link rel="stylesheet" href="../src/css/editar-receitas.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../src/css/rodape.css" />
     <script defer src="../js/libs/script.js"></script>
     <script defer src="../js/libs/ateotopo.js"></script>
+    <script defer src="../js/libs/editar_receita.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Receitas</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="header">
 
         <div id="topo">
 
@@ -80,40 +81,66 @@
 
         </div><!--topo-->
 
-        <div class="edit-receita-text">
-            <h1>Editar Receita</h1>
-        </div>
-
-        <main>
-            <form action="#" method="POST">
-                <label for="title">Título da Receita:</label>
-                <input type="text" id="title" name="title" value="Bolo de Chocolate">
+        <div class="edit">
+            <div class="edit_receita">
+                <h1>Editar Receita</h1>
+            </div>
+            <form>
+                <label for="recipe-name">Nome da Receita:</label>
+                <input type="text" id="recipe-name" name="recipe-name" required>
 
                 <label for="ingredients">Ingredientes:</label>
-                <textarea id="ingredients" name="ingredients" rows="4"
-                    placeholder="Digite os ingredientes...">50g de chocolate, 2 ovos, ...</textarea>
+                <textarea id="ingredients" name="ingredients" required></textarea>
 
-                <label for="instructions">Instruções:</label>
-                <textarea id="instructions" name="instructions" rows="6"
-                    placeholder="Digite as instruções...">1. Pré-aqueça o forno a 180°C...</textarea>
+                <label for="directions">Modo de Preparo:</label>
+                <textarea id="directions" name="directions" required></textarea>
 
-                <label for="image">Imagem:</label>
-                <input type="file" id="image" name="image" accept="image/*">
+                <label for="prep-time">Tempo de preparo (em minutos):</label>
+                <input type="number" id="prep-time" name="prep-time" required>
 
-                <label for="video">Vídeo:</label>
-                <input type="text" id="video" name="video" placeholder="Cole o link do vídeo">
+                <label for="categories">Categorias:</label>
 
-                <button class="savereceita" type="submit">Salvar Alterações</button>
+                <div class="categories">
+                    <input type="checkbox" id="breakfast" name="breakfast">
+                    <label for="breakfast">Café da Manhã</label>
+
+                    <input type="checkbox" id="lunch" name="lunch">
+                    <label for="lunch">Almoço</label>
+
+                    <input type="checkbox" id="dinner" name="dinner">
+                    <label for="dinner">Jantar</label>
+
+                    <input type="checkbox" id="snack" name="snack">
+                    <label for="snack">Sobremesa</label>
+                </div>
+
+                <label for="recipe-image">
+                    <p>Adicionar Foto:</p>
+                </label>
+                <input type="file" id="recipe-image" name="recipe-image" onchange="previewImage(event)">
+                <img id="preview-image" src="" alt="Imagem da receita">
+
+                <label for="video">
+                    <p>Vídeo:</p>
+                </label>
+                <input type="text" id="video" name="video" placeholder="Cole o link do vídeo"
+                    oninput="previewVideo(event)">
+                <div id="preview-video"></div>
+
+                <button class="enviar-receita" type="submit">
+                    <h1>Enviar receita</h1>
+                </button>
             </form>
-        </main>
+        </div>
 
-        <button id="backToTopBtn" onclick="backToTop()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor" />
-            </svg>
-        </button><!--botão de subir até o topo da página-->
+    </div>
 
-        <div id="footer"></div>
+    <button id="backToTopBtn" onclick="backToTop()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor" />
+        </svg>
+    </button><!--botão de subir até o topo da página-->
+
 </body>
 <script src="../js/libs/rodape.js"></script>
 
