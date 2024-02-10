@@ -16,6 +16,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  confirmarsenha: {
+    type: String,
+    required: true,
+  },
+  cpf: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
 });
 
 const User = mongoose.model("User", userSchema);
