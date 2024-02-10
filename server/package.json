@@ -6,8 +6,8 @@
     "yarn": "^1.22.21"
   },
   "scripts": {
-    "start": "sucrase-node src/server.js",
-    "start2": "nodemon --exec sucrase-node src/server.js"
+
+    "start": "nodemon --exec sucrase-node src/server.js"
   },
   "name": "serve",
   "version": "1",
