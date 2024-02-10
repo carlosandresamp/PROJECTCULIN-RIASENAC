@@ -11,9 +11,12 @@ routes.get("/", (req, res) => {
   return res.json({ message: "ok" });
 });
 
-//put
+//put/post/delete
 routes.post("/cadastroReceita", upload.single("foto"), cadastroReceita.store);
+routes.put("/update", cadastroReceita.update);
 routes.post("/RegistrarUsuarioController", RegistrarUsuarioController.store);
 routes.get("/RegistrarUsuarioController", RegistrarUsuarioController.show);
 routes.get("/cadastroReceita", cadastroReceita.showAll);
+routes.put("/delete", cadastroReceita.delete);
+
 module.exports = routes;
