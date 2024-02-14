@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/add-receitas.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/rodape.css"/>
+    <script defer src="../js/script.js"></script>
+    <script defer src="../js/ateotopo.js"></script>
+    <script defer src="../js/add_receita.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar receita</title>
+</head>
+
+<body>
+    <header>
+
+        <div id="topo"></div><!--topo-->
+
+        <div class="adc">
+            <div class="add_receita">
+                <h1>Adicionar Receita</h1>
+            </div>
+            <form>
+                <label for="recipe-name">Nome da Receita:</label>
+                <input type="text" id="recipe-name" name="recipe-name" required>
+
+                <label for="ingredients">Ingredientes:</label>
+                <textarea id="ingredients" name="ingredients" required></textarea>
+
+                <label for="directions">Modo de Preparo:</label>
+                <textarea id="directions" name="directions" required></textarea>
+
+                <label for="prep-time">Tempo de preparo (em minutos):</label>
+                <input type="number" id="prep-time" name="prep-time" required>
+
+                <label for="categories">Categorias:</label>
+
+                <div class="categories">
+                    <input type="checkbox" id="breakfast" name="breakfast">
+                    <label for="breakfast">Café da Manhã</label>
+            
+                    <input type="checkbox" id="lunch" name="lunch">
+                    <label for="lunch">Almoço</label>
+            
+                    <input type="checkbox" id="dinner" name="dinner">
+                    <label for="dinner">Jantar</label>
+            
+                    <input type="checkbox" id="snack" name="snack">
+                    <label for="snack">Sobremesa</label>
+                </div>
+
+                <label for="recipe-image">
+                    <p>Adicionar Foto:</p>
+                </label>
+                <input type="file" id="recipe-image" name="recipe-image" onchange="previewImage(event)">
+                <img id="preview-image" src="" alt="Imagem da receita">
+
+                <label for="video">
+                    <p>Vídeo:</p>
+                </label>
+                <input type="text" id="video" name="video" placeholder="Cole o link do vídeo"
+                    oninput="previewVideo(event)">
+                <div id="preview-video"></div>
+
+                <button class="enviar-receita" type="submit">
+                    <h1>Enviar receita</h1>
+                </button>
+            </form>
+        </div>
+
+        <button id="backToTopBtn" onclick="backToTop()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor" />
+            </svg>
+        </button><!--botão de subir até o topo da página-->
+
+        <div id="footer"></div>
+
+    </header>
+</body>
+<script src="../js/rodape.js"></script>
+<script src="../js/topo.js"></script>
+
+</html>
