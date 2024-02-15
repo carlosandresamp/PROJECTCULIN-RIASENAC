@@ -108,7 +108,7 @@ body {
 .banner {
     bottom: 0;
     margin-top: 0px;
-    background-image: url(../../public/media/images/slide_senac.jpg);
+    background-image: url(../media/images/slide_senac.jpg);
     background-position: center;
     background-size: cover;
     height: 300px;
