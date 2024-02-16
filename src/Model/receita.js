@@ -6,6 +6,7 @@ const ReceitaSchema = new Schema({
   ingredientes: { type: String, required: true },
   modoDePreparo: { type: String, required: true },
   tempo: { type: Number, required: true },
+  categoria: { type: String, required: true }, // Adicionado campo de categoria
   foto: { type: String },
   user: { type: Schema.Types.ObjectId }, // Adicionado campo de referência ao usuário
 });

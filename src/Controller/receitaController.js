@@ -6,10 +6,12 @@ class CadastroReceita {
   async store(req, res) {
     try {
       const foto = req.file ? req.file.filename : null;
-      const { Titulo, ingredientes, modoDePreparo, tempo } = req.body;
+      const { Titulo, ingredientes, modoDePreparo, tempo, categoria } =
+        req.body; // Adicionado categoria
       const { username } = req.headers;
 
-      if (!Titulo || !ingredientes || !modoDePreparo || !tempo) {
+      if (!Titulo || !ingredientes || !modoDePreparo || !tempo || !categoria) {
+        // Adicionado categoria
         return res
           .status(400)
           .json({ message: "Todos os campos são obrigatórios." });
@@ -26,6 +28,7 @@ class CadastroReceita {
         ingredientes,
         modoDePreparo,
         tempo,
+        categoria, // Adicionado categoria
         user: userExists._id,
         foto,
       });
