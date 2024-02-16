@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/my-perfil.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script defer src="../js/script.js"></script>
+    <script defer src="../js/ateotopo.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="topo"></div><!--topo-->
+
+        <header>
+            <!-- User profile picture and name -->
+            <div class="profile-pic">
+                <img src="../media/images/chef.png" alt="User profile picture">
+            </div>
+            <h1 class="user-name">Joãozin da Cozinha</h1>
+        </header>
+        <main class="profile-content">
+            <!-- User information -->
+            <section class="user-info">
+                <h2>Dados Pessoais</h2>
+                <p><strong>E-mail:</strong> joaozindacozinha@gmail.com</p>
+                <p><strong>Entrou:</strong> 7 de Janeiro, 2021</p>
+                <button onclick="location.href='editar_dados.php'"><i class="bi bi-pencil-square"></i> Editar Dados</button>
+            </section>
+            
+            <!-- Recipes section -->
+            <section class="recipes">
+                <h2>Receitas</h2>
+                
+                <!-- Show recipe button -->
+                <button onclick="showRecipe()">Ver Receita</button>
+
+                <!-- Hide recipe button (hidden by default) -->
+                <button id="hideBtn" style="display: none;" onclick="hideRecipe()">Esconder Receita</button>
+            </section>
+            <!-- User's favorite recipes -->
+            <section class="favorite-recipes">
+                <h2>Favorite Recipes</h2>
+                <ul>
+                    <li>
+                        <a href="recipe-1.html">Spaghetti Bolognese</a>
+                    </li>
+                    <li>
+                        <a href="recipe-2.html">Chocolate Chip Cookies</a>
+                    </li>
+                    <li>
+                        <a href="recipe-3.html">Vegetarian Lasagna</a>
+                    </li>
+                </ul>
+            </section>
+            <!-- User's clicked recipes -->
+            <section class="clicked-recipes">
+                <h2>Clicked Recipes</h2>
+                <ul>
+                    <li>
+                        <a href="recipe-4.html">Cheesy Garlic Bread</a>
+                    </li>
+                    <li>
+                        <a href="recipe-5.html">Caprese Salad</a>
+                    </li>
+                    <li>
+                        <a href="recipe-6.html">Vegan Pizza</a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <button id="backToTopBtn" onclick="backToTop()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor" />
+            </svg>
+        </button><!--botão de subir até o topo da página-->
+        <div id="footer"></div>
+    </div>
+</body>
+<script src="../js/rodape.js"></script>
+<script src="../js/topo.js"></script>
+
+</html>
