@@ -18,5 +18,6 @@ routes.post("/RegistrarUsuarioController", RegistrarUsuarioController.store);
 routes.get("/RegistrarUsuarioController", RegistrarUsuarioController.show);
 routes.get("/cadastroReceita", cadastroReceita.showAll);
 routes.put("/delete", cadastroReceita.delete);
+routes.post("/LoginUsuarioController", RegistrarUsuarioController.login);
 
 module.exports = routes;

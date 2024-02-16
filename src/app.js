@@ -1,5 +1,6 @@
 const express = require("express");
 const routes = require("./routes/routes");
+import session from "express-session";
 import mongoose from "mongoose";
 
 // @author carlos augusto
@@ -19,6 +20,14 @@ class App {
   middlewares() {
     this.server.use(express.static(__dirname + "/public"));
     this.server.use(express.json());
+    this.server.use(
+      session({
+        secret: "werewrwewrwe",
+        resave: false,
+        saveUninitialized: true,
+        cookie: { secure: false },
+      })
+    );
   }
   routes() {
     this.server.use(routes);

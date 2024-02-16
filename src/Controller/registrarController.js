@@ -19,6 +19,23 @@ class RegistrarUsuarioController {
     let usuario = await Usuario.find();
     return res.json(usuario);
   }
+
+  async login(req, res) {
+    const { email, senha } = req.body;
+
+    const user = await Usuario.findOne({ email: email }).select("+senha");
+
+    if (!user) {
+      return res.status(401).json({ error: "Email ou Senha incorreto(s)" });
+    }
+
+    if (user.senha !== senha) {
+      return res.status(401).json({ error: "Senha incorreta" });
+    } else {
+      req.session.Id = user._id;
+      return res.json(user);
+    }
+  }
 }
 
 export default new RegistrarUsuarioController();
