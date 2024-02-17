@@ -2,6 +2,7 @@
 :root{
   --normal-color: #444;
   --hover-color: rgb(255, 141, 33);
+  --btn-color: rgb(63, 63, 224);
 }
 
 .form{
@@ -31,7 +32,7 @@
 }
 
 .btn-submit{
-  background-color: rgb(63, 63, 224);
+  background-color: var(--btn-color);
   color: white;
   border: 0;
 }
