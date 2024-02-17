@@ -4,44 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../js/rodape.js">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/forms.css">
     <script defer src="../js/script.js"></script>
     <script defer src="../js/ateotopo.js"></script>
     <script defer src="../js/eyepassword.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
-
 <body>
-    <header>
-
-        <div id="topo"></div><!--topo-->
-
-        <div class="page">
-            <form class="formLogin">
-                <h2>Login</h1>
-                    <p>Digite os seus dados de acesso no campo abaixo.</p>
-                    <label for="email">E-mail</label>
-                    <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" placeholder="Digite sua senha" />
-                    <button type="button" id="togglePassword">Mostrar Senha</button>
-                    <a href="recuperar-senha.html">Esqueci minha senha</a>
-                    <a href="registrar.html">Não possui cadastro? clique aqui</a>
-                    <input type="submit" value="Acessar" class="btn" />
+    <div class="container">
+        <div id="topo"></div>
+        <!--topo-->
+        <div class="center">
+            <form id="formLogin">
+                <fieldset>
+                    <div class="form">
+                        <img src="../media/images/logo-senac-cnc-color-100.png" alt="">
+                        <h3>Faça seu Cadastro!</h3>
+                        <label for="email">E-mail</label>
+                        <input class="input" type="email" placeholder="Digite seu e-mail" autofocus="true" />
+                        <label for="password">Senha</label>
+                        <input class="input" type="password" id="password" placeholder="Digite sua senha" />
+                        <button type="button" id="togglePassword">Mostrar Senha</button>
+                        <a class="link" href="recuperar-senha.html">Esqueci minha senha</a>
+                        <a class="link" href="registrar.html">Não possui cadastro? clique aqui!</a>
+                        <input type="submit" value="Acessar" class="btn-submit" />
+                    </div>
+                </fieldset>
             </form>
         </div>
-
-        <button id="backToTopBtn" onclick="backToTop()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor" />
-            </svg>
-        </button><!--botão de subir até o topo da página-->
-
         <div id="footer"></div>
+    </div>
+    <script src="../js/validar_senha.js"></script>
+    <script src="../js/rodape.js"></script>
+    <script src="../js/topo.js"></script>
 </body>
-<script src="../js/validar_senha.js"></script>
-<script src="../js/rodape.js"></script>
-<script src="../js/topo.js"></script>
-
 </html>

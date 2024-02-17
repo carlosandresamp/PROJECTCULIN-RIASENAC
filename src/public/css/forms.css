@@ -1,23 +1,38 @@
+/* Estilo dedicado aos formulários */
 
-:root{
+:root {
   --normal-color: #444;
   --hover-color: rgb(255, 141, 33);
   --btn-color: rgb(63, 63, 224);
 }
 
-.form{
+fieldset{
+  border: 0;
+}
+
+form label{
+  align-self: flex-start;
+}
+
+.form {
+  margin: 5mm;
+  -webkit-box-shadow: 0px 0px 26px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 26px 2px rgba(0, 0, 0, 0.6);
+  width: 400px;
   padding: 10mm;
+  border-radius: 5mm;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.form img{
+.form img {
   width: 200px;
 }
 
-.input, .btn-submit{
+.input,
+.btn-submit {
   margin-top: 2mm;
   margin-bottom: 2mm;
   padding: 2mm;
@@ -26,17 +41,27 @@
   border: 1px solid var(--normal-color);
 }
 
-.input:hover, input:focus{
+.input:hover,
+input:focus {
   outline: 1px solid var(--hover-color);
   border: 1px solid var(--hover-color);
 }
 
-.btn-submit{
+.btn-submit {
   background-color: var(--btn-color);
   color: white;
   border: 0;
 }
 
-.btn-submit:hover{
+.btn-submit:hover {
   background-color: var(--hover-color);
+}
+
+#togglePassword {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #004587;
+  cursor: pointer;
+  margin-left: 5px;
 }
