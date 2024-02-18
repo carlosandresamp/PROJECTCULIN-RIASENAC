@@ -78,4 +78,4 @@ socialRodapier.appendChild(youtubeButton);
 footer.appendChild(socialRodapier);
 
 // Adição do footer ao final do body
-document.body.appendChild(footer);
+document.getElementById("footer").appendChild(footer);
