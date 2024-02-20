@@ -102,57 +102,57 @@ body {
 /* MENU DO TOPO */
 
 /* PERFIL */
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* Header styles */
-header {
-    background-color: #004587;
-    color: white;
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    color: #fff;
+    width: 5%;
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 15px;
 }
 
-.profile-pic {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
+.navbar img {
     border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
 }
 
-.profile-pic img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.navbar button {
+    padding: 10px 20px;
+    background-color: #004587;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.user-name {
-    margin: 0;
+.info {
+    margin: 20px;
+    text-align: center;
 }
 
-/* Main content styles */
-.profile-content {
-    display: flex;
-    flex-direction: column;
+.info img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
     padding: 20px;
-}
-
-.profile-content section {
-    margin-bottom: 20px;
-}
-
-.user-info strong,
-.favorite-recipes strong,
-.clicked-recipes strong {
-    font-weight: bold;
+    text-align: center;
 }
 
 /* PERFIL */

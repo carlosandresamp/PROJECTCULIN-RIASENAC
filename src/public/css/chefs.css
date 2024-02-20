@@ -102,91 +102,55 @@ body {
 /* MENU DO TOPO */
 
 /* CHEFS */
-.cards {
-    padding: 5mm;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-    justify-content: center;
-}
-
-.card {
-    background-color: #fff;
-    width: 180px;
-    height: 260px;
-    border-radius: 12px;
-    box-shadow: 4px 4px 12px #aaaa;
-    margin: 2mm;
-    position: relative;
-    transition: all 0.3s linear;
-    overflow: hidden;
-}
-
-.card:hover {
-    box-shadow: 0 0 8px #004587;
-}
-
-.card img {
-    width: 100%;
-    height: 130px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    transition: all 0.3s linear;
-}
-
-.card:hover img {
-    scale: 1.1;
-}
-
-.card div {
+.ranking-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 4px;
-    height: 50%;
-}
-
-.card i {
-    font-size: .7rem;
-    color: #a8a8a8;
-}
-
-.card h2 {
-    font-size: 25px;
-    color: #000000;
-    padding: 5px;
-    text-align: center;
-}
-
-.card button:hover {
-    background-color: #00407E;
-    cursor: pointer;
-}
-
-.cards button {
-    background-color: #007BFF;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin: auto;
-    display: flex;
+    margin-top: 20px;
   }
-  
-  .cards button:hover {
-    background-color: #0056b3;
+  .categoria {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+  }
+  .chef-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  .info-chef {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+  }
+  .imagem-chef {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 5px;
+  }
+  .estrelas {
+    color: gold;
+    margin-left: 5px;
+  }
+  .nome-chef {
+    font-weight: bold;
   }
   
 /* CHEFS */
 
 /* RODAPÉ */
 .footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 115px;
