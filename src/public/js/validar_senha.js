@@ -1,17 +1,15 @@
 window.addEventListener("load", function () {
   // Selecione os campos de senha, confirmação de senha, CPF e e-mail
-  const senhaInput = document.querySelector(
-    'input[type="password"][placeholder="Crie uma senha"]'
-  );
+  const senhaInput = document.querySelector("input[name='senha']");
   const confirmarSenhaInput = document.querySelector(
-    'input[type="password"][placeholder="Confirme a senha"]'
+    "input[name='confirmarsenha']"
   );
-  const cpfInput = document.querySelector('input[placeholder="CPF"]');
-  const emailInput = document.querySelector('input[type="email"]');
+  const cpfInput = document.querySelector("input[name='cpf']");
+  const emailInput = document.querySelector("input[name='email']");
 
   // Função para enviar dados
   function enviarDados() {
-    const nome = document.querySelector(".Nome input").value;
+    const nome = document.querySelector("input[name='nome']").value;
     const email = emailInput.value;
     const senha = senhaInput.value;
     const confirmarsenha = confirmarSenhaInput.value;
@@ -43,43 +41,87 @@ window.addEventListener("load", function () {
         console.error("Error:", error);
       });
   }
+});
 
+// Função para enviar dados
+function enviarDados() {
+  const nome = document.querySelector("input[name='nome']").value;
+  const email = document.querySelector("input[name='email']").value;
+  const senha = document.querySelector("input[name='senha']").value;
+  const confirmarsenha = document.querySelector(
+    "input[name='confirmarsenha']"
+  ).value;
+  const cpf = document.querySelector("input[name='cpf']").value;
+
+  const data = { nome, email, senha, confirmarsenha, cpf };
+
+  fetch("/RegistrarUsuarioController", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        return response.json();
+      } else {
+        return response.text();
+      }
+    })
+    .then((data) => {
+      console.log("Success:", data);
+      alert("Conta cadastrada com sucesso!");
+      window.location.href = "../pages/login.html";
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+window.addEventListener("load", function () {
   // Adicione um ouvinte de evento de submit ao formulário
-  document.querySelector("form").addEventListener("submit", function (event) {
-    event.preventDefault();
+  document
+    .querySelector("#integracao")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
 
-    if (senhaInput.value !== confirmarSenhaInput.value) {
-      senhaInput.value = "";
-      confirmarSenhaInput.value = "";
-      alert("As senhas não correspondem. Por favor, insira novamente.");
-      return;
-    }
+      let senhaInput = document.querySelector("input[name='senha']");
+      let confirmarSenhaInput = document.querySelector(
+        "input[name='confirmarsenha']"
+      );
+      let cpfInput = document.querySelector("input[name='cpf']");
+      let emailInput = document.querySelector("input[name='email']");
 
-    if (cpfInput.value.length !== 11) {
-      cpfInput.value = "";
-      alert("O CPF deve conter 11 dígitos. Por favor, insira novamente.");
-      return;
-    }
+      if (senhaInput.value !== confirmarSenhaInput.value) {
+        senhaInput.value = "";
+        confirmarSenhaInput.value = "";
+        alert("As senhas não correspondem. Por favor, insira novamente.");
+        return;
+      }
 
-    if (!emailInput.value.endsWith("@gmail.com")) {
-      emailInput.value = "";
-      alert("Por favor, insira um e-mail válido do tipo @gmail.com.");
-      return;
-    }
+      if (cpfInput.value.length !== 11) {
+        cpfInput.value = "";
+        alert("O CPF deve conter 11 dígitos. Por favor, insira novamente.");
+        return;
+      }
 
-    // Se todas as validações passarem, envie os dados
-    enviarDados();
-  });
+      if (!emailInput.value.endsWith("@gmail.com")) {
+        emailInput.value = "";
+        alert("Por favor, insira um e-mail válido do tipo @gmail.com.");
+        return;
+      }
+
+      // Se todas as validações passarem, envie os dados
+      enviarDados();
+    });
 });
 
 window.addEventListener("load", function () {
   // Selecione os campos de e-mail e senha
-  const emailInput = document.querySelector(
-    'input[type="email"][placeholder="Digite seu e-mail"]'
-  );
-  const passwordInput = document.querySelector(
-    'input[type="password"][id="password"]'
-  );
+  const emailInput = document.querySelector("input[type='email']");
+  const passwordInput = document.querySelector("input[id='password']");
 
   // Função para enviar dados
   function enviarDados() {
@@ -118,7 +160,7 @@ window.addEventListener("load", function () {
 
   // Adicione um ouvinte de evento ao formulário para enviar os dados quando o formulário for enviado
   document
-    .querySelector(".formLogin")
+    .querySelector("#formLogin")
     .addEventListener("submit", function (event) {
       event.preventDefault(); // Impede o comportamento padrão do formulário
       enviarDados(); // Chama a função para enviar os dados
