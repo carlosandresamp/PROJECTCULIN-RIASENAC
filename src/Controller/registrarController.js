@@ -14,6 +14,13 @@ class RegistrarUsuarioController {
 
     res.status(201).send("Usuário registrado com sucesso");
   }
+  // // Cria uma rota que retorna o id do usuário logado
+  // async verificalogin(req, res) {
+  //   // Obtém o id do usuário da sessão
+  //   let id = req.session.Id;
+  //   // Retorna o id como um JSON
+  //   res.json({ id: id });
+  // }
 
   async show(req, res) {
     let usuario = await Usuario.find();
@@ -35,6 +42,7 @@ class RegistrarUsuarioController {
       req.session.Id = user._id;
       return res.json(user);
     }
+    
   }
 }
 
