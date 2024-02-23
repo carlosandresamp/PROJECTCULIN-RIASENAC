@@ -87,3 +87,37 @@ document
       alert(`Erro: ${data.message}`);
     }
   });
+
+// integração do add-receitas com back
+// Função para enviar dados do formulário para adicionar uma nova receita
+async function adicionarReceita(event) {
+  event.preventDefault(); // Evita o comportamento padrão do formulário
+
+  const form = event.target; // Obtém o formulário
+  const formData = new FormData(form); // Cria um objeto FormData com os dados do formulário
+
+  try {
+    const response = await fetch("/api/receitas", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data); // Aqui você pode lidar com a resposta do servidor, se necessário
+      alert("Receita adicionada com sucesso!");
+      form.reset(); // Limpa o formulário após o envio bem-sucedido
+    } else {
+      const errorMessage = await response.text();
+      console.error("Erro ao adicionar receita:", errorMessage);
+      alert("Erro ao adicionar receita. Por favor, tente novamente.");
+    }
+  } catch (error) {
+    console.error("Erro ao adicionar receita:", error);
+    alert("Erro ao adicionar receita. Por favor, tente novamente.");
+  }
+}
+
+// Event listener para o envio do formulário
+const form = document.getElementById("addReceitasForm");
+form.addEventListener("submit", adicionarReceita);

@@ -1,124 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/dashboard.css">
-    <link rel="stylesheet" href="../css/default.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/rodapier.css" />
+    <link rel="stylesheet" href="../css/topo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <script defer src="../js/script.js"></script>
     <script defer src="../js/ateotopo.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
+      <div id="topo"></div>
 
-        <div id="topo">
-
-            <div class="logo">
-                <h1>
-                    <a href="index.html"><img width="100" src="../media/images/logo-senac-cnc-color-100.png" alt=""></a>
-                </h1>
-            </div>
-            <!--logo-->
-
-            <nav class="nav">
-
-                <button class="btn-menu" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
-                    aria-expanded="false"><span class="hamburger"></span>
-                </button>
-
-                <ul class="menu" id="menu" role="menu">
-                    <a href="inicio.html">
-                        <button class="btn-menu-desktop">Ínicio</button>
-                    </a>
-
-                    <a href="http://www.senac.br/" target="_blank">
-                        <button class="btn-menu-desktop">Senac</button>
-                    </a>
-
-                    <a href="chefs.html">
-                        <button class="btn-menu-desktop">Chefs</button>
-                    </a>
-
-                    <a href="login.html">
-                        <button class="btn-menu-desktop">Login</button>
-                    </a>
-                    <!--MENU DO TOPO-->
-
-                </ul><!--menu-->
-
-                <div class="social">
-                    <a href="https://www.facebook.com/SenacBrasil" target="_blank">
-                        <button class="btn-social"><img width="20px" img src="../media/images/facebook.png"
-                                alt=""></button>
-                    </a>
-
-                    <a href="https://www.instagram.com/senacbrasil/" target="_blank">
-                        <button class="btn-social"><img width="20px" img src="../media/images/instagram.png"
-                                alt=""></button>
-                    </a>
-
-                    <a href="https://twitter.com/SenacBrasil" target="_blank">
-                        <button class="btn-social"><img width="20px" img src="../media/images/x-twitter.png"
-                                alt=""></button>
-                    </a>
-
-                    <a href="https://www.linkedin.com/company/2655383" target="_blank">
-                        <button class="btn-social" alt=""><img width="20px" img src="../media/images/linkedin.png"
-                                alt=""></button>
-                    </a>
-
-                    <a href="https://www.youtube.com/user/SenacNacional" target="_blank">
-                        <button class="btn-social"><img width="20px" img src="../media/images/youtube.png"
-                                alt=""></button>
-                    </a>
-                </div>
-                <!--social-->
-
-            </nav>
-
-        </div><!--topo-->
-
-        <!--dashboard-->
-        <div id="perfilfundo">
-            <div id="perfil">
-                <img id="fundoperfil" src="../media/images/fundo de perfil.png" alt="">
-                <img id="perfilfoto" src="../media/images/mialeitao.webp" alt="">
-            
-                <div class="botoes">
-
-                    <button id="botao">Editar perfil</button>
-                    <button id="botao">Excluir perfil</button>
-                    <button id="botao">Adicionar receita</button>
-    
-                </div>
-
-                <div id="nick">
-                    <label id="nome" for="">Mariana Duart</label>
-                </div>
-
-                <div id="sombra">
-                    <label id="categoria">Minhas receitas</label>
-                    <label id="categoria" for="">Receitas curtidas</label>
-                </div>
-            </div>
-
-
+      <div class="main">
+        <div class="recipe-box">
+          <h3>Macarrão ao Molho de Tomate</h3>
+          <p>Macarrão com molho caseiro de tomate e ervas.</p>
+          <a href="ver-receitas.html">Veja mais</a>
         </div>
 
-       
+        <div class="recipe-box">
+          <h3>Feijoada com Arroz</h3>
+          <p>Clássica feijoada brasileira com arroz.</p>
+          <a href="ver-receitas.html">Veja mais</a>
+        </div>
 
-        <button id="backToTopBtn" onclick="backToTop()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor" />
-            </svg>
-        </button><!--botão de subir até o topo da página-->
-        <div id="footer"></div>
+        <div class="recipe-box">
+          <h3>Filé ao Molho de Limão</h3>
+          <p>Filé grelhado com molho cítrico irresistível.</p>
+          <a href="ver-receitas.html">Veja mais</a>
+        </div>
+
+        <div class="sidebar">
+          <h3>Categorias</h3>
+          <ul>
+            <li><a href="#">Sopas</a></li>
+            <li><a href="#">Entradas</a></li>
+            <li><a href="#">Massas</a></li>
+            <li><a href="#">Sobremesas</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Dashboard -->
+
+      <button id="backToTopBtn" onclick="backToTop()">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z"
+            fill="currentColor"
+          />
+        </svg></button
+      ><!--botão de subir até o topo da página-->
+      <div id="footer"></div>
     </div>
-</body>
-<script src="../js/rodape.js"></script>
-
+  </body>
+  <script src="../js/rodape.js"></script>
+  <script src="../js/topo.js"></script>
 </html>
