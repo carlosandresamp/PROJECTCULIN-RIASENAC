@@ -60,6 +60,38 @@ if (false) {
   btnMyPerfil.style.display = "none";
 }
 
+
+
+
+  // fetch("/verificalogin")
+    
+  //   .then(resposta => resposta.json())
+   
+  //   .then(dados => {
+  //     let id = dados.id;
+  //     if (id) {
+       
+  //       console.log("Usuário logado com o id " + id);
+       
+  //       btnLogin.style.display = "none";
+   
+  //       btnMyPerfil.style.display = "block";
+  //     } else {
+       
+  //       console.log("Usuário não logado");
+       
+  //       btnLogin.style.display = "block";
+      
+  //       btnMyPerfil.style.display = "none";
+  //     }
+  //   })
+    
+  //   .catch(erro => console.error("Erro na requisição: " + erro));
+  // }
+
+
+
+
 console.log(btnChef);
 // Função para criar o menu
 function createMenu(menu) {
