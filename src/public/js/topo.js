@@ -53,7 +53,7 @@ let btnSenac = btnTopoFactory("http://www.senac.br/", "SENAC", "btn-senac");
 let btnChef = btnTopoFactory("chefs.html", "Chefs", "btn-chefs");
 let btnLogin = btnTopoFactory("login.html", "Login", "btn-login");
 let btnMyPerfil = btnTopoFactory("my-perfil.html", "Perfil", "btn-my-perfil");
-let btnlogout = btnTopoFactory("login.html", "logout", "btn-logout");
+let btnlogout = btnTopoFactory("inicio.html", "logout", "btn-logout");
 
 fetch("/verificalogin")
   .then((resposta) => resposta.json())
@@ -70,6 +70,23 @@ fetch("/verificalogin")
     }
   })
   .catch((erro) => console.error("Erro na requisição: " + erro));
+
+
+// Criar função que faz encerrar a sessão do usuário
+function logout() {
+  fetch("/logout")
+    .then((resposta) => resposta.json())
+    .then((dados) => {
+      if (dados.success) {
+        window.location.href = "inicio.html";
+         alert("deslogado com sucesso!")
+      } else {
+        alert("Erro ao fazer logout: " + dados.message);
+      }
+    })
+    .catch((erro) => console.error("Erro na requisição: " + erro));
+}
+btnlogout.addEventListener("click", logout);
 
 // Função para criar o menu
 function createMenu(menu) {
