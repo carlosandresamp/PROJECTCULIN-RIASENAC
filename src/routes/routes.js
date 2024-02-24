@@ -12,6 +12,10 @@ routes.get("/", (req, res) => {
 });
 
 //put/post/delete
+routes.get('/logout', function (req, res) {
+  req.session.destroy();
+  res.json({ success: true, message: "Logout realizado com sucesso" });
+});
 routes.get("/verificalogin", RegistrarUsuarioController.verificalogin);
 routes.post("/cadastroReceita", upload.single("foto"), cadastroReceita.store);
 routes.put("/update", cadastroReceita.update);
