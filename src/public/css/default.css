@@ -332,6 +332,21 @@ body {
 
 /* SUBIR ATÉ O TOPO */
 
+.background{
+    width: 1080px;
+    height: 350px;
+    background-color: #004587;
+    margin: auto;
+    padding: 50px;
+    border-radius: 50px;
+
+}
+
+.background h3{
+    color: white;
+}
+
+
 /* RODAPÉ */
 .footer {
     position: relative;
