@@ -12,7 +12,7 @@ routes.get("/", (req, res) => {
 });
 
 //put/post/delete
-// routes.get("/verificalogin", RegistrarUsuarioController.verificalogin);
+routes.get("/verificalogin", RegistrarUsuarioController.verificalogin);
 routes.post("/cadastroReceita", upload.single("foto"), cadastroReceita.store);
 routes.put("/update", cadastroReceita.update);
 routes.post("/RegistrarUsuarioController", RegistrarUsuarioController.store);
