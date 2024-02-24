@@ -44,55 +44,33 @@ function btnTopoFactory(hreff, textt, idd) {
   a.appendChild(btn);
   a.href = hreff;
   a.id = idd;
+  console.log(textt);
   return a;
 }
+
 let btnInicio = btnTopoFactory("inicio.html", "Início", "btn-inicio");
 let btnSenac = btnTopoFactory("http://www.senac.br/", "SENAC", "btn-senac");
 let btnChef = btnTopoFactory("chefs.html", "Chefs", "btn-chefs");
 let btnLogin = btnTopoFactory("login.html", "Login", "btn-login");
 let btnMyPerfil = btnTopoFactory("my-perfil.html", "Perfil", "btn-my-perfil");
+let btnlogout = btnTopoFactory("login.html", "logout", "btn-logout");
 
-if (false) {
-  btnLogin.style.display = "none";
-  btnMyPerfil.style.display = "block";
-} else {
-  btnLogin.style.display = "block";
-  btnMyPerfil.style.display = "none";
-}
+fetch("/verificalogin")
+  .then((resposta) => resposta.json())
+  .then((dados) => {
+    if (dados.login) {
+      console.log(dados.login);
+      btnLogin.style.display = "none";
+      btnMyPerfil.style.display = "block";
+      btnlogout.style.display = "block";
+    } else {
+      btnLogin.style.display = "block";
+      btnMyPerfil.style.display = "none";
+      btnlogout.style.display = "none";
+    }
+  })
+  .catch((erro) => console.error("Erro na requisição: " + erro));
 
-
-
-
-  // fetch("/verificalogin")
-    
-  //   .then(resposta => resposta.json())
-   
-  //   .then(dados => {
-  //     let id = dados.id;
-  //     if (id) {
-       
-  //       console.log("Usuário logado com o id " + id);
-       
-  //       btnLogin.style.display = "none";
-   
-  //       btnMyPerfil.style.display = "block";
-  //     } else {
-       
-  //       console.log("Usuário não logado");
-       
-  //       btnLogin.style.display = "block";
-      
-  //       btnMyPerfil.style.display = "none";
-  //     }
-  //   })
-    
-  //   .catch(erro => console.error("Erro na requisição: " + erro));
-  // }
-
-
-
-
-console.log(btnChef);
 // Função para criar o menu
 function createMenu(menu) {
   var topo = document.getElementById("topo");
@@ -128,19 +106,8 @@ function createMenu(menu) {
   ul.className = "menu";
   ul.id = "menu";
   ul.role = "menu";
-  //   menu.links.forEach(function (link) {
-  //     var a = document.createElement("a");
-  //     a.href = link.href;
-  //     if (link.target) {
-  //       a.target = link.target;
-  //     }
-  //     var button = document.createElement("button");
-  //     button.className = "btn-menu-desktop";
-  //     button.textContent = link.text;
-  //     a.appendChild(button);
-  //     ul.appendChild(a); // Adicione o <a> diretamente ao <ul>
-  //   });
-  ul.append(btnInicio, btnSenac, btnChef, btnLogin, btnMyPerfil);
+
+  ul.append(btnInicio, btnSenac, btnChef, btnLogin, btnMyPerfil, btnlogout);
   nav.appendChild(ul);
   topo.appendChild(nav);
 
