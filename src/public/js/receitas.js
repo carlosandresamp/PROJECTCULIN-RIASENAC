@@ -1,39 +1,50 @@
+async function fetchReceitaAndFillData() {
 
-let recipeList; // lista de receitas
+  const urlParams = new URLSearchParams(window.location.search);
+  const receitaId = urlParams.get('id');
 
-// Base para a interação com o backend. (Sugestão apenas)
-class Recipe {  //Classe de receitas, para a criação de objetos nas funções abaixo, ou para exportar para outros módulos.
-  constructor (id, name, chef, ingredients, preparation, duration, category, images, videos, rating){
-    this.id = id;
-    this.name = name;
-    this.chef = chef;
-    this.ingredients = ingredients;
-    this.preparation = preparation;
-    this.duration = duration;
-    this.category = category;// Deve ser lista
-    this.images = images;// Deve ser lista
-    this.videos = videos;// Deve ser lista
-    this.rating = rating;
+
+  const response = await fetch('/cadastroReceita/' + receitaId);
+  const receita = await response.json();
+
+
+  document.getElementById('titulo').textContent = receita.Titulo;
+
+
+  const ingredientesDiv = document.querySelector('.Igredientes');
+  const ingredientes = receita.ingredientes.split(', ');
+  for (let ingrediente of ingredientes) {
+    const label = document.createElement('label');
+    label.textContent = '🔸 ' + ingrediente;
+    ingredientesDiv.appendChild(label);
   }
+
+  document.getElementById('modo').textContent = 'Modo de preparo (' + receita.tempo + 'min)';
+  document.getElementById('preparo').textContent = receita.modoDePreparo;
+
+
+  const sliderWrapper = document.getElementById('slider-wrapper');
+
+const imageSlide = document.createElement('div');
+imageSlide.className = 'slide';
+const imageElement = document.createElement('img');
+imageElement.src = '../media/images/Uploads/' + receita.foto; 
+imageSlide.appendChild(imageElement);
+sliderWrapper.appendChild(imageSlide);
+
+
+
+  const videoSlide = document.createElement('div');
+  videoSlide.className = 'slide';
+  const iframeElement = document.createElement('iframe');
+  iframeElement.width = '100%';
+  iframeElement.height = '100%';
+  iframeElement.src = receita.video;
+  iframeElement.frameborder = '0';
+  iframeElement.allowfullscreen = true;
+  videoSlide.appendChild(iframeElement);
+  sliderWrapper.appendChild(videoSlide);
 }
 
-function GetRecipes(parms){
-  //Solicitar as receitas de acordo com parâmetros (todas, por chef, por nome, etc.). É possível criar uma função para cada busca separadamente.
-  // e salvar na recipeList para serem carregadas nos cards ou exibidas na página ver-receitas.
-  return recipeList;
-}
 
-function SaveRecipe(recipe){
-  //Salva a receita, nova ou editada, se preferirem podem fazer em duas funções ao invés de uma.
-}
-
-function EditRecipe(receita){
-
-}
-
-function DeleteRecipe(recipeID){
-  //Deleta a receita de acordo com o id fornecido
-}
-
-export default {GetRecipes, SaveRecipe, DeleteRecipe, recipeList}
-
+document.addEventListener('DOMContentLoaded', fetchReceitaAndFillData);

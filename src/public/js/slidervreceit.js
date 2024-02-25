@@ -24,3 +24,5 @@ function prevSlide() {
 }
 
 setInterval(nextSlide, 5000) // PASSAR SLIDE AUTOMATICAMENTE - 5 SECONDS
+
+

@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-  // Selecione os campos de senha, confirmação de senha, CPF e e-mail
+
   const senhaInput = document.querySelector("input[name='senha']");
   const confirmarSenhaInput = document.querySelector(
     "input[name='confirmarsenha']"
@@ -81,7 +81,7 @@ function enviarDados() {
 }
 
 window.addEventListener("load", function () {
-  // Adicione um ouvinte de evento de submit ao formulário
+ 
   document
     .querySelector("#integracao")
     .addEventListener("submit", function (event) {
@@ -113,13 +113,13 @@ window.addEventListener("load", function () {
         return;
       }
 
-      // Se todas as validações passarem, envie os dados
+   
       enviarDados();
     });
 });
 
 window.addEventListener("load", function () {
-  // Selecione os campos de e-mail e senha
+
   const emailInput = document.querySelector("input[type='email']");
   const passwordInput = document.querySelector("input[id='password']");
 
@@ -158,11 +158,11 @@ window.addEventListener("load", function () {
       });
   }
 
-  // Adicione um ouvinte de evento ao formulário para enviar os dados quando o formulário for enviado
+  
   document
     .querySelector("#formLogin")
     .addEventListener("submit", function (event) {
-      event.preventDefault(); // Impede o comportamento padrão do formulário
-      enviarDados(); // Chama a função para enviar os dados
+      event.preventDefault(); 
+      enviarDados();
     });
 });

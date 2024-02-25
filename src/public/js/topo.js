@@ -54,7 +54,7 @@ let btnChef = btnTopoFactory("chefs.html", "Chefs", "btn-chefs");
 let btnLogin = btnTopoFactory("login.html", "Login", "btn-login");
 let btnMyPerfil = btnTopoFactory("my-perfil.html", "Perfil", "btn-my-perfil");
 let btnlogout = btnTopoFactory("inicio.html", "logout", "btn-logout");
-let btnadicionar = btnTopoFactory("add-receitas.html", "Adicionar Receita", "btn-adicionar");
+let btnadicionar = btnTopoFactory("add-receitas.html", "Adcicionar Receita", "btn-adicionar");
 
 fetch("/verificalogin")
   .then((resposta) => resposta.json())

@@ -50,7 +50,7 @@ function previewVideo(event) {
   }
 }
 document
-  .querySelector(".enviar-receita")
+  .querySelector(".btn-submit")
   .addEventListener("click", async (event) => {
     event.preventDefault();
 
@@ -59,22 +59,38 @@ document
     const modoDePreparo = document.querySelector("#directions").value;
     const tempo = document.querySelector("#prep-time").value;
     const foto = document.querySelector("#recipe-image").files[0];
-    const categoria = document.querySelector("#categoria").value;
-
+    const video = document.querySelector("#video").value;
+    let categorias = [];
+    if (document.querySelector("#breakfast").checked) {
+      categorias.push("Café da Manhã");
+    }
+    if (document.querySelector("#lunch").checked) {
+      categorias.push("Almoço");
+    }
+    if (document.querySelector("#dinner").checked) {
+      categorias.push("Jantar");
+    }
+    if (document.querySelector("#snack").checked) {
+      categorias.push("Sobremesa");
+    }
+    
+    const categoriasString = categorias.join(", ");
     const formData = new FormData();
     formData.append("Titulo", Titulo);
     formData.append("ingredientes", ingredientes);
     formData.append("modoDePreparo", modoDePreparo);
     formData.append("tempo", tempo);
     formData.append("foto", foto);
-    formData.append("Categoria", categoria);
-
-    const userId = req.session.userId; // pega o id do usuário da sessão
-
+    formData.append("categoria", categoriasString); 
+    formData.append("video", video); 
+    const loginResponse = await fetch("/verificalogin");
+    const loginData = await loginResponse.json();
+    const userId = loginData.id; 
+    console.log(userId);
     const response = await fetch("/cadastroReceita", {
       method: "POST",
       headers: {
-        userId: userId, // pega o id do usuário da sessão
+        userid: userId, 
       },
       body: formData,
     });
@@ -83,41 +99,13 @@ document
 
     if (response.ok) {
       alert(data.message);
+      window.location.href = "../pages/inicio.html";
     } else {
       alert(`Erro: ${data.message}`);
     }
   });
 
-// integração do add-receitas com back
-// Função para enviar dados do formulário para adicionar uma nova receita
-async function adicionarReceita(event) {
-  event.preventDefault(); // Evita o comportamento padrão do formulário
 
-  const form = event.target; // Obtém o formulário
-  const formData = new FormData(form); // Cria um objeto FormData com os dados do formulário
 
-  try {
-    const response = await fetch("/api/receitas", {
-      method: "POST",
-      body: formData,
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data); // Aqui você pode lidar com a resposta do servidor, se necessário
-      alert("Receita adicionada com sucesso!");
-      form.reset(); // Limpa o formulário após o envio bem-sucedido
-    } else {
-      const errorMessage = await response.text();
-      console.error("Erro ao adicionar receita:", errorMessage);
-      alert("Erro ao adicionar receita. Por favor, tente novamente.");
-    }
-  } catch (error) {
-    console.error("Erro ao adicionar receita:", error);
-    alert("Erro ao adicionar receita. Por favor, tente novamente.");
-  }
-}
-
-// Event listener para o envio do formulário
 const form = document.getElementById("addReceitasForm");
 form.addEventListener("submit", adicionarReceita);

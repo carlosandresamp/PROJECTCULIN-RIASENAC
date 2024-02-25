@@ -28,7 +28,7 @@ function CardFactory(recipe, ){
 
   let aChef = document.createElement('a');
   aChef.textContent = recipe.chef; 
-  aChef.href = ""// add link para a tela do chef
+  aChef.href = ""
 
   let avaliacao = document.createElement('span');
   avaliacao.textContent = recipe.rating;
