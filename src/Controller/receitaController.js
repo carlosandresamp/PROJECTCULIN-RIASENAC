@@ -1,26 +1,25 @@
-// Controller
-import Receita from "../Model/Receita";
+import Receita from "../Model/receita";
 import User from "../Model/User";
 
 class CadastroReceita {
   async store(req, res) {
     try {
       const foto = req.file ? req.file.filename : null;
-      const { Titulo, ingredientes, modoDePreparo, tempo, categoria } =
-        req.body; // Adicionado categoria
-      const { username } = req.headers;
+      const { Titulo, ingredientes, modoDePreparo, tempo, categoria, video } = req.body;
+      const categoriasArray = categoria.split(", ");
+      const userId = req.headers.userid;
+      console.log(userId);
+      if (!userId) {
+        return res.status(400).json({ message: "ID do usuário não fornecido." });
+      }
 
-      if (!Titulo || !ingredientes || !modoDePreparo || !tempo || !categoria) {
-        // Adicionado categoria
+      const userExists = await User.findById(userId);
+
+
+      if (!Titulo || !ingredientes || !modoDePreparo || !tempo ) {
         return res
           .status(400)
           .json({ message: "Todos os campos são obrigatórios." });
-      }
-
-      const userExists = await User.findOne({ username });
-
-      if (!userExists) {
-        return res.status(404).json({ message: "Usuário não encontrado." });
       }
 
       const receitaCadastrada = await Receita.create({
@@ -28,9 +27,10 @@ class CadastroReceita {
         ingredientes,
         modoDePreparo,
         tempo,
-        categoria, // Adicionado categoria
+        categoria: categoriasArray,
         user: userExists._id,
         foto,
+        chef: userExists.nome, 
       });
 
       return res.status(201).json({
@@ -42,6 +42,8 @@ class CadastroReceita {
       return res.status(500).json({ message: "Erro ao cadastrar a receita." });
     }
   }
+
+
 
   async index(req, res) {
     const { id } = req.query;
@@ -68,6 +70,21 @@ class CadastroReceita {
       return res.status(500).json({ message: "Erro ao listar as receitas." });
     }
   }
+
+
+async show(req, res) {
+  try {
+    const receita = await Receita.findById(req.params.id);
+    if (!receita) {
+      return res.status(404).json({ message: "Receita não encontrada." });
+    }
+    return res.json(receita);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Erro ao buscar a receita." });
+  }
+}
+
 
   async update(req, res) {
     try {
@@ -96,7 +113,7 @@ class CadastroReceita {
       const buscaReceita = Receita.findById(id);
       console.log("busca receita:  ", buscaReceita);
       const receitaAtualizada = await Receita.findOneAndUpdate(
-        { _id: id }, // filter
+        { _id: id }, 
         { Titulo, ingredientes, modoDePreparo, tempo }
       );
       console.log(receitaAtualizada);
@@ -117,28 +134,16 @@ class CadastroReceita {
 
   async delete(req, res) {
     try {
-      const { id } = req.params; // ID da receita a ser deletada
-      const { username } = req.headers;
+      const { id } = req.headers; 
 
-      const userExists = await User.findOne({ username });
+      // Procurar a receita pelo ID e deletá-la
+      const receita = await Receita.findByIdAndDelete(id);
 
-      if (!userExists) {
-        return res.status(404).json({ message: "Usuário não encontrado." });
-      }
-
-      const receitaDeletada = await Receita.findOneAndDelete({
-        _id: id,
-        user: userExists._id,
-      });
-
-      if (!receitaDeletada) {
+      if (!receita) {
         return res.status(404).json({ message: "Receita não encontrada." });
       }
 
-      return res.status(200).json({
-        message: "Receita deletada com sucesso.",
-        receita: receitaDeletada,
-      });
+      return res.status(200).json({ message: "Receita deletada com sucesso." });
     } catch (error) {
       console.error(error);
       return res.status(500).json({ message: "Erro ao deletar a receita." });

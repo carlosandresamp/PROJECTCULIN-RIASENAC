@@ -20,9 +20,9 @@ class RegistrarUsuarioController {
     if (!id) {
       return res.json({ login: false });
     } else {
-      return res.json({ login: true });
-    }
+      return res.json({ login: true, id: id }); 
   }
+  
 
   async show(req, res) {
     let usuario = await Usuario.find();

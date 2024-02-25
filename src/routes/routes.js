@@ -22,7 +22,9 @@ routes.put("/update", cadastroReceita.update);
 routes.post("/RegistrarUsuarioController", RegistrarUsuarioController.store);
 routes.get("/RegistrarUsuarioController", RegistrarUsuarioController.show);
 routes.get("/cadastroReceita", cadastroReceita.showAll);
+routes.get("/cadastroReceita/:id", cadastroReceita.show);
+
 routes.put("/delete", cadastroReceita.delete);
 routes.post("/LoginUsuarioController", RegistrarUsuarioController.login);
-
+routes.delete("/cadastroReceita", cadastroReceita.delete);
 module.exports = routes;
