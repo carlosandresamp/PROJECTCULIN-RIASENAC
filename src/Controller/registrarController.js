@@ -22,7 +22,7 @@ class RegistrarUsuarioController {
     } else {
       return res.json({ login: true, id: id }); 
   }
-  
+}
 
   async show(req, res) {
     let usuario = await Usuario.find();
