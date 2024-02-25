@@ -54,6 +54,7 @@ let btnChef = btnTopoFactory("chefs.html", "Chefs", "btn-chefs");
 let btnLogin = btnTopoFactory("login.html", "Login", "btn-login");
 let btnMyPerfil = btnTopoFactory("my-perfil.html", "Perfil", "btn-my-perfil");
 let btnlogout = btnTopoFactory("inicio.html", "logout", "btn-logout");
+let btnadicionar = btnTopoFactory("add-receitas.html", "Adcicionar Receita", "btn-adicionar");
 
 fetch("/verificalogin")
   .then((resposta) => resposta.json())
@@ -63,10 +64,12 @@ fetch("/verificalogin")
       btnLogin.style.display = "none";
       btnMyPerfil.style.display = "block";
       btnlogout.style.display = "block";
+      btnadicionar.style.display = "block";
     } else {
       btnLogin.style.display = "block";
       btnMyPerfil.style.display = "none";
       btnlogout.style.display = "none";
+      btnadicionar.style.display = "none";
     }
   })
   .catch((erro) => console.error("Erro na requisição: " + erro));
@@ -124,7 +127,7 @@ function createMenu(menu) {
   ul.id = "menu";
   ul.role = "menu";
 
-  ul.append(btnInicio, btnSenac, btnChef, btnLogin, btnMyPerfil, btnlogout);
+  ul.append(btnInicio, btnSenac, btnChef, btnLogin, btnMyPerfil, btnlogout, btnadicionar);
   nav.appendChild(ul);
   topo.appendChild(nav);
 
