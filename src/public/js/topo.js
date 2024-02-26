@@ -1,4 +1,3 @@
-// Crie um objeto para representar o seu menu
 var menu = {
   logo: "../media/images/logo-senac-cnc-color-100.png",
   links: [
@@ -54,7 +53,11 @@ let btnChef = btnTopoFactory("chefs.html", "Chefs", "btn-chefs");
 let btnLogin = btnTopoFactory("login.html", "Login", "btn-login");
 let btnMyPerfil = btnTopoFactory("my-perfil.html", "Perfil", "btn-my-perfil");
 let btnlogout = btnTopoFactory("inicio.html", "logout", "btn-logout");
-let btnadicionar = btnTopoFactory("add-receitas.html", "Adcicionar Receita", "btn-adicionar");
+let btnadicionar = btnTopoFactory(
+  "dashboard.html",
+  "dashboard",
+  "btn-adicionar"
+);
 
 fetch("/verificalogin")
   .then((resposta) => resposta.json())
@@ -74,7 +77,6 @@ fetch("/verificalogin")
   })
   .catch((erro) => console.error("Erro na requisição: " + erro));
 
-
 // Criar função que faz encerrar a sessão do usuário
 function logout() {
   fetch("/logout")
@@ -82,7 +84,7 @@ function logout() {
     .then((dados) => {
       if (dados.success) {
         window.location.href = "inicio.html";
-         alert("deslogado com sucesso!")
+        alert("deslogado com sucesso!");
       } else {
         alert("Erro ao fazer logout: " + dados.message);
       }
@@ -127,7 +129,15 @@ function createMenu(menu) {
   ul.id = "menu";
   ul.role = "menu";
 
-  ul.append(btnInicio, btnSenac, btnChef, btnLogin, btnMyPerfil, btnlogout, btnadicionar);
+  ul.append(
+    btnInicio,
+    btnSenac,
+    btnChef,
+    btnLogin,
+    btnMyPerfil,
+    btnlogout,
+    btnadicionar
+  );
   nav.appendChild(ul);
   topo.appendChild(nav);
 
