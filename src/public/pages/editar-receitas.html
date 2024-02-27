@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="../css/editar-receitas.css" />
-  <link rel="stylesheet" href="../css/rodapier.css" />
+  <link rel="stylesheet" href="../css/forms.css" />
+  <link rel="stylesheet" href="../css/default.css" />
   <link rel="stylesheet" href="../css/topo.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
   <script defer src="../js/script.js"></script>
@@ -78,55 +78,92 @@
       </nav>
 
     </div><!--topo-->
+    <div class="center">
 
-    <div class="edit">
-      <div class="edit_receita">
-        <h1>Editar Receita</h1>
-      </div>
-      <form>
-        <label for="recipe-name">Nome da Receita:</label>
-        <input type="text" id="recipe-name" name="recipe-name" required />
+      <form id="edit-receita-form">
 
-        <label for="ingredients">Ingredientes:</label>
-        <textarea id="ingredients" name="ingredients" required></textarea>
-
-        <label for="directions">Modo de Preparo:</label>
-        <textarea id="directions" name="directions" required></textarea>
-
-        <label for="prep-time">Tempo de preparo (em minutos):</label>
-        <input type="number" id="prep-time" name="prep-time" required />
-
-        <label for="categories">Categorias:</label>
-
-        <div class="categories">
-          <input type="checkbox" id="breakfast" name="breakfast" />
-          <label for="breakfast">Café da Manhã</label>
-
-          <input type="checkbox" id="lunch" name="lunch" />
-          <label for="lunch">Almoço</label>
-
-          <input type="checkbox" id="dinner" name="dinner" />
-          <label for="dinner">Jantar</label>
-
-          <input type="checkbox" id="snack" name="snack" />
-          <label for="snack">Sobremesa</label>
+        <div class="title center">
+          <h3>Editar Receita</h3>
         </div>
 
-        <label for="recipe-image">
-          <p>Adicionar Foto:</p>
-        </label>
-        <input type="file" id="recipe-image" name="recipe-image" onchange="previewImage(event)" />
-        <img id="preview-image" src="" alt="Imagem da receita" />
+        <div class="form-large">
+          <label for="recipe-name">Nome da Receita:</label>
+          <input
+            class="input"
+            type="text"
+            id="recipe-name"
+            name="recipe-name"
+            required
+          />
 
-        <label for="video">
-          <p>Vídeo:</p>
-        </label>
-        <input type="text" id="video" name="video" placeholder="Cole o link do vídeo" oninput="previewVideo(event)" />
-        <div id="preview-video"></div>
+          <label for="ingredients">Ingredientes:</label>
+          <textarea
+            class="input"
+            id="ingredients"
+            name="ingredients"
+            rows="6"
+            required
+          ></textarea>
 
-        <button class="enviar-receita" type="submit">
-          <h1>Enviar receita</h1>
-        </button>
+          <label for="directions">Modo de Preparo:</label>
+          <textarea
+            class="input"
+            id="directions"
+            name="directions"
+            rows="6"
+            required
+          ></textarea>
+
+          <label for="prep-time">Tempo de preparo (em minutos):</label>
+          <input
+            class="input"
+            type="number"
+            id="prep-time"
+            name="prep-time"
+            required
+          />
+
+          <label for="categories">Categorias:</label>
+
+          <div class="categories">
+            <input type="checkbox" id="breakfast" name="breakfast" />
+            <label for="breakfast">Café da Manhã</label>
+
+            <input type="checkbox" id="lunch" name="lunch" />
+            <label for="lunch">Almoço</label>
+
+            <input type="checkbox" id="dinner" name="dinner" />
+            <label for="dinner">Jantar</label>
+
+            <input type="checkbox" id="snack" name="snack" />
+            <label for="snack">Sobremesa</label>
+          </div>
+
+          <label for="recipe-image">
+            <p>Adicionar Foto:</p>
+          </label>
+          <input
+            type="file"
+            id="recipe-image"
+            name="recipe-image"
+            onchange="previewImage(event)"
+          />
+          <img id="preview-image" src="" alt="Imagem da receita" />
+
+          <label for="video">
+            <p>Vídeo:</p>
+          </label>
+          <input
+            type="text"
+            id="video"
+            name="video"
+            placeholder="Cole o link do vídeo"
+            oninput="previewVideo(event)"
+          />
+          <div id="preview-video"></div>
+
+          <button class="btn-submit" type="submit">Salvar</button>
+        </div>
       </form>
     </div>
     <div id="footer"></div>

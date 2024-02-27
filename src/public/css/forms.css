@@ -6,6 +6,10 @@
   --btn-color: rgb(63, 63, 224);
 }
 
+.title{
+  margin-top: 2mm;
+}
+
 fieldset{
   border: 0;
 }
@@ -41,6 +45,10 @@ form label{
 
 .form-large .btn-submit{
   max-width: 300px;
+}
+
+.form-large label{
+  margin: 1mm;
 }
 
 .form img {
