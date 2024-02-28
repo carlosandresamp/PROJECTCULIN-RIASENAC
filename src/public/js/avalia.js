@@ -10,3 +10,31 @@ document.addEventListener('click', function(e){
     console.log(e.target.getAttribute('data-avaliacao'));
   }
 });
+
+  function previewImage(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var img = document.getElementById("profile-pic");
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+
+  // puxar imagem do usuario na pagina de perfil
+  
+  document.getElementById('profile-pic').onclick = function() {
+    var input = document.createElement('input');
+    input.type = 'file';
+    input.onchange = function(event) {
+      var file = event.target.files[0];
+      var reader = new FileReader();
+      reader.onload = function(event) {
+        document.getElementById('profile-pic').src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    };
+    input.click();
+  };

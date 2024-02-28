@@ -131,6 +131,16 @@ body {
     flex-direction: column;
 }
 
+#profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border:1px solid #000000;
+}
+.form2 {
+    display: flex;
+    justify-content: space-between;
+}
 #perfil .form h3 {
     margin-bottom: 20px;
 }

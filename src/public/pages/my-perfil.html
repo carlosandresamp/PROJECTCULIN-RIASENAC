@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../css/default.css" />
-    <link rel="stylesheet" href="../css/my-perfil.css" />
-    <link rel="stylesheet" href="../css/topo.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-    />
-    <script defer src="../js/script.js"></script>
-    <script defer src="../js/ateotopo.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil do Usuário</title>
-  </head>
 
-  <body>
-    <div class="container">
-      <div id="topo"></div>
-      <div class="center content">
-        <form id="perfil">
-            <div class="form">
-                <h3>Seu Perfil</h3>
-                <div class="input">
-                    <label for="profile-pic">Foto de perfil:</label>
-                    <button type="button" style="float: right;">Editar</button>
-                    <input type="file" id="profile-pic" name="profile-pic">
-                </div>
-                <p name="nome">Usuário</p>
-                <div class="input">
-                    <input type="text" placeholder="Atualizar dados...">
-                    <button type="button" style="float: right;">Editar</button>
-                </div>
-                <p name="email">E-mail</p>
-                <div class="input">
-                    <input type="text" placeholder="Atualizar dados...">
-                    <button type="button" style="float: right;">Editar</button>
-                </div>
-                <p name="cpf">CPF</p>
-                <div class="input">
-                    <input type="text" placeholder="Atualizar dados...">
-                    <button type="button" style="float: right;">Editar</button>
-                </div>
-                <input class="btn-submit" type="submit" value="Atualizar Perfil" />
-            </div>
-        </form>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../css/default.css" />
+  <link rel="stylesheet" href="../css/my-perfil.css" />
+  <link rel="stylesheet" href="../css/topo.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  <script defer src="../js/script.js"></script>
+  <script defer src="../js/ateotopo.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil do Usuário</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="topo"></div>
+    <div class="center content">
+      <form id="perfil">
+        <div class="form">
+          <div class="form2">
+            <h3>Seu Perfil</h3>
+            <img id="profile-pic" alt="Perfil">
+          </div>
+          <p name="nome">Usuário</p>
+          <div class="input">
+            <input type="text" placeholder="Atualizar dados...">
+            <button type="button" style="float: right;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.243-1.242l1-3a1 1 0 0 1 .242-.39l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+                <path fill-rule="evenodd"
+                  d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.243-1.242l1-3a1 1 0 0 1 .242-.39l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+              </svg>
+            </button>
+          </div>
+          <p name="email">E-mail</p>
+          <div class="input">
+            <input type="text" placeholder="Atualizar dados...">
+            <button type="button" style="float: right;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.243-1.242l1-3a1 1 0 0 1 .242-.39l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+                <path fill-rule="evenodd"
+                  d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.243-1.242l1-3a1 1 0 0 1 .242-.39l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+              </svg>
+            </button>
+          </div>
+          <p name="cpf">CPF</p>
+          <div class="input">
+            <input type="text" placeholder="Atualizar dados...">
+            <button type="button" style="float: right;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.243-1.242l1-3a1 1 0 0 1 .242-.39l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+                <path fill-rule="evenodd"
+                  d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.243-1.242l1-3a1 1 0 0 1 .242-.39l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" />
+              </svg>
+            </button>
+          </div>
+          <input class="btn-submit" type="submit" value="Atualizar Perfil" />
+        </div>
+      </form>
     </div>
-        </svg></button>
-        <!--botão de subir até o topo da página-->
-      <div id="footer"></div>
-    </div>
-    <script src="../js/rodape.js"></script>
-    <script src="../js/topo.js"></script>
-  </body>
+    </svg></button>
+    <!--botão de subir até o topo da página-->
+    <div id="footer"></div>
+  </div>
+  <script src="../js/rodape.js"></script>
+  <script src="../js/avalia.js"></script>
+  <script src="../js/topo.js"></script>
+</body>
+
 </html>

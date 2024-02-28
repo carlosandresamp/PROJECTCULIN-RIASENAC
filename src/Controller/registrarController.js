@@ -45,6 +45,36 @@ class RegistrarUsuarioController {
       return res.json(user);
     }
   }
+
+
+  // update usuario 
+  async update(req, res) {
+    const { id, nome, email, senha, confirmarsenha, cpf } = req.body;
+  
+    const usuario = await Usuario.findById(id);
+    if (!usuario) {
+      return res.status(404).send("Usuário não encontrado");
+    }
+  
+    if (email && (email !== usuario.email)) {
+      const usuarioExiste = await Usuario.findOne({ email });
+      if (usuarioExiste) {
+        return res.status(409).send("Email já está em uso");
+      }
+    }
+  
+    usuario.nome = nome || usuario.nome;
+    usuario.email = email || usuario.email;
+    usuario.senha = senha || usuario.senha;
+    usuario.confirmarsenha = confirmarsenha || usuario.confirmarsenha;
+    usuario.cpf = cpf || usuario.cpf;
+  
+    await usuario.save();
+  
+    return res.status(200).send("Usuário atualizado com sucesso");
+  }
 }
+
+
 
 export default new RegistrarUsuarioController();
