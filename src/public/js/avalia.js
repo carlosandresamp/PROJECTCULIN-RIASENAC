@@ -38,3 +38,53 @@ document.addEventListener('click', function(e){
     };
     input.click();
   };
+
+
+  // enviar dados de usuario para pagina de perfil
+
+  function getId() {
+    fetch('/verificalogin')
+      .then(function(response) {
+        return response.json(); 
+      })
+      .then(function(data) {
+        if (data.login) { 
+          return data.id; 
+        } else {
+          return null; 
+        }
+      })
+      .catch(function(error) {
+        console.error("Erro ao verificar o login:", error); 
+      });
+  }
+  function getDados(id) {
+    fetch('/perfil/' + id) 
+      .then(function(response) {
+        return response.json(); 
+      })
+      .then(function(data) {
+        console.log("Dados do usuário recebidos:", data); 
+       
+      })
+      .catch(function(error) {
+        console.error("Erro ao obter os dados do usuário:", error); 
+      });
+  }
+  function preencherPerfil(data) {
+    document.getElementById("profile-pic").src = data.foto;
+    document.getElementById("nome").innerHTML = data.nome; 
+    document.getElementById("email").innerHTML = data.email;
+  
+  }
+  document.getElementById("load", function() {
+    var id = getId(); 
+    if (id) { 
+      var data = getDados(id); 
+      preencherPerfil(data); 
+    } else {
+      alert("Você precisa estar logado para ver o seu perfil");
+    }
+  });
+
+  

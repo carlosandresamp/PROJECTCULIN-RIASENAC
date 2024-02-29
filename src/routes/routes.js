@@ -28,4 +28,37 @@ routes.get("/cadastroReceita/:id", cadastroReceita.show);
 routes.put("/delete", cadastroReceita.delete);
 routes.post("/LoginUsuarioController", RegistrarUsuarioController.login);
 routes.delete("/cadastroReceita", cadastroReceita.delete);
+
+
+
+
+routes.get('/perfil/:id', function(req, res) {
+
+  const id = req.params.id;
+  
+  
+  const user = db.query('SELECT * FROM users WHERE id = ?', [id]);
+ 
+  if (user) {
+    res.json(user);
+  } else {
+   
+    res.status(404).send('Usuário não encontrado');
+  }
+});
+
+routes.get('/verificalogin', function(req, res) {
+ 
+  
+  const id = req.cookies.id;
+ 
+  if (login) {
+    res.json({login: true, id: id});
+  } else {
+   
+    res.json({login: false});
+  }
+});
+
+
 module.exports = routes;
