@@ -1,5 +1,5 @@
 const app = require('./app.js');
 
-app.listen(3333);
+app.listen(80);
 
 console.log('Servidor em Execução!');
