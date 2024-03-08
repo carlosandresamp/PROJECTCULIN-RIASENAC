@@ -7,6 +7,7 @@ async function fetchReceitaAndFillData() {
   const response = await fetch('/cadastroReceita/' + receitaId);
   const receita = await response.json();
 
+  console.log(receita.foto)
 
   document.getElementById('titulo').textContent = receita.Titulo;
 
@@ -25,12 +26,13 @@ async function fetchReceitaAndFillData() {
 
   const sliderWrapper = document.getElementById('slider-wrapper');
 
-const imageSlide = document.createElement('div');
-imageSlide.className = 'slide';
-const imageElement = document.createElement('img');
-imageElement.src = '../media/images/Uploads/' + receita.foto; 
-imageSlide.appendChild(imageElement);
-sliderWrapper.appendChild(imageSlide);
+  const imageSlide = document.createElement('div');
+  imageSlide.className = 'slide';
+  const imageElement = document.createElement('img');
+  imageElement.className = 'foto_receita';
+  imageElement.src = '../media/images/Uploads/' + receita.foto;
+  imageSlide.appendChild(imageElement);
+  sliderWrapper.appendChild(imageSlide);
 
 
 
