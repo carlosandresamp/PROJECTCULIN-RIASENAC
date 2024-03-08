@@ -243,6 +243,7 @@ body {
   flex-direction: column;
   margin-bottom: 50px;
   margin-left: 335px;
+  margin-right: 235px;
 }
 
 #igre {
@@ -294,6 +295,7 @@ body {
 
 #preparo {
   font-size: 20px;
+  text-align: justify;
 }
 
 #frango {

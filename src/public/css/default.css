@@ -12,7 +12,8 @@
     padding: 0px;
 }
 
-#container, .container{
+#container,
+.container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -26,7 +27,7 @@
     align-items: center;
 }
 
-.content{
+.content {
     min-height: calc(100vh - 100px);
 }
 
@@ -332,7 +333,7 @@ body {
 
 /* SUBIR ATÉ O TOPO */
 
-.background{
+.background {
     width: 1080px;
     height: 350px;
     background-color: #004587;
@@ -342,7 +343,7 @@ body {
 
 }
 
-.background h3{
+.background h3 {
     color: white;
 }
 

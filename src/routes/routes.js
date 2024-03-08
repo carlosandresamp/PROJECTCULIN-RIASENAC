@@ -30,6 +30,9 @@ routes.post("/LoginUsuarioController", RegistrarUsuarioController.login);
 routes.delete("/cadastroReceita", cadastroReceita.delete);
 
 
+routes.get("/getMyProfile", RegistrarUsuarioController.getMyProfile);
+routes.get("/getUser/:id", RegistrarUsuarioController.getUserById);
+routes.put("/updateMyProfile",upload.single("foto"), RegistrarUsuarioController.updateMyProfile);
 
 
 routes.get('/perfil/:id', function(req, res) {

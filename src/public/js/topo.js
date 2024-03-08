@@ -172,3 +172,28 @@ window.onload = function () {
 window.onload = function () {
   createMenu(menu);
 };
+
+
+
+
+
+
+// Criar as categorias
+
+var categorias = ["Almoço", "Lanches", "Bolos", "Vitaminas", "Bebidas", "Aperitivos", "Sobremesas", "Jantar", "Sopas", "Saladas", "Carnes"];
+
+var divCategoria = document.querySelector('.category');
+
+for (var i = 0; i < categorias.length; i++) {
+    var a = document.createElement('a');
+    a.href = "#";
+
+    // Cria um novo elemento 'button'
+    var button = document.createElement('button');
+    button.className = "btn-category";
+    button.textContent = categorias[i];
+
+    a.appendChild(button);
+
+    divCategoria.appendChild(a);
+}

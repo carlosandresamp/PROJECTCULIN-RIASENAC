@@ -81,7 +81,7 @@ function enviarDados() {
 }
 
 window.addEventListener("load", function () {
- 
+
   document
     .querySelector("#integracao")
     .addEventListener("submit", function (event) {
@@ -113,7 +113,7 @@ window.addEventListener("load", function () {
         return;
       }
 
-   
+
       enviarDados();
     });
 });
@@ -158,13 +158,13 @@ window.addEventListener("load", function () {
       });
   }
 
-  
 
-  
+
+
   document
     .querySelector("#formLogin")
     .addEventListener("submit", function (event) {
-      event.preventDefault(); 
+      event.preventDefault();
       enviarDados();
     });
 });

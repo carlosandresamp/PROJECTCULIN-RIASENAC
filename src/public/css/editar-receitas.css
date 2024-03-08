@@ -6,14 +6,12 @@
 }
 
 .container {
-    /* position: relative; */
     width: 100%;
-    /* height: 100vh; */
-    background: url(../media/images/fundo\ do\ dash.png) no-repeat;
-    background-size: cover;
-
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
 
 /* DEFAULT */
 
@@ -106,115 +104,77 @@ body {
 
 /* MENU DO TOPO */
 
-/* DASHBOARD */
-#perfilfundo {
+/* EDITAR RECEITAS */
+.edit_receita {
+    color: #ffffff;
+    -webkit-text-stroke-width: 0.7px;
+    -webkit-text-stroke-color: #ff8000;
+    margin-bottom: 20px;
+    font-family: "Roboto", sans-serif;
+}
+
+.categories {
+    padding: 20px;
+
+}
+
+.categories label {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 5px;
+}
+
+.edit {
+    width: 70%;
+    height: auto;
+    margin: auto;
     display: flex;
-    justify-content: center;
-    position: relative;
-    top: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #00407E;
+    border-radius: 5px;
+    color: #ffffff;
+    margin-top: 50px;
 }
 
-#perfil {
-    background-color: white;
-    height: 1150px;
-    width: 80%;
-    border-radius: 20px;
-}
-
-#fundoperfil {
-    border-radius: 3mm;
-    height: 350px;
-    width: calc(100% - 20px);
-    margin: 10px;
-}
-
-#curtida {
-    display: flex;
-    position: relative;
-    left: 570px;
-    top: -120px;
-}
-
-#avaliação {
-    font-size: 35PX;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bolder;
-
-}
-
-#perfilfoto {
-    height: 300px;
-    width: 300px;
-    border-radius: 100%;
-    border: 5px solid white;
-    margin-top: -170px;
-    margin-left: 50px;
-
-}
-
-.botoes {
-    display: flex;
-    justify-content: center;
-    margin-left: 300px;
-    margin-top: -80px;
-}
-
-#botao {
-    background-color: white;
-    height: 30px;
-    width: 144px;
-    border-radius: 20px;
-    margin-left: 70px;
-    font-size: 15px;
-    font-weight: bolder;
-    border: 1px solid #666;
-
-
-}
-
-#botao:hover {
-    background-color: #cccccc;
-
-}
-
-#nick {
-    margin-top: 2px;
-    margin-left: 70px;
-}
-
-#nome {
-    color: #333;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-}
-
-#sombra {
-    margin-top: 90px;
+input[type="text"],
+input[type="number"],
+textarea {
     width: 100%;
-    height: 60px;
-    background-color: white;
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 1px 50px 36px 32px rgba(0, 0, 0, 0);
-    box-shadow: 0px 10px 13px -7px #000000, 1px 50px 36px 32px rgba(0, 0, 0, 0);
-
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
 }
 
-#categoria {
-    font-size: 20px;
-    margin-left: 250px;
-    margin-top: 20px;
-    font-weight: bolder;
-
+label {
+    font-weight: bold;
 }
 
-#categoria:hover {
-    color: #666;
-    font-size: 21px;
+.enviar-receita {
+    width: 110px;
+    height: 25px;
+    background: none;
+    background-color: #000000;
+    border-radius: 3mm;
+    border: none;
+    margin: auto;
+    margin-top: 15px;
+    display: block;
 }
 
+.enviar-receita:hover {
+    background-color: #ff8000;
+    color: #ffffff;
+}
 
-/* DASHBOARD */
+.enviar-receita h1 {
+    font-size: 15px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* EDITAR RECEITAS */
+
 
 /* SUBIR ATÉ O TOPO */
 #backToTopBtn {
@@ -356,7 +316,6 @@ body {
     /* RODAPÉ */
     .footer {
         height: 200px;
-        /* background: url(../media/images/fundo\ do\ dash.png); */
     }
 
     .logo-rodapier {

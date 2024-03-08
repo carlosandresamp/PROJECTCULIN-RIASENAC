@@ -6,19 +6,20 @@
   --btn-color: rgb(63, 63, 224);
 }
 
-.title{
+.title {
   margin-top: 2mm;
 }
 
-fieldset{
+fieldset {
   border: 0;
 }
 
-form label{
+form label {
   align-self: flex-start;
 }
 
-.form, .form-large {
+.form,
+.form-large {
   margin: 5mm;
   -webkit-box-shadow: 0px 0px 26px 2px rgba(0, 0, 0, 0.6);
   box-shadow: 0px 0px 26px 2px rgba(0, 0, 0, 0.6);
@@ -30,24 +31,24 @@ form label{
   align-items: center;
 }
 
-.form{
+.form {
   min-width: 400px;
 }
 
-.form-large{
+.form-large {
   min-width: 400px;
   max-width: 800px;
 }
 
-.form-large textarea{
+.form-large textarea {
   resize: vertical;
 }
 
-.form-large .btn-submit{
+.form-large .btn-submit {
   max-width: 300px;
 }
 
-.form-large label{
+.form-large label {
   margin: 1mm;
 }
 

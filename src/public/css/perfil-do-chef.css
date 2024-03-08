@@ -6,7 +6,7 @@
     flex-direction: flex;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -269,8 +269,8 @@ body {
     align-items: center;
     flex-direction: column;
     font-family: none;
-
-
+    flex-direction: column-reverse;
+    justify-content: space-around;
 }
 
 #receitatipo {

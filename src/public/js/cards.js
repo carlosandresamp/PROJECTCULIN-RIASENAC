@@ -16,7 +16,7 @@ async function createCard(receita) {
   chefDiv.className = 'chef';
 
   const chefImageElement = document.createElement('img');
-  chefImageElement.src = '../media/images/chef.png';
+  chefImageElement.src = '../media/images/Uploads/' + receita.user.foto;
 
 
   chefDiv.appendChild(chefImageElement);

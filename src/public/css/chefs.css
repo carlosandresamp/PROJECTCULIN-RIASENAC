@@ -88,6 +88,13 @@ body {
     width: 35px;
 }
 
+
+#cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .cardzin{
     display: flex;
     justify-content: flex-end;
