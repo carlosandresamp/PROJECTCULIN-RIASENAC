@@ -356,7 +356,8 @@ body {
   display: flex;
   padding: 1rem;
   overflow-x: auto;
-  grid-column-gap: 11px;
+  grid-column-gap: 30px;
+  justify-content: center;
 }
 
 .category::-webkit-scrollbar {

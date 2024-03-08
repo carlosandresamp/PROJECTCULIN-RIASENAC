@@ -198,8 +198,9 @@ body {
     display: flex;
     padding: 1rem;
     overflow-x: auto;
-    grid-column-gap: 11px;
+    grid-column-gap: 30px;
     padding-bottom: 0;
+    justify-content: center;
 }
 
 .category::-webkit-scrollbar {
