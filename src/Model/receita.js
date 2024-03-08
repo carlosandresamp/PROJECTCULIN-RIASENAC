@@ -7,7 +7,7 @@ const ReceitaSchema = new Schema({
   modoDePreparo: { type: String, required: true },
   tempo: { type: Number, required: true },
   categoria: { type: [String], required: true }, 
-  user: { type: Schema.Types.ObjectId }, 
+  user: { type: Schema.Types.ObjectId, ref: 'User' }, 
   chef: { type: String }, 
   foto: { type: String },
   likes: { type: Number, default: 0 }, 

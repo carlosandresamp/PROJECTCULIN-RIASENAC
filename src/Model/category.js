@@ -15,13 +15,13 @@ const CategorySchema = new Schema({
         required: true
     },
     image: {
-        type: Buffer, 
+        type: Buffer, // Armazenar imagem como Buffer (pode ser alterado conforme necessário)
         contentType: String
     },
     recipes: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Receita' 
+            ref: 'Receita' // Referência ao modelo 'Receita'
         }
     ]
 });
