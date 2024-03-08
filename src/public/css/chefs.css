@@ -88,31 +88,27 @@ body {
     width: 35px;
 }
 
-#card{
+.cardzin{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     align-items: center;
     background-color: white;
     width: 250px;
+    height: 300PX;
     margin-left: 50px;
     margin-top: 60px;
     border-radius: 20px;
     -webkit-box-shadow: 0px 2px 28px -4px rgba(0,0,0,0.79); 
     box-shadow: 0px 2px 28px -4px rgba(0,0,0,0.79);
     transition: transform 0.3s ease; 
-
+    background-image: url("../media/images/chapeu_chef_cozinheiro_mestre_branco_xadrez_1723_1_ad5e0d99ad2e1ab9075b08a2a01ffda8.webp");
+    background-size: cover;
 }
 
-#card:hover{
+.cardzin:hover{
     transform: scale(1.05); 
-}
 
-#fotocard{
-    height: 300px;
-    width: 100%;
-    border-radius: 20px;
-   
 }
 
 
@@ -127,8 +123,9 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     color: white;
-    margin-top: -50px;
     transition: transform 0.3s ease; 
+    margin-bottom: 15px
+    ;
 }
 
 .nick:hover{
