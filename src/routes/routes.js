@@ -21,7 +21,7 @@ routes.post("/cadastroReceita", upload.single("foto"), cadastroReceita.store);
 routes.put("/update", cadastroReceita.update);
 routes.put("/updateUsuario", RegistrarUsuarioController.update);
 routes.post("/RegistrarUsuarioController", RegistrarUsuarioController.store);
-routes.get("/RegistrarUsuarioController", RegistrarUsuarioController.show);
+routes.get("/getAllUsers", RegistrarUsuarioController.show);
 routes.get("/cadastroReceita", cadastroReceita.showAll);
 routes.get("/cadastroReceita/:id", cadastroReceita.show);
 
