@@ -27,16 +27,22 @@ body {
     justify-content: space-between;
     width: 100%;
     min-height: 100vh;
+    background-image: url(../media/images/fundo\ do\ dash.png);
+    background-size: cover;
+    
 }
 
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
+ 
+  
 }
 
 .content {
     min-height: calc(100vh - 100px);
+    
 }
 
 .link {
