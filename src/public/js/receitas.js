@@ -60,3 +60,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
     window.location.href = `../pages/editar-receitas.html?id=${id}`;
   });
 });
+
+
+// botão editar receita aparecer apenas quando logado 
+
+
+
+  $(document).ready(function() {
+    // Verifique o login quando a página carregar
+    $.get('/verificalogin', function(data) {
+      if (data.login) {
+        // Usuário logado, mostre o botão
+        $('#but').show();
+      } else {
+        // Usuário não logado, oculte o botão
+        $('#but').hide();
+      }
+    });
+  });

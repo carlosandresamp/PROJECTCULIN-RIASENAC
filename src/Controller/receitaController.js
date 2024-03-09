@@ -152,4 +152,6 @@ async show(req, res) {
   }
 }
 
+
+
 export default new CadastroReceita();

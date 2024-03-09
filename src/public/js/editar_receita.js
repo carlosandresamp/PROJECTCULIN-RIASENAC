@@ -84,15 +84,28 @@ function previewImage(event) {
   const file = event.target.files[0];
   const reader = new FileReader();
 
-  reader.onload = function(e) {
+  reader.onload = function (e) {
     const img = new Image();
     img.src = e.target.result;
-    img.onload = function() {
+    img.onload = function () {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
-      canvas.width = 320;
-      canvas.height = 240;
+      canvas.width = this.width;
+      canvas.height = this.height;
+
       ctx.drawImage(this, 0, 0, canvas.width, canvas.height);
+
+      // Convert to grayscale
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        data[i] = avg; // red
+        data[i + 1] = avg; // green
+        data[i + 2] = avg; // blue
+      }
+      ctx.putImageData(imageData, 0, 0);
+
       preview.innerHTML = `<img src="${canvas.toDataURL()}" alt="Preview da Imagem">`;
     };
   };
@@ -103,7 +116,6 @@ function previewImage(event) {
     preview.innerHTML = '';
   }
 }
-
 // function previewVideo(event) {
 //   const preview = document.getElementById('preview-video');
 //   const url = event.target.value;
@@ -115,3 +127,7 @@ function previewImage(event) {
 //     preview.innerHTML = '';
 //   }
 // }
+
+
+
+

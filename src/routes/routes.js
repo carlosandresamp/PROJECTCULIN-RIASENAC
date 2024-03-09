@@ -6,6 +6,7 @@ import uploadconfg from "./uploadConfig";
 
 const upload = multer(uploadconfg);
 
+
 const routes = new Router();
 routes.get("/", (req, res) => {
   return res.json({ message: "ok" });
@@ -18,10 +19,14 @@ routes.get('/logout', function (req, res) {
 });
 routes.get("/verificalogin", RegistrarUsuarioController.verificalogin);
 routes.post("/cadastroReceita", upload.single("foto"), cadastroReceita.store);
+//Atualizar recita
 routes.put("/update", cadastroReceita.update);
+
 routes.put("/updateUsuario", RegistrarUsuarioController.update);
 routes.post("/RegistrarUsuarioController", RegistrarUsuarioController.store);
+//ver usuarios
 routes.get("/getAllUsers", RegistrarUsuarioController.show);
+// ver receitas cadastradas
 routes.get("/getReceita", cadastroReceita.showAll);
 routes.get("/getReceita/:id", cadastroReceita.show);
 
@@ -62,6 +67,26 @@ routes.get('/verificalogin', function(req, res) {
     res.json({login: false});
   }
 });
+
+// botão editar receita
+
+routes.get('/editar-receitas', function(req, res) {
+
+  if (login) {
+    
+    res.render('editar-receitas', { showButton: true });
+  } else {
+    
+    res.render('editar-receitas', { showButton: false });
+  }
+});
+
+
+
+
+
+
+
 
 
 module.exports = routes;
