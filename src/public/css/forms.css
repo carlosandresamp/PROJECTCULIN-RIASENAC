@@ -7,15 +7,25 @@
 }
 
 .title {
-  margin-top: 2mm;
+  margin-top: 20px;
+  font-size: 30px;
+
+}
+
+#adiciRece{
+  color: black;
+
+ 
 }
 
 fieldset {
   border: 0;
+  
 }
 
 form label {
   align-self: flex-start;
+  
 }
 
 .form,
@@ -36,8 +46,10 @@ form label {
 }
 
 .form-large {
-  min-width: 400px;
-  max-width: 800px;
+  min-width: 700px;
+  max-width: 900px;
+  background-color: white;
+  opacity: 90%;
 }
 
 .form-large textarea {
