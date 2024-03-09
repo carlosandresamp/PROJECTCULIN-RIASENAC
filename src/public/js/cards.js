@@ -31,7 +31,7 @@ async function createCard(receita) {
 
 
   const chefBylineElement = document.createElement('i');
-  chefBylineElement.textContent = 'Por: ' + receita.chef; 
+  chefBylineElement.textContent = 'Por: ' + receita.user.nome; 
   chefDetailsDiv.appendChild(chefBylineElement);
 
 
@@ -56,7 +56,7 @@ async function createCard(receita) {
 
 
 async function fetchReceitasAndCreateCards() {
-  const response = await fetch('/cadastroReceita');
+  const response = await fetch('/getReceita');
   const receitas = await response.json();
 
   for (let receita of receitas) {

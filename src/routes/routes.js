@@ -22,8 +22,8 @@ routes.put("/update", cadastroReceita.update);
 routes.put("/updateUsuario", RegistrarUsuarioController.update);
 routes.post("/RegistrarUsuarioController", RegistrarUsuarioController.store);
 routes.get("/getAllUsers", RegistrarUsuarioController.show);
-routes.get("/cadastroReceita", cadastroReceita.showAll);
-routes.get("/cadastroReceita/:id", cadastroReceita.show);
+routes.get("/getReceita", cadastroReceita.showAll);
+routes.get("/getReceita/:id", cadastroReceita.show);
 
 routes.put("/delete", cadastroReceita.delete);
 routes.post("/LoginUsuarioController", RegistrarUsuarioController.login);

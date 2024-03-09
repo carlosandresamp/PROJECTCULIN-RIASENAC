@@ -4,7 +4,7 @@ async function fetchReceitaAndFillData() {
   const receitaId = urlParams.get('id');
 
 
-  const response = await fetch('/cadastroReceita/' + receitaId);
+  const response = await fetch('/getReceita/' + receitaId);
   const receita = await response.json();
 
   console.log(receita.foto)
@@ -48,5 +48,15 @@ async function fetchReceitaAndFillData() {
   sliderWrapper.appendChild(videoSlide);
 }
 
-
 document.addEventListener('DOMContentLoaded', fetchReceitaAndFillData);
+
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  document.getElementById('but').addEventListener('click', (event) => {
+    event.preventDefault();
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    window.location.href = `../pages/editar-receitas.html?id=${id}`;
+  });
+});

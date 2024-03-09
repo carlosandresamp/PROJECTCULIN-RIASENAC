@@ -23,28 +23,95 @@ function previewImage(event) {
     }
   }
 
-  function previewVideo(event) {
-    const preview = document.getElementById('preview-video');
-    const url = event.target.value;
-    const videoId = url.split('v=')[1];
+//   function previewVideo(event) {
+//     const preview = document.getElementById('preview-video');
+//     const url = event.target.value;
+//     const videoId = url.split('v=')[1];
   
-    if (url && videoId) {
-      const iframe = document.createElement('iframe');
+//     if (url && videoId) {
+//       const iframe = document.createElement('iframe');
   
-      iframe.src = `https://www.youtube.com/embed/${videoId}`;
-      iframe.width = '320';
-      iframe.height = '240';
-      iframe.frameBorder = '0';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      iframe.allowFullscreen = true;
+//       iframe.src = `https://www.youtube.com/embed/${videoId}`;
+//       iframe.width = '320';
+//       iframe.height = '240';
+//       iframe.frameBorder = '0';
+//       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+//       iframe.allowFullscreen = true;
   
-      const existingIframe = preview.querySelector('iframe');
-      if (existingIframe) {
-        preview.removeChild(existingIframe);
-      }
+//       const existingIframe = preview.querySelector('iframe');
+//       if (existingIframe) {
+//         preview.removeChild(existingIframe);
+//       }
   
-      preview.appendChild(iframe);
-    } else {
-      preview.innerHTML = '';
-    }
+//       preview.appendChild(iframe);
+//     } else {
+//       preview.innerHTML = '';
+//     }
+//   }
+
+// document.getElementById('recipe-name').textContent = receita.Titulo;
+
+
+
+
+async function fetchReceitaAndFillData() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const receitaId = urlParams.get('id');
+
+  const response = await fetch('/getReceita/' + receitaId);
+  const receita = await response.json();
+
+  document.getElementById('recipe-name').value = receita.Titulo;
+  document.getElementById('ingredients').value = receita.ingredientes;
+  document.getElementById('directions').value = receita.modoDePreparo;
+  document.getElementById('prep-time').value = receita.tempo;
+
+ 
+  document.getElementById('breakfast').checked = receita.categorias.includes('Café da Manhã');
+  document.getElementById('lunch').checked = receita.categorias.includes('Almoço');
+  document.getElementById('dinner').checked = receita.categorias.includes('Jantar');
+  document.getElementById('snack').checked = receita.categorias.includes('Sobremesa');
+
+
+  document.getElementById('preview-image').innerHTML = `<img src="../media/images/Uploads/${receita.foto}" alt="Foto da Receita">`;
+  document.getElementById('preview-video').innerHTML = `<iframe src="${receita.video}" width="320" height="240" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+}
+
+document.addEventListener('DOMContentLoaded', fetchReceitaAndFillData);
+
+function previewImage(event) {
+  const preview = document.getElementById('preview-image');
+  const file = event.target.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    const img = new Image();
+    img.src = e.target.result;
+    img.onload = function() {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 320;
+      canvas.height = 240;
+      ctx.drawImage(this, 0, 0, canvas.width, canvas.height);
+      preview.innerHTML = `<img src="${canvas.toDataURL()}" alt="Preview da Imagem">`;
+    };
+  };
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.innerHTML = '';
   }
+}
+
+// function previewVideo(event) {
+//   const preview = document.getElementById('preview-video');
+//   const url = event.target.value;
+//   const videoId = url.split('v=')[1];
+
+//   if (url && videoId) {
+//     preview.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" width="320" height="240" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+//   } else {
+//     preview.innerHTML = '';
+//   }
+// }
