@@ -12,6 +12,14 @@
     padding: 0px;
 }
 
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
 #container,
 .container {
     display: flex;
@@ -37,36 +45,34 @@
 
 /*endRegion DEFAULT */
 
-/* TOPO */
+/*#region TOPO */
 #topo {
+    
+    padding: 2mm;
     width: 100%;
-    height: 100px;
+    min-height: 100px;
+    padding-left: 5mm;
+    padding-right: 5mm;
     margin: 0;
     background: rgb(255, 255, 255);
-    display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
     border-bottom: 5px solid #ff8000;
 }
 
 .logo {
-    margin: 15px;
+    margin-left: 15px;
 }
 
 a {
     text-decoration: none;
 }
 
-html,
-body {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #ffffff;
-}
 
-/* TOPO */
+/*#endregion TOPO */
 
-/* MENU DO TOPO */
+/*#region MENU DO TOPO */
 .btn-menu-desktop {
     width: 90px;
     height: 30px;
@@ -93,10 +99,10 @@ body {
 
 .social {
     display: flex;
-    margin-top: -19px;
+    padding: 2mm;
     justify-content: flex-end;
+    flex-grow: 1;
     grid-column-gap: 5px;
-    margin-left: 170px;
 }
 
 .btn-social {
@@ -121,10 +127,9 @@ body {
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
-    margin-right: 555px;
 }
 
-/* MENU DO TOPO */
+/*#endregion MENU DO TOPO */
 
 /*BACKGROUND BANNER */
 .banner {
@@ -138,7 +143,7 @@ body {
 
 /*BACKGROUND BANNER */
 
-/* SEARCH BAR */
+/*#region SEARCH BAR */
 .texto {
     margin: 10px;
     word-wrap: break-word;
@@ -190,9 +195,9 @@ body {
     background: rgba(255, 255, 255, 0);
 }
 
-/* SEARCH BAR */
+/*#endregion SEARCH BAR */
 
-/* CATEGORY */
+/*#region CATEGORY */
 .category {
     width: 100%;
     display: flex;
@@ -222,9 +227,9 @@ body {
     background-size: 5mm;
 }
 
-/* CATEGORY */
+/*#endregion CATEGORY */
 
-/* CARDS */
+/*#region CARDS */
 .cards {
     padding: 5mm;
     display: flex;
@@ -310,7 +315,7 @@ body {
     border: 3px solid #ffffff;
 }
 
-/* CARDS */
+/*#endregion CARDS */
 
 /* SUBIR ATÉ O TOPO */
 #backToTopBtn {
@@ -349,7 +354,7 @@ body {
 }
 
 
-/* RODAPÉ */
+/*#region RODAPÉ */
 .footer {
     position: relative;
     bottom: 0;
@@ -405,13 +410,15 @@ body {
     background-size: 10mm;
 }
 
-/* RODAPÉ */
+/*#endregion RODAPÉ */
 
 @media screen and (max-width: 800px) {
 
     /* TOPO */
     #topo {
         justify-content: flex-start;
+        height: 100px;
+        flex-wrap: nowrap;
     }
 
     /* TOPO */

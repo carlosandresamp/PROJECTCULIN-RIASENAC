@@ -113,7 +113,7 @@ function createMenu(menu) {
 
   // Criação dos links do menu
   var nav = document.createElement("nav");
-  nav.className = "nav";
+  nav.classList.add("nav", "center")
   var btnMenu = document.createElement("button");
   btnMenu.className = "btn-menu";
   btnMenu.setAttribute("aria-label", "Abrir Menu");
@@ -139,7 +139,6 @@ function createMenu(menu) {
     btnadicionar
   );
   nav.appendChild(ul);
-  topo.appendChild(nav);
 
   // Criação dos botões sociais
   var socialDiv = document.createElement("div");
@@ -159,8 +158,8 @@ function createMenu(menu) {
     a.appendChild(button);
     socialDiv.appendChild(a);
   });
-  nav.appendChild(socialDiv);
   topo.appendChild(nav);
+  topo.appendChild(socialDiv);
 }
 
 // Chame a função createMenu quando a página for carregada
