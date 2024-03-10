@@ -138,31 +138,25 @@ document.querySelector('.btn-submit').addEventListener('click', async function (
   if (document.getElementById('dinner').checked) categorias.push('Jantar');
   if (document.getElementById('snack').checked) categorias.push('Sobremesa');
 
-  let foto = '';
-  if (document.getElementById('preview-image').children[0]) {
-    foto = document.getElementById('preview-image').children[0].src;
-  }
-
+  const foto = document.getElementById('recipe-image').files[0];
 
   const urlParams = new URLSearchParams(window.location.search);
   const receitaId = urlParams.get('id');
 
-  const body = {
-    id: receitaId,
-    Titulo: document.getElementById('recipe-name').value,
-    ingredientes: document.getElementById('ingredients').value,
-    modoDePreparo: document.getElementById('directions').value,
-    tempo: document.getElementById('prep-time').value,
-    categorias,
-    foto
-  };
+  const formData = new FormData();
+  formData.append('id', receitaId);
+  formData.append('Titulo', document.getElementById('recipe-name').value);
+  formData.append('ingredientes', document.getElementById('ingredients').value);
+  formData.append('modoDePreparo', document.getElementById('directions').value);
+  formData.append('tempo', document.getElementById('prep-time').value);
+  formData.append('categorias', JSON.stringify(categorias));
+  if (foto) {
+    formData.append('foto', foto);
+  }
 
   const response = await fetch('/update', {
     method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
+    body: formData,
   });
 
   if (response.ok) {
@@ -171,4 +165,3 @@ document.querySelector('.btn-submit').addEventListener('click', async function (
     alert('Erro ao atualizar a receita.');
   }
 });
-

@@ -20,7 +20,8 @@ routes.get('/logout', function (req, res) {
 routes.get("/verificalogin", RegistrarUsuarioController.verificalogin);
 routes.post("/cadastroReceita", upload.single("foto"), cadastroReceita.store);
 //Atualizar recita
-routes.put("/update", cadastroReceita.update);
+// routes.put("/update", cadastroReceita.update);
+routes.put("/update",upload.single("foto"), cadastroReceita.update);
 
 routes.put("/updateUsuario", RegistrarUsuarioController.update);
 routes.post("/RegistrarUsuarioController", RegistrarUsuarioController.store);
@@ -80,13 +81,5 @@ routes.get('/editar-receitas', function(req, res) {
     res.render('editar-receitas', { showButton: false });
   }
 });
-
-
-
-
-
-
-
-
 
 module.exports = routes;

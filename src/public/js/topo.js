@@ -48,11 +48,11 @@ function btnTopoFactory(hreff, textt, idd) {
 }
 
 let btnInicio = btnTopoFactory("inicio.html", "Início", "btn-inicio");
-let btnSenac = btnTopoFactory("http://www.senac.br/", "SENAC", "btn-senac");
+let btnSenac = btnTopoFactory("http://www.senac.br/", "Senac", "btn-senac");
 let btnChef = btnTopoFactory("chefs.html", "Chefs", "btn-chefs");
 let btnLogin = btnTopoFactory("login.html", "Login", "btn-login");
 let btnMyPerfil = btnTopoFactory("my-perfil.html", "Perfil", "btn-my-perfil");
-let btnlogout = btnTopoFactory("inicio.html", "logout", "btn-logout");
+let btnlogout = btnTopoFactory("inicio.html", "Sair", "btn-logout");
 let btnadicionar = btnTopoFactory(
   "dashboard.html",
   "dashboard",

@@ -6,7 +6,6 @@ class CadastroReceita {
     try {
       const foto = req.file ? req.file.filename : null;
       const { Titulo, ingredientes, modoDePreparo, tempo, categoria, video } = req.body;
-      const categoriasArray = categoria.split(", ");
       const userId = req.headers.userid;
       console.log(userId);
       if (!userId) {
@@ -16,7 +15,7 @@ class CadastroReceita {
       const userExists = await User.findById(userId);
 
 
-      if (!Titulo || !ingredientes || !modoDePreparo || !tempo ) {
+      if (!Titulo || !ingredientes || !modoDePreparo || !tempo) {
         return res
           .status(400)
           .json({ message: "Todos os campos são obrigatórios." });
@@ -27,10 +26,10 @@ class CadastroReceita {
         ingredientes,
         modoDePreparo,
         tempo,
-        categoria: categoriasArray,
+        categoria,
         user: userExists._id,
         foto,
-        chef: userExists.nome, 
+        chef: userExists.nome,
       });
 
       return res.status(201).json({
@@ -87,46 +86,43 @@ async show(req, res) {
 }
 
 
-async update(req, res) {
-  try {
-    const { id, Titulo, ingredientes, modoDePreparo, tempo, categorias, foto } = req.body;
+  async update(req, res) {
+    try {
+      const { id, Titulo, ingredientes, modoDePreparo, tempo, categorias } = req.body;
+      const foto = req.file ? req.file.filename : null;
 
-    if (!Titulo || !ingredientes || !modoDePreparo || !tempo) {
-      return res.status(400).json({ message: "Todos os campos são obrigatórios." });
+      if (!Titulo || !ingredientes || !modoDePreparo || !tempo) {
+        return res.status(400).json({ message: "Todos os campos são obrigatórios." });
+      }
+
+      const receita = await Receita.findById(id);
+
+      if (!receita) {
+        return res.status(404).json({ message: "Receita não encontrada." });
+      }
+
+      const userExists = await User.findById(receita.user);
+
+      if (!userExists) {
+        return res.status(404).json({ message: "Usuário não encontrado." });
+      }
+
+      const updateFields = { Titulo, ingredientes, modoDePreparo, tempo, categorias, foto };
+      const receitaAtualizada = await Receita.findOneAndUpdate({ _id: id, user: receita.user }, updateFields, { new: true });
+
+      if (!receitaAtualizada) {
+        return res.status(404).json({ message: "Receita não encontrada." });
+      }
+
+      return res.status(200).json({
+        message: "Receita atualizada com sucesso.",
+        receita: receitaAtualizada,
+      });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: "Erro ao atualizar a receita." });
     }
-
-    const receita = await Receita.findById(id);
-
-    if (!receita) {
-      return res.status(404).json({ message: "Receita não encontrada." });
-    }
-
-    const userExists = await User.findById(receita.user);
-
-    if (!userExists) {
-      return res.status(404).json({ message: "Usuário não encontrado." });
-    }
-
-    // Se o campo 'foto' estiver vazio, mantenha a imagem atual
-    const fotoAtualizada = foto || receita.foto;
-
-    const updateFields = { Titulo, ingredientes, modoDePreparo, tempo, categorias, foto: fotoAtualizada };
-    const receitaAtualizada = await Receita.findOneAndUpdate({ _id: id, user: receita.user }, updateFields, { new: true });
-
-    if (!receitaAtualizada) {
-      return res.status(404).json({ message: "Receita não encontrada." });
-    }
-
-    return res.status(200).json({
-      message: "Receita atualizada com sucesso.",
-      receita: receitaAtualizada,
-    });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Erro ao atualizar a receita." });
   }
-}
-
   async delete(req, res) {
     try {
       const { id } = req.headers; 
