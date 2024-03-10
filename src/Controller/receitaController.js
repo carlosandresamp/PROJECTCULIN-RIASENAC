@@ -87,51 +87,45 @@ async show(req, res) {
 }
 
 
-  async update(req, res) {
-    try {
-      const { id } = req.query;
-      const { Titulo, ingredientes, modoDePreparo, tempo } = req.body;
-      const { username } = req.headers;
-      console.log(id);
-      // console.log(req.body);
-      // console.log(Titulo);
-      // console.log(ingredientes);
-      // console.log(modoDePreparo);
-      // console.log(tempo);
-      // console.log(username);
-      const userExists = await User.findById(username);
-      // console.log(userExists);
+async update(req, res) {
+  try {
+    const { id, Titulo, ingredientes, modoDePreparo, tempo, categorias, foto } = req.body;
 
-      if (!userExists) {
-        return res.status(404).json({ message: "Usuário não encontrado." });
-      }
-
-      if (!Titulo || !ingredientes || !modoDePreparo || !tempo) {
-        return res
-          .status(400)
-          .json({ message: "Todos os campos são obrigatórios." });
-      }
-      const buscaReceita = Receita.findById(id);
-      console.log("busca receita:  ", buscaReceita);
-      const receitaAtualizada = await Receita.findOneAndUpdate(
-        { _id: id }, 
-        { Titulo, ingredientes, modoDePreparo, tempo }
-      );
-      console.log(receitaAtualizada);
-
-      if (!receitaAtualizada) {
-        return res.status(404).json({ message: "Receita não encontrada." });
-      }
-
-      return res.status(200).json({
-        message: "Receita atualizada com sucesso.",
-        receita: receitaAtualizada,
-      });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ message: "Erro ao atualizar a receita." });
+    if (!Titulo || !ingredientes || !modoDePreparo || !tempo) {
+      return res.status(400).json({ message: "Todos os campos são obrigatórios." });
     }
+
+    const receita = await Receita.findById(id);
+
+    if (!receita) {
+      return res.status(404).json({ message: "Receita não encontrada." });
+    }
+
+    const userExists = await User.findById(receita.user);
+
+    if (!userExists) {
+      return res.status(404).json({ message: "Usuário não encontrado." });
+    }
+
+    // Se o campo 'foto' estiver vazio, mantenha a imagem atual
+    const fotoAtualizada = foto || receita.foto;
+
+    const updateFields = { Titulo, ingredientes, modoDePreparo, tempo, categorias, foto: fotoAtualizada };
+    const receitaAtualizada = await Receita.findOneAndUpdate({ _id: id, user: receita.user }, updateFields, { new: true });
+
+    if (!receitaAtualizada) {
+      return res.status(404).json({ message: "Receita não encontrada." });
+    }
+
+    return res.status(200).json({
+      message: "Receita atualizada com sucesso.",
+      receita: receitaAtualizada,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Erro ao atualizar a receita." });
   }
+}
 
   async delete(req, res) {
     try {

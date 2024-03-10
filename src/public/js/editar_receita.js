@@ -129,5 +129,46 @@ function previewImage(event) {
 // }
 
 
+document.querySelector('.btn-submit').addEventListener('click', async function (event) {
+  event.preventDefault();
 
+  const categorias = [];
+  if (document.getElementById('breakfast').checked) categorias.push('Café da Manhã');
+  if (document.getElementById('lunch').checked) categorias.push('Almoço');
+  if (document.getElementById('dinner').checked) categorias.push('Jantar');
+  if (document.getElementById('snack').checked) categorias.push('Sobremesa');
+
+  let foto = '';
+  if (document.getElementById('preview-image').children[0]) {
+    foto = document.getElementById('preview-image').children[0].src;
+  }
+
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const receitaId = urlParams.get('id');
+
+  const body = {
+    id: receitaId,
+    Titulo: document.getElementById('recipe-name').value,
+    ingredientes: document.getElementById('ingredients').value,
+    modoDePreparo: document.getElementById('directions').value,
+    tempo: document.getElementById('prep-time').value,
+    categorias,
+    foto
+  };
+
+  const response = await fetch('/update', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (response.ok) {
+    alert('Receita atualizada com sucesso!');
+  } else {
+    alert('Erro ao atualizar a receita.');
+  }
+});
 
