@@ -55,7 +55,7 @@ let btnMyPerfil = btnTopoFactory("my-perfil.html", "Perfil", "btn-my-perfil");
 let btnlogout = btnTopoFactory("inicio.html", "Sair", "btn-logout");
 let btnadicionar = btnTopoFactory(
   "dashboard.html",
-  "dashboard",
+  "Dashboard",
   "btn-adicionar"
 );
 
